@@ -225,10 +225,11 @@ body {
 
 /* ── HERO ────────────────────────────────────────────────── */
 .step-hero {
-  background: var(--dark);
+  background: var(--warm-white);
   padding: 64px 64px 56px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid var(--border);
 }
 
 .step-hero::before {
@@ -241,7 +242,7 @@ body {
   font-weight: 900;
   font-size: 130px;
   letter-spacing: -0.04em;
-  color: rgba(255,255,255,0.04);
+  color: rgba(0,0,0,0.04);
   pointer-events: none;
   line-height: 1;
   user-select: none;
@@ -253,7 +254,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: var(--dimmed);
   margin-bottom: 16px;
 }
 
@@ -269,10 +270,10 @@ body {
 
 .step-hero-title {
   font-family: var(--sans);
-  font-weight: 600;           /* Thinner than before */
-  font-size: 52px;
-  letter-spacing: .01em;
-  color: var(--white);
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 52px);
+  letter-spacing: -0.02em;
+  color: var(--dark);
   line-height: 1.05;
   margin-bottom: 10px;
 }
@@ -281,17 +282,17 @@ body {
   font-family: var(--serif);
   font-style: italic;
   font-size: 17px;
-  color: rgba(255,255,255,0.4);
+  color: var(--dimmed);
   margin-bottom: 36px;
 }
 
 .step-hero-question {
-  font-family: var(--sans);
+  font-family: var(--serif);
   font-style: italic;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.5;
+  color: var(--body);
+  line-height: 1.6;
   max-width: 580px;
   padding-left: 22px;
   border-left: 3px solid var(--step);
@@ -521,7 +522,7 @@ ol li::before {
   font-family: var(--sans);
   font-weight: 700;
   font-size: 13.5px;
-  color: rgba(255,255,255,0.9);
+  color: var(--dark);
   letter-spacing: 0.01em;
 }
 
@@ -775,7 +776,8 @@ ul.artifact-list li strong {
 
 /* ── FOOTER NAV ──────────────────────────────────────────── */
 .step-footer-nav {
-  background: var(--dark);
+  background: #252220;
+  border-top: 2px solid rgba(255,255,255,0.08);
   padding: 32px 64px;
   display: flex;
   justify-content: flex-end;
