@@ -28,7 +28,7 @@
 
     <main aria-label="Main content">
       <section class="section hero" aria-label="Hero">
-        <h1>Build With Structure. Not Guesswork. 1</h1>
+        <h1>Build With Structure. Not Guesswork.</h1>
         <p>
           Stupid Simple Startup gives builders and creators a disciplined operating model for turning ideas
           into revenue-generating initiatives.
@@ -55,7 +55,9 @@
           </div>
         </div>
 
-        <p>Each step forces a decision. Each decision reduces risk. Each decision builds leverage.</p>
+        <p>
+          Each step forces a decision. Each decision reduces risk. Each decision builds leverage.
+        </p>
 
         <div class="cta-row">
           <button class="btn primary" type="button" data-open-optin>Get the IMPACT System</button>
@@ -70,7 +72,9 @@
               Most startup frameworks were built for funded teams. They assume co-founders, departments,
               outside capital, and aggressive scaling timelines.
             </p>
-            <p>That model works if you have those conditions. Most builders and creators don’t.</p>
+            <p>
+              That model works if you have those conditions. Most builders and creators don’t.
+            </p>
 
             <div class="list" aria-label="Audiences">
               <div class="item">
@@ -146,7 +150,9 @@
           </div>
         </div>
 
-        <p>The IMPACT System defines the operating model. Playbooks apply it to specific industries. Worksheets force documented decisions.</p>
+        <p>
+          The IMPACT System defines the operating model. Playbooks apply it to specific industries. Worksheets force documented decisions.
+        </p>
 
         <div class="model" role="group" aria-label="Strategy tactics execution model">
           <div class="row top">
@@ -182,12 +188,7 @@
     </footer>
   </div>
 
-  <!-- Hidden Kit Render Host (Kit renders here first, then we move the rendered markup into the modal) -->
-  <div id="kitHidden" style="position:absolute; left:-99999px; top:0; width:600px;">
-    <script async data-uid="5fd5d63b2c" src="https://tadrobert.kit.com/5fd5d63b2c/index.js"></script>
-  </div>
-
-  <!-- Opt-in Modal -->
+  <!-- Opt-in Modal (kept in DOM at load; hidden via opacity/visibility, NOT display:none) -->
   <div id="optinOverlay" class="overlay" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-label="Get the IMPACT System">
       <div class="modal-head">
@@ -201,8 +202,9 @@
       <div class="modal-body">
         <p class="modal-sub">Enter your email to access the full framework online.</p>
 
-        <!-- Kit gets moved into here -->
-        <div id="kitMount" class="kit-embed"></div>
+        <div id="kitMount" class="kit-embed">
+          <script async data-uid="5fd5d63b2c" src="https://tadrobert.kit.com/5fd5d63b2c/index.js"></script>
+        </div>
 
         <div class="modal-footnote">You’ll be redirected to the IMPACT System after submitting.</div>
       </div>
