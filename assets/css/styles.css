@@ -248,7 +248,7 @@ p{
   padding: 16px 16px;
   border-radius: 16px;
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.62);
+  background: #fff;
 }
 .model .row{
   display:flex;
@@ -289,7 +289,7 @@ footer{
 .overlay{
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.45);
+  background: rgba(0,0,0,.75);
   display:flex;
   align-items: center;
   justify-content: center;
@@ -310,7 +310,7 @@ footer{
 
 .modal{
   width: min(860px, 100%);
-  background: rgba(255,255,255,.92);
+  background: #fff;
   border: 1px solid var(--line);
   border-radius: 18px;
   box-shadow: 0 24px 70px rgba(0,0,0,.18);
@@ -351,7 +351,7 @@ footer{
 
 .modal-close{
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.6);
+  background: #fff;
   border-radius: 999px;
   width: 38px;
   height: 38px;
