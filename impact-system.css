@@ -2922,3 +2922,309 @@ ul.artifact-list li strong {
 .site-footer a:hover {
   color: var(--body);
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE NAV TOGGLE BUTTON
+   Fixed top bar that replaces sidebar on small screens
+═══════════════════════════════════════════════════════════ */
+
+.mobile-top-bar {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 52px;
+  background: var(--dark);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 200;
+}
+
+.mobile-top-bar-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mobile-top-bar-eyebrow {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  line-height: 1;
+}
+
+.mobile-top-bar-title {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.2;
+}
+
+.mobile-top-bar-title strong {
+  font-weight: 800;
+  color: var(--white);
+}
+
+.mobile-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px 9px;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.mobile-hamburger:hover { background: rgba(255,255,255,0.1); }
+
+.mobile-hamburger span {
+  display: block;
+  height: 1.5px;
+  background: rgba(255,255,255,0.65);
+  border-radius: 2px;
+  transition: all 0.22s ease;
+  transform-origin: center;
+}
+
+/* Hamburger → X animation */
+.mobile-hamburger.is-open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.mobile-hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.mobile-hamburger.is-open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   SIDEBAR OVERLAY (mobile only)
+═══════════════════════════════════════════════════════════ */
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 149;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.sidebar-overlay.is-visible {
+  opacity: 1;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* Show mobile top bar */
+  .mobile-top-bar { display: flex; }
+
+  /* Show overlay element (toggled via JS) */
+  .sidebar-overlay { display: block; }
+
+  /* Push body down below fixed top bar */
+  body { padding-top: 52px; }
+
+  /* ── SIDEBAR: hide by default, slide in on open ── */
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 150;
+    /* Keep all existing sidebar styles, just control visibility */
+  }
+
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  /* ── MAIN: full width, no left margin ── */
+  .main {
+    margin-left: 0;
+  }
+
+  /* ── STEP HERO ── */
+  .step-hero {
+    padding: 36px 24px 32px;
+  }
+
+  .step-hero::before {
+    font-size: 80px;
+    right: -10px;
+    color: rgba(0,0,0,0.07);
+  }
+
+  .step-hero-title { font-size: clamp(28px, 8vw, 42px); }
+  .step-hero-subtitle { font-size: 15px; }
+  .step-hero-question { font-size: 16px; }
+
+  /* ── CONTENT ── */
+  .content {
+    padding: 36px 24px 64px;
+  }
+
+  /* ── PHASE HERO ── */
+  .phase-hero {
+    padding: 36px 24px 32px;
+  }
+
+  .phase-hero-title { font-size: clamp(28px, 8vw, 42px); }
+  .phase-hero-subtitle { font-size: 16px; }
+
+  /* ── PHASE STEPS ROW: stack vertically ── */
+  .phase-steps-row {
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 24px;
+  }
+
+  /* ── INTRO STEP GRID: single column ── */
+  .intro-step-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* ── CHECKPOINT: stack columns ── */
+  .checkpoint-row {
+    grid-template-columns: 1fr;
+  }
+
+  .checkpoint-col {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .checkpoint-col:last-child { border-bottom: none; }
+
+  /* ── GOAL TIERS: single column ── */
+  .goal-tiers {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* ── SCOPE GRID: single column ── */
+  .scope-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── GLOSSARY GRID: single column ── */
+  .glossary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── LOOP TYPES GRID: single column ── */
+  .loop-types-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── DECISION MATRIX: adjust grid ── */
+  .decision-matrix-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dm-question:nth-child(2n) { border-right: none; }
+  .dm-question:nth-child(4n) { border-right: 1px solid var(--border); }
+  .dm-question:nth-last-child(-n+2) { border-bottom: none; }
+  .dm-question:nth-last-child(-n+4) { border-bottom: 1px solid var(--border); }
+
+  /* ── ABOUT BLOCK: single column ── */
+  .about-block {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* ── VERSION CARD: hide purpose from header ── */
+  .version-card-purpose { display: none; }
+  .anatomy-phase-timeline { display: none; }
+  .process-phase-tagline { display: none; }
+  .triumph-tool-question { display: none; }
+  .campaign-category-note { display: none; }
+  .campaign-type-purpose { display: none; }
+  .step-review-trigger { display: none; }
+  .quick-ref-question { display: none; }
+  .pillar-tagline { display: none; }
+
+  /* ── PROCESS PHASE BODY: reduce indent ── */
+  .process-phase-body { padding: 0 16px 16px 16px; }
+  .anatomy-phase-body { padding: 0 16px 16px 16px; }
+
+  /* ── FOOTER NAV ── */
+  .step-footer-nav {
+    padding: 24px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .step-footer-nav-btn {
+    padding: 12px 16px;
+    flex: 1;
+    min-width: 130px;
+  }
+
+  /* ── SITE FOOTER ── */
+  .site-footer {
+    padding: 14px 24px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ── CTA PAGE ── */
+  .cta-hero {
+    padding: 40px 24px 36px;
+  }
+
+  .cta-hero-title { font-size: clamp(24px, 7vw, 36px); }
+  .cta-hero-subtitle { font-size: 16px; }
+
+  .cta-offer-block {
+    padding: 32px 24px;
+  }
+
+  .cta-offer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cta-purchase-card {
+    position: static; /* remove sticky on mobile */
+  }
+
+  .cta-trust-row { padding: 32px 24px; }
+  .cta-footer-links {
+    padding: 24px 24px;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* ── QUICK REF HEADER: stack on small screens ── */
+  .quick-ref-header {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+}
+
+/* Slightly wider mobile: allow some 2-col layouts back */
+@media (max-width: 768px) and (min-width: 480px) {
+  .intro-step-grid { grid-template-columns: 1fr 1fr; }
+}
+
