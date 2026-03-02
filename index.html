@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Stupid Simple Startup gives builders and creators a disciplined operating model for turning ideas into revenue-generating initiatives." />
   <title>Stupid Simple Startup</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 
 <body>
+
   <div class="wrap">
     <header>
       <div class="brand">
@@ -30,21 +29,6 @@
           Stupid Simple Startup gives builders and creators a disciplined operating model
           for turning ideas into revenue-generating initiatives.
         </p>
-
-        <div class="cta-row">
-          <button class="btn primary" data-open-optin>Get the IMPACT System</button>
-          <span class="cta-note">Free access. Read online.</span>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>A Structured Operating Model</h2>
-        <p>Most people start with tactics. Stupid Simple Startup starts with structure.</p>
-
-        <div class="steps">
-          IDENTIFY → MONETIZE → PRODUCTIZE → ACTIVATE → CONVERT → TRIUMPH
-        </div>
-
         <div class="cta-row">
           <button class="btn primary" data-open-optin>Get the IMPACT System</button>
         </div>
@@ -54,6 +38,11 @@
     <footer>
       © <span id="y"></span> Eight Echo Agency, LLC
     </footer>
+  </div>
+
+  <!-- Hidden Kit Container (always rendered at load) -->
+  <div id="kitHidden" style="position:absolute;left:-9999px;top:auto;">
+    <script async data-uid="5fd5d63b2c" src="https://tadrobert.kit.com/5fd5d63b2c/index.js"></script>
   </div>
 
   <!-- Modal -->
@@ -69,9 +58,7 @@
 
       <div class="modal-body">
         <p class="modal-sub">Enter your email to access the full framework online.</p>
-
-        <div id="kitFormMount" class="kit-embed"></div>
-
+        <div id="kitMount"></div>
         <div class="modal-footnote">
           You’ll be redirected to the IMPACT System after submitting.
         </div>
