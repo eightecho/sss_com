@@ -27,26 +27,36 @@
     <div class="sidebar-brand-eyebrow">Stupid Simple Startup</div>
     <div class="sidebar-brand-title">The <strong>IMPACT</strong> System</div>
   </div>
-  <div style="padding: 14px 0 6px;">
+  <div class="sidebar-nav-primary">
     <a class="nav-item" href="index.html"><span class="nav-item-icon">—</span><span class="nav-item-name">Overview</span></a>
     <a class="nav-item" href="copyright.html"><span class="nav-item-icon" style="font-size:9px;">©</span><span class="nav-item-name">Copyright</span></a>
     <a class="nav-item" href="introduction.html"><span class="nav-item-icon">In</span><span class="nav-item-name">Introduction</span></a>
   </div>
   <div class="sidebar-nav-divider"></div>
-  <div style="padding: 8px 0 6px;">
-    <div class="sidebar-phase-label"><span class="sidebar-phase-pip" style="background:#6b8cba;"></span><span class="sidebar-phase-text">Phase 1 — Foundation</span></div>
-    <a class="nav-item" href="phase-1.html"><span class="nav-item-icon">P1</span><span class="nav-item-name">Phase 1 Overview</span></a>
-    <a class="step-nav-item indented " data-step="1" href="step-1-identify.html"><div class="step-dot" style="">1</div><div class="step-nav-label"><span class="step-nav-number">Step 1</span><span class="step-nav-name">Identify</span></div></a>
-    <a class="step-nav-item indented " data-step="2" href="step-2-monetize.html"><div class="step-dot" style="">2</div><div class="step-nav-label"><span class="step-nav-number">Step 2</span><span class="step-nav-name">Monetize</span></div></a>
-    <a class="step-nav-item indented " data-step="3" href="step-3-productize.html"><div class="step-dot" style="">3</div><div class="step-nav-label"><span class="step-nav-number">Step 3</span><span class="step-nav-name">Productize</span></div></a>
+  <div class="sidebar-phase-group">
+    <a class="sidebar-phase-toggle" href="phase-1.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P1</span>
+      <span class="sidebar-phase-text">Phase 1 — Foundation</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps">
+      <a class="step-nav-item indented" data-step="1" href="step-1-identify.html"><div class="step-dot" >1</div><div class="step-nav-label"><span class="step-nav-number">Step 1</span><span class="step-nav-name">Identify</span></div></a>
+      <a class="step-nav-item indented" data-step="2" href="step-2-monetize.html"><div class="step-dot" >2</div><div class="step-nav-label"><span class="step-nav-number">Step 2</span><span class="step-nav-name">Monetize</span></div></a>
+      <a class="step-nav-item indented" data-step="3" href="step-3-productize.html"><div class="step-dot" >3</div><div class="step-nav-label"><span class="step-nav-number">Step 3</span><span class="step-nav-name">Productize</span></div></a>
+    </div>
   </div>
   <div class="sidebar-nav-divider"></div>
-  <div style="padding: 8px 0 6px;">
-    <div class="sidebar-phase-label"><span class="sidebar-phase-pip" style="background:#8b7ab8;"></span><span class="sidebar-phase-text">Phase 2 — Growth</span></div>
-    <a class="nav-item" href="phase-2.html"><span class="nav-item-icon">P2</span><span class="nav-item-name">Phase 2 Overview</span></a>
-    <a class="step-nav-item indented " data-step="4" href="step-4-activate.html"><div class="step-dot" style="">4</div><div class="step-nav-label"><span class="step-nav-number">Step 4</span><span class="step-nav-name">Activate</span></div></a>
-    <a class="step-nav-item indented active" data-step="5" href="step-5-campaign.html"><div class="step-dot" style="border-color:#E07830; background:#E07830; color:white;">5</div><div class="step-nav-label"><span class="step-nav-number">Step 5</span><span class="step-nav-name">Campaign</span></div></a>
-    <a class="step-nav-item indented " data-step="6" href="step-6-triumph.html"><div class="step-dot" style="">6</div><div class="step-nav-label"><span class="step-nav-number">Step 6</span><span class="step-nav-name">Triumph</span></div></a>
+  <div class="sidebar-phase-group  open">
+    <a class="sidebar-phase-toggle" href="phase-2.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P2</span>
+      <span class="sidebar-phase-text">Phase 2 — Growth</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps  visible">
+      <a class="step-nav-item indented" data-step="4" href="step-4-activate.html"><div class="step-dot" >4</div><div class="step-nav-label"><span class="step-nav-number">Step 4</span><span class="step-nav-name">Activate</span></div></a>
+      <a class="step-nav-item indented active" data-step="5" href="step-5-campaign.html"><div class="step-dot" style="border-color:#E07830; background:#E07830; color:white;">5</div><div class="step-nav-label"><span class="step-nav-number">Step 5</span><span class="step-nav-name">Campaign</span></div></a>
+      <a class="step-nav-item indented" data-step="6" href="step-6-triumph.html"><div class="step-dot" >6</div><div class="step-nav-label"><span class="step-nav-number">Step 6</span><span class="step-nav-name">Triumph</span></div></a>
+    </div>
   </div>
   <div class="sidebar-nav-divider"></div>
   <div style="padding: 8px 0 14px;">
@@ -54,16 +64,6 @@
     <a class="nav-item" href="reference.html"><span class="nav-item-icon">≡</span><span class="nav-item-name">Glossary &amp; Reference</span></a>
     <a class="nav-item" href="author.html"><span class="nav-item-icon">T</span><span class="nav-item-name">About the Author</span></a>
     <a class="nav-item" href="cta.html" style="margin-top:4px;"><span class="nav-item-icon" style="border-color:#c4a35a;color:#c4a35a;">▸</span><span class="nav-item-name" style="color:rgba(196,163,90,0.8);">Get the Playbook</span></a>
-  </div>
-    <a class="sidebar-toc-item" href="#core-question">Core Question</a>
-    <a class="sidebar-toc-item" href="#responsible-for">What It Owns</a>
-    <a class="sidebar-toc-item" href="#failure-modes">Failure Modes</a>
-    <a class="sidebar-toc-item" href="#campaign-types">Campaign Types</a>
-    <a class="sidebar-toc-item" href="#good-looks-like">What "Good" Looks Like</a>
-    <a class="sidebar-toc-item" href="#traps">Common Traps</a>
-    <a class="sidebar-toc-item" href="#checkpoint">Decision Checkpoint</a>
-    <a class="sidebar-toc-item" href="#connects-to">Connects to Next</a>
-    <a class="sidebar-toc-item" href="#workbook">Workbook Handoff</a>
   </div>
   <div class="sidebar-footer">
     <div class="sidebar-footer-text">Working Draft v1</div>
@@ -74,7 +74,7 @@
 <!-- ═══ MAIN ═══ -->
 <main class="main">
 
-  <div class="step-hero" data-word="CAMPAIGN">
+  <div class="step-hero" data-word="CAMPAIGN" style="background:linear-gradient(135deg, #C06020 0%, #8a4416 100%);">
     <div class="step-hero-phase">Phase 2 — Generate Attention and Sales · Steps 4–6</div>
     <div class="step-hero-id">Step 05 · Campaign</div>
     <h1 class="step-hero-title">Drive Initiatives</h1>

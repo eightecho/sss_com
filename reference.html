@@ -23,37 +23,43 @@
     <div class="sidebar-brand-eyebrow">Stupid Simple Startup</div>
     <div class="sidebar-brand-title">The <strong>IMPACT</strong> System</div>
   </div>
-  <div style="padding: 14px 0 6px;">
+  <div class="sidebar-nav-primary">
     <a class="nav-item" href="index.html"><span class="nav-item-icon">—</span><span class="nav-item-name">Overview</span></a>
     <a class="nav-item" href="copyright.html"><span class="nav-item-icon" style="font-size:9px;">©</span><span class="nav-item-name">Copyright</span></a>
     <a class="nav-item" href="introduction.html"><span class="nav-item-icon">In</span><span class="nav-item-name">Introduction</span></a>
   </div>
   <div class="sidebar-nav-divider"></div>
-  <div style="padding: 8px 0 6px;">
-    <div class="sidebar-phase-label"><span class="sidebar-phase-pip" style="background:#6b8cba;"></span><span class="sidebar-phase-text">Phase 1 — Foundation</span></div>
-    <a class="nav-item" href="phase-1.html"><span class="nav-item-icon">P1</span><span class="nav-item-name">Phase 1 Overview</span></a>
-    <a class="step-nav-item indented" data-step="1" href="step-1-identify.html"><div class="step-dot">1</div><div class="step-nav-label"><span class="step-nav-number">Step 1</span><span class="step-nav-name">Identify</span></div></a>
-    <a class="step-nav-item indented" data-step="2" href="step-2-monetize.html"><div class="step-dot">2</div><div class="step-nav-label"><span class="step-nav-number">Step 2</span><span class="step-nav-name">Monetize</span></div></a>
-    <a class="step-nav-item indented" data-step="3" href="step-3-productize.html"><div class="step-dot">3</div><div class="step-nav-label"><span class="step-nav-number">Step 3</span><span class="step-nav-name">Productize</span></div></a>
+  <div class="sidebar-phase-group">
+    <a class="sidebar-phase-toggle" href="phase-1.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P1</span>
+      <span class="sidebar-phase-text">Phase 1 — Foundation</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps">
+      <a class="step-nav-item indented" data-step="1" href="step-1-identify.html"><div class="step-dot" >1</div><div class="step-nav-label"><span class="step-nav-number">Step 1</span><span class="step-nav-name">Identify</span></div></a>
+      <a class="step-nav-item indented" data-step="2" href="step-2-monetize.html"><div class="step-dot" >2</div><div class="step-nav-label"><span class="step-nav-number">Step 2</span><span class="step-nav-name">Monetize</span></div></a>
+      <a class="step-nav-item indented" data-step="3" href="step-3-productize.html"><div class="step-dot" >3</div><div class="step-nav-label"><span class="step-nav-number">Step 3</span><span class="step-nav-name">Productize</span></div></a>
+    </div>
   </div>
   <div class="sidebar-nav-divider"></div>
-  <div style="padding: 8px 0 6px;">
-    <div class="sidebar-phase-label"><span class="sidebar-phase-pip" style="background:#8b7ab8;"></span><span class="sidebar-phase-text">Phase 2 — Growth</span></div>
-    <a class="nav-item" href="phase-2.html"><span class="nav-item-icon">P2</span><span class="nav-item-name">Phase 2 Overview</span></a>
-    <a class="step-nav-item indented" data-step="4" href="step-4-activate.html"><div class="step-dot">4</div><div class="step-nav-label"><span class="step-nav-number">Step 4</span><span class="step-nav-name">Activate</span></div></a>
-    <a class="step-nav-item indented" data-step="5" href="step-5-campaign.html"><div class="step-dot">5</div><div class="step-nav-label"><span class="step-nav-number">Step 5</span><span class="step-nav-name">Campaign</span></div></a>
-    <a class="step-nav-item indented" data-step="6" href="step-6-triumph.html"><div class="step-dot">6</div><div class="step-nav-label"><span class="step-nav-number">Step 6</span><span class="step-nav-name">Triumph</span></div></a>
+  <div class="sidebar-phase-group">
+    <a class="sidebar-phase-toggle" href="phase-2.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P2</span>
+      <span class="sidebar-phase-text">Phase 2 — Growth</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps">
+      <a class="step-nav-item indented" data-step="4" href="step-4-activate.html"><div class="step-dot" >4</div><div class="step-nav-label"><span class="step-nav-number">Step 4</span><span class="step-nav-name">Activate</span></div></a>
+      <a class="step-nav-item indented" data-step="5" href="step-5-campaign.html"><div class="step-dot" >5</div><div class="step-nav-label"><span class="step-nav-number">Step 5</span><span class="step-nav-name">Campaign</span></div></a>
+      <a class="step-nav-item indented" data-step="6" href="step-6-triumph.html"><div class="step-dot" >6</div><div class="step-nav-label"><span class="step-nav-number">Step 6</span><span class="step-nav-name">Triumph</span></div></a>
+    </div>
   </div>
   <div class="sidebar-nav-divider"></div>
   <div style="padding: 8px 0 14px;">
     <a class="nav-item" href="guiding-loop.html"><span class="nav-item-icon">↺</span><span class="nav-item-name">The Guiding Loop</span></a>
     <a class="nav-item active" href="reference.html"><span class="nav-item-icon">≡</span><span class="nav-item-name">Glossary &amp; Reference</span></a>
+    <a class="nav-item" href="author.html"><span class="nav-item-icon">T</span><span class="nav-item-name">About the Author</span></a>
     <a class="nav-item" href="cta.html" style="margin-top:4px;"><span class="nav-item-icon" style="border-color:#c4a35a;color:#c4a35a;">▸</span><span class="nav-item-name" style="color:rgba(196,163,90,0.8);">Get the Playbook</span></a>
-  </div>
-    <a class="sidebar-toc-item" href="#glossary">Glossary</a>
-    <a class="sidebar-toc-item" href="#quick-ref">Quick Reference</a>
-    <a class="sidebar-toc-item" href="#ecosystem">The IMPACT Ecosystem</a>
-    <a class="sidebar-toc-item" href="#about">About the Author</a>
   </div>
   <div class="sidebar-footer">
     <div class="sidebar-footer-text">Working Draft v1</div>
@@ -180,7 +186,7 @@
 
       <div class="quick-ref-step">
         <div class="quick-ref-header">
-          <span class="quick-ref-num" style="background:#E6A817; color:#333;">Step 3</span>
+          <span class="quick-ref-num" style="background:#E6A817; color:#fff;">Step 3</span>
           <span class="quick-ref-title">Productize — Create What We're Selling</span>
           <span class="quick-ref-question">What exactly are we selling right now?</span>
         </div>
@@ -214,68 +220,7 @@
         <div class="quick-ref-body">The analytical discipline applied at every step and after every campaign. Complete when results are analyzed, bottlenecks identified, and a committed decision made: Iterate, Scale, or Stop.</div>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:20px;">
-        <div style="background:var(--warm-white); border:1px solid var(--border); border-radius:8px; padding:16px 18px;">
-          <div style="font-family:var(--mono); font-size:9px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--dimmed); margin-bottom:8px;">The Decision at Every Step</div>
-          <div style="font-family:var(--serif); font-size:14px; line-height:1.7; color:var(--body);">
-            <strong>Proceed</strong> — Step is complete. Move forward.<br>
-            <strong>Loop</strong> — Something incomplete. Return and strengthen.<br>
-            <strong>Stop</strong> — Not viable. Reallocate resources.
-          </div>
-        </div>
-        <div style="background:var(--warm-white); border:1px solid var(--border); border-radius:8px; padding:16px 18px;">
-          <div style="font-family:var(--mono); font-size:9px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--dimmed); margin-bottom:8px;">Phase 1 Complete When</div>
-          <div style="font-family:var(--serif); font-size:14px; line-height:1.7; color:var(--body);">You can deliver your product to a paying customer tomorrow and the transaction is sound — for both of you.</div>
-        </div>
-        <div style="background:var(--warm-white); border:1px solid var(--border); border-radius:8px; padding:16px 18px;">
-          <div style="font-family:var(--mono); font-size:9px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--dimmed); margin-bottom:8px;">Phase 2 Complete When</div>
-          <div style="font-family:var(--serif); font-size:14px; line-height:1.7; color:var(--body);">You can generate revenue through campaigns and know with confidence what to do next.</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider">* * *</div>
-
-    <!-- Ecosystem -->
-    <section class="section" id="ecosystem">
-      <span class="section-number">03</span>
-      <h2 class="section-title">The IMPACT Ecosystem</h2>
-      <p>The IMPACT System is the foundation. Built on top of it is a growing ecosystem of Niche Playbooks and Workbooks designed to translate the system into a defined roadmap for your specific starting condition.</p>
-      <p><strong>The IMPACT System</strong> — what you've just read. Defines the system: the six steps, the two phases, the Guiding Loop, and the analytical discipline that runs through all of it. Applies universally, regardless of what you're building or where you're starting from. Available free at <a href="https://stupidsimplestartup.com/impact" style="color:var(--dark); font-weight:600;">stupidsimplestartup.com/impact</a>.</p>
-      <p><strong>Niche Playbooks</strong> apply the IMPACT System to a specific archetype and business context. Each walks through all six steps with examples, decision criteria, and guidance tailored to how that archetype actually operates — their constraints, their typical starting points, their common failure modes.</p>
-      <p><strong>Workbooks</strong> are structured execution tools — one per step — that force the decisions, calculations, and commitments each step requires. Workbooks are archetype-specific, meaning the Side Hustle Workbook set is calibrated for someone building alongside a primary job, with different defaults and decision criteria than the Solopreneur or SME sets. Released alongside their corresponding Niche Playbook.</p>
-
-      <div style="background:var(--warm-white); border:1px solid var(--border); border-radius:8px; padding:20px 24px; margin-top:20px;">
-        <div style="font-family:var(--mono); font-size:9px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--dimmed); margin-bottom:10px;">Now Available</div>
-        <div style="font-family:var(--sans); font-weight:700; font-size:16px; color:var(--dark); margin-bottom:6px;">The Picture Book Project Playbook</div>
-        <div style="font-family:var(--serif); font-size:14.5px; line-height:1.7; color:var(--body); margin-bottom:14px;">The IMPACT System applied to self-publishing a picture book as a side hustle. The full six-step sequence with decisions already made for your specific context — timeline guidance, scope decisions, and realistic expectations for operators building alongside a primary job.</div>
-        <a href="cta.html" style="display:inline-block; padding:10px 20px; background:var(--dark); color:var(--white); font-family:var(--sans); font-weight:700; font-size:13px; text-decoration:none; border-radius:5px; letter-spacing:0.03em;">Learn More →</a>
-      </div>
-    </section>
-
-    <div class="divider">* * *</div>
-
-    <!-- About -->
-    <section class="section" id="about">
-      <span class="section-number">04</span>
-      <h2 class="section-title">About the Author</h2>
-
-      <div class="about-block">
-        <div class="about-label">TADROBERT</div>
-        <div class="about-body">
-          <p>I'm TADROBERT — a writer, strategist, and creative who has spent thirty years in advertising, marketing, and independent work as a freelancer and consultant, and about ten of those years trying to turn everything I learned into a system that actually makes sense.</p>
-          <p>My career started in advertising agencies in New York — building brand campaigns for companies like Quaker Oats, Novartis, and Hasbro. I moved into tech startups during the first internet wave, where I was recruited as Creative Director to build a marketing communications department from scratch. Then a corporate stint managing channel marketing for a major satellite brand. Then, since 2005, independent consulting — working with everyone from early-stage startups to established companies on marketing, communications, and strategy.</p>
-          <p>Somewhere in the middle of all that, I built something of my own — a self-funded SaaS product and a small team to deliver event marketing automation software. We built it, used it on client work, and were preparing to open it to the public. Then the 2008 market crash hit and shut us down.</p>
-          <p>It was a convoluted, expensive, and clarifying experience. We had the product. We had the clients. We had the intent. What we didn't have was a system — a clear, sequential process for building and launching something sustainable without the chaos, the wasted effort, and the decisions made in the wrong order at the wrong time. That experience set me down the path of Stupid Simple Startup. The IMPACT System is what I wish I'd had.</p>
-          <p>I'm building my first solo Stupid Simple Startup in public — a picture book project — which means you're not just getting a framework. You're getting a front-row seat to the process of building something real, making decisions with incomplete information, and improving systematically over time. The same loop this book teaches.</p>
-        </div>
-      </div>
-
-      <div style="display:flex; gap:20px; flex-wrap:wrap; padding-top:16px; border-top:1px solid var(--border);">
-        <a href="https://stupidsimplestartup.com" target="_blank" style="font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--dimmed); text-decoration:none;">↗ stupidsimplestartup.com</a>
-        <a href="https://tadrobert.com" target="_blank" style="font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--dimmed); text-decoration:none;">↗ tadrobert.com</a>
-        <span style="font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--dimmed);">hello@tadrobert.com</span>
-      </div>
+      
     </section>
 
   </div>
@@ -290,12 +235,12 @@
         <div class="step-footer-nav-name">The Guiding Loop</div>
       </div>
     </a>
-    <a class="step-footer-nav-btn" href="cta.html" style="border-color:#c4a35a;">
+    <a class="step-footer-nav-btn" href="author.html">
       <div>
-        <div class="step-footer-nav-step" style="color:#c4a35a;">Up Next</div>
-        <div class="step-footer-nav-name">Get the Playbook</div>
+        <div class="step-footer-nav-step">Up Next</div>
+        <div class="step-footer-nav-name">About the Author</div>
       </div>
-      <span class="step-footer-arrow" style="color:#c4a35a;">→</span>
+      <span class="step-footer-arrow">→</span>
     </a>
   </div>
 
