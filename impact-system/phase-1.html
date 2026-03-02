@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 1: Build the Business Foundation — The IMPACT System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="impact-system.css">
+<style>
+  :root {
+    --step: #6b8cba;
+    --step-light: #f0f4f9;
+    --step-mid: #b8cce0;
+  }
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sidebar-brand-eyebrow">Stupid Simple Startup</div>
+    <div class="sidebar-brand-title">The <strong>IMPACT</strong> System</div>
+  </div>
+  <div class="sidebar-nav-primary">
+    <a class="nav-item" href="index.html"><span class="nav-item-icon">—</span><span class="nav-item-name">Overview</span></a>
+    <a class="nav-item" href="copyright.html"><span class="nav-item-icon" style="font-size:9px;">©</span><span class="nav-item-name">Copyright</span></a>
+    <a class="nav-item" href="introduction.html"><span class="nav-item-icon">In</span><span class="nav-item-name">Introduction</span></a>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div class="sidebar-phase-group  open">
+    <a class="sidebar-phase-toggle active" href="phase-1.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P1</span>
+      <span class="sidebar-phase-text">Phase 1 — Foundation</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps  visible">
+      <a class="step-nav-item indented" data-step="1" href="step-1-identify.html"><div class="step-dot" >1</div><div class="step-nav-label"><span class="step-nav-number">Step 1</span><span class="step-nav-name">Identify</span></div></a>
+      <a class="step-nav-item indented" data-step="2" href="step-2-monetize.html"><div class="step-dot" >2</div><div class="step-nav-label"><span class="step-nav-number">Step 2</span><span class="step-nav-name">Monetize</span></div></a>
+      <a class="step-nav-item indented" data-step="3" href="step-3-productize.html"><div class="step-dot" >3</div><div class="step-nav-label"><span class="step-nav-number">Step 3</span><span class="step-nav-name">Productize</span></div></a>
+    </div>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div class="sidebar-phase-group">
+    <a class="sidebar-phase-toggle" href="phase-2.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P2</span>
+      <span class="sidebar-phase-text">Phase 2 — Growth</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps">
+      <a class="step-nav-item indented" data-step="4" href="step-4-activate.html"><div class="step-dot" >4</div><div class="step-nav-label"><span class="step-nav-number">Step 4</span><span class="step-nav-name">Activate</span></div></a>
+      <a class="step-nav-item indented" data-step="5" href="step-5-campaign.html"><div class="step-dot" >5</div><div class="step-nav-label"><span class="step-nav-number">Step 5</span><span class="step-nav-name">Campaign</span></div></a>
+      <a class="step-nav-item indented" data-step="6" href="step-6-triumph.html"><div class="step-dot" >6</div><div class="step-nav-label"><span class="step-nav-number">Step 6</span><span class="step-nav-name">Triumph</span></div></a>
+    </div>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div style="padding: 8px 0 14px;">
+    <a class="nav-item" href="guiding-loop.html"><span class="nav-item-icon">↺</span><span class="nav-item-name">The Guiding Loop</span></a>
+    <a class="nav-item" href="reference.html"><span class="nav-item-icon">≡</span><span class="nav-item-name">Glossary &amp; Reference</span></a>
+    <a class="nav-item" href="author.html"><span class="nav-item-icon">T</span><span class="nav-item-name">About the Author</span></a>
+    <a class="nav-item" href="cta.html" style="margin-top:4px;"><span class="nav-item-icon" style="border-color:#c4a35a;color:#c4a35a;">▸</span><span class="nav-item-name" style="color:rgba(196,163,90,0.8);">Get the Playbook</span></a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-text">Working Draft v1</div>
+    <a class="sidebar-site-link" href="https://stupidsimplestartup.com" target="_blank"><span class="sidebar-site-link-arrow">↗</span>stupidsimplestartup.com</a>
+  </div>
+</nav>
+
+<main class="main">
+
+  <div class="phase-hero">
+    <div class="phase-hero-eyebrow">Phase 1 of 2</div>
+    <h1 class="phase-hero-title">Build the Business Foundation</h1>
+    <p class="phase-hero-subtitle">Before you can sell anything, you must have something worth selling to someone who wants it at a price that sustains you. This sounds obvious. Yet most business failures happen here — not in execution, not in marketing — but in the foundation work that most people rush or skip entirely.</p>
+  </div>
+
+  <div class="phase-steps-row">
+    <div class="phase-step-chip" style="--chip-color:#E05252;">
+      <div class="phase-step-chip-num">Step 1</div>
+      <div class="phase-step-chip-name" style="color:#E05252;">Identify</div>
+      <div class="phase-step-chip-q">Should this exist, and for whom?</div>
+    </div>
+    <div class="phase-step-chip" style="--chip-color:#4A90C4;">
+      <div class="phase-step-chip-num">Step 2</div>
+      <div class="phase-step-chip-name" style="color:#4A90C4;">Monetize</div>
+      <div class="phase-step-chip-q">Can this make money, and how?</div>
+    </div>
+    <div class="phase-step-chip" style="--chip-color:#E6A817;">
+      <div class="phase-step-chip-num">Step 3</div>
+      <div class="phase-step-chip-name" style="color:#E6A817;">Productize</div>
+      <div class="phase-step-chip-q">What exactly are we selling right now?</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <section class="section" id="three-questions">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Phase 1 Answers Three Questions</h2>
+
+      <div class="failure-mode" style="border-left-color:#E05252;">
+        <div class="failure-mode-header" style="background:#fdf5f5;">
+          <span class="failure-mode-badge" style="background:#E05252;">Should this exist, and for whom?</span>
+          <span class="failure-mode-title">Identify</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>Not what you could build or what you think people need — what specific people actually struggle with enough to pay you to solve it. The customer, the problem, the competitive context, the positioning. Everything downstream depends on getting this right.</p>
+        </div>
+      </div>
+
+      <div class="failure-mode" style="border-left-color:#4A90C4;">
+        <div class="failure-mode-header" style="background:#f5f8fd;">
+          <span class="failure-mode-badge" style="background:#4A90C4;">Can this make money, and how?</span>
+          <span class="failure-mode-title">Monetize</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>Not projected optimism — real economics with actual costs, defensible pricing, and positive unit economics. You need to know how each sale generates profit before you build anything.</p>
+        </div>
+      </div>
+
+      <div class="failure-mode" style="border-left-color:#E6A817;">
+        <div class="failure-mode-header" style="background:#fdf9f0;">
+          <span class="failure-mode-badge" style="background:#E6A817; color:#fff;">What exactly are we selling right now?</span>
+          <span class="failure-mode-title">Productize</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>Not the complete vision or version 5.0 — the minimum viable version that delivers the promised value at the established price. The thing a paying customer could receive tomorrow.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <section class="section" id="the-discipline">
+      <span class="section-number">02</span>
+      <h2 class="section-title">The Phase 1 Discipline</h2>
+      <p>The most common Phase 1 mistake: three days on foundation, six months on marketing — then wondering why nothing converts. Beautiful execution for an offer nobody wants, at a price that doesn't work, delivered through a product that overpromises and underdelivers.</p>
+      <p>The IMPACT discipline: get Phase 1 right. Not perfect — right. Clear customer, viable economics, complete product. Everything in Phase 2 depends on it.</p>
+      <div class="callout">
+        Phase 1 is complete when you can deliver your product to a paying customer tomorrow and the transaction is sound — for both of you. If you can't do that yet, you're not ready for Phase 2. The foundation determines everything that follows.
+      </div>
+    </section>
+
+  </div>
+
+
+
+  <div class="step-footer-nav">
+    <a class="step-footer-nav-btn" href="introduction.html" style="margin-right:auto;">
+      <span class="step-footer-arrow" style="transform:scaleX(-1); display:inline-block;">→</span>
+      <div>
+        <div class="step-footer-nav-step">Previous</div>
+        <div class="step-footer-nav-name">Introduction</div>
+      </div>
+    </a>
+    <a class="step-footer-nav-btn" href="step-1-identify.html">
+      <div>
+        <div class="step-footer-nav-step" style="color:#E05252;">Step 1</div>
+        <div class="step-footer-nav-name">Identify</div>
+      </div>
+      <span class="step-footer-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="site-footer">
+    <span>© 2026 Eight Echo Agency, LLC. All rights reserved.</span>
+    <span>Author: TADROBERT</span>
+  </div>
+
+</main>
+
+</body>
+</html>

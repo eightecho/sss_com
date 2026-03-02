@@ -1,1 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The IMPACT System — Stupid Simple Startup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="impact-system.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; background: var(--dark); }
 
+  .cover {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+
+  .cover-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 48px);
+  }
+
+  .cover-left {
+    padding: 64px 56px 64px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-left::after {
+    content: 'IMPACT';
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: 220px;
+    letter-spacing: -0.05em;
+    color: rgba(255,255,255,0.025);
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .cover-brand {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-title-block {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-system-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c4a35a;
+    margin-bottom: 20px;
+  }
+
+  .cover-title {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(52px, 7vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    color: #faf8f4;
+    margin-bottom: 8px;
+  }
+
+  .cover-title-sub {
+    font-family: var(--sans);
+    font-weight: 900;
+    font-size: clamp(28px, 4vw, 52px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #c4a35a;
+    margin-bottom: 36px;
+  }
+
+  .cover-desc {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.38);
+    max-width: 380px;
+    margin-bottom: 48px;
+  }
+
+  .cover-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #c4a35a;
+    color: #1c1a17;
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 28px;
+    border-radius: 4px;
+    transition: background 0.15s, transform 0.1s;
+    align-self: flex-start;
+  }
+
+  .cover-cta:hover {
+    background: #d4b36a;
+    transform: translateY(-1px);
+  }
+
+  .cover-author {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-right {
+    padding: 56px 72px 56px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cover-steps-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.18);
+    margin-bottom: 24px;
+  }
+
+  .cover-step {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    text-decoration: none;
+  }
+
+  .cover-step:first-of-type { border-top: 1px solid rgba(255,255,255,0.06); }
+
+  .cover-step-dot {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .cover-step-info { flex: 1; min-width: 0; }
+
+  .cover-step-num {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    margin-bottom: 2px;
+  }
+
+  .cover-step-name {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .cover-step-q {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.2);
+    text-align: right;
+    max-width: 210px;
+    line-height: 1.5;
+    flex-shrink: 0;
+  }
+
+  .cover-phase-divider {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.15);
+    padding: 16px 0 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cover-phase-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .cover-footer {
+    background: rgba(255,255,255,0.04);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 13px 72px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.18);
+  }
+
+  .cover-footer a {
+    color: rgba(255,255,255,0.18);
+    text-decoration: none;
+  }
+
+  .cover-footer a:hover { color: rgba(255,255,255,0.4); }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-main">
+
+    <!-- Left: title block -->
+    <div class="cover-left">
+      <div class="cover-brand">Stupid Simple Startup</div>
+
+      <div class="cover-title-block">
+        <div class="cover-system-label">The System</div>
+        <h1 class="cover-title">IMPACT</h1>
+        <div class="cover-title-sub">System</div>
+        <p class="cover-desc">Six sequential steps for solo operators who need to know what to do, in what order, and how to know when it's working.</p>
+        <a class="cover-cta" href="copyright.html">Get Started →</a>
+      </div>
+
+      <div class="cover-author">By TADROBERT &nbsp;·&nbsp; stupidsimplestartup.com</div>
+    </div>
+
+    <!-- Right: steps list -->
+    <div class="cover-right">
+      <div class="cover-steps-label">Six Steps · Two Phases</div>
+
+      <div class="cover-phase-divider">Phase 1 — Build the Foundation</div>
+
+      <div class="cover-step">
+        <div class="cover-step-dot" style="border-color:#E05252;color:#E05252;">1</div>
+        <div class="cover-step-info">
+          <div class="cover-step-num">Step 1</div>
+          <div class="cover-step-name">Identify</div>
+        </div>
+        <div class="cover-step-q">Should this exist, and for whom?</div>
+      </div>
+
+      <div class="cover-step">
+        <div class="cover-step-dot" style="border-color:#4A90C4;color:#4A90C4;">2</div>
+        <div class="cover-step-info">
+          <div class="cover-step-num">Step 2</div>
+          <div class="cover-step-name">Monetize</div>
+        </div>
+        <div class="cover-step-q">Can this make money, and how?</div>
+      </div>
+
+      <div class="cover-step">
+        <div class="cover-step-dot" style="border-color:#E6A817;color:#E6A817;">3</div>
+        <div class="cover-step-info">
+          <div class="cover-step-num">Step 3</div>
+          <div class="cover-step-name">Productize</div>
+        </div>
+        <div class="cover-step-q">What exactly are we selling right now?</div>
+      </div>
+
+      <div class="cover-phase-divider">Phase 2 — Generate Attention &amp; Sales</div>
+
+      <div class="cover-step">
+        <div class="cover-step-dot" style="border-color:#4AA85A;color:#4AA85A;">4</div>
+        <div class="cover-step-info">
+          <div class="cover-step-num">Step 4</div>
+          <div class="cover-step-name">Activate</div>
+        </div>
+        <div class="cover-step-q">How will people discover and engage?</div>
+      </div>
+
+      <div class="cover-step">
+        <div class="cover-step-dot" style="border-color:#E07830;color:#E07830;">5</div>
+        <div class="cover-step-info">
+          <div class="cover-step-num">Step 5</div>
+          <div class="cover-step-name">Campaign</div>
+        </div>
+        <div class="cover-step-q">How do we apply pressure intentionally?</div>
+      </div>
+
+      <div class="cover-step">
+        <div class="cover-step-dot" style="border-color:#9B5CC4;color:#9B5CC4;">6</div>
+        <div class="cover-step-info">
+          <div class="cover-step-num">Step 6</div>
+          <div class="cover-step-name">Triumph</div>
+        </div>
+        <div class="cover-step-q">What did we learn, and what do we do next?</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span>© 2026 Eight Echo Agency, LLC. All rights reserved.</span>
+    <span>Author: TADROBERT</span>
+    <a href="copyright.html" style="margin-left:auto;">Copyright &amp; Permissions</a>
+    <a href="https://stupidsimplestartup.com" target="_blank">↗ stupidsimplestartup.com</a>
+  </div>
+</div>
+
+</body>
+</html>

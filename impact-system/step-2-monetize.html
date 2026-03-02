@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 2: Monetize — The IMPACT System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="impact-system.css">
+<style>
+  :root {
+    --step:       #4A90C4;
+    --step-light: #f0f6fc;
+    --step-mid:   #c8dff0;
+  }
+  .next-step-title .step-badge { background: var(--productize); }
+  .step-footer-nav-btn:hover   { background: rgba(230,168,23,0.12); border-color: rgba(230,168,23,0.35); }
+  .step-footer-nav-step        { color: var(--productize); }
+</style>
+</head>
+<body>
+
+<!-- ═══ SIDEBAR ═══ -->
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sidebar-brand-eyebrow">Stupid Simple Startup</div>
+    <div class="sidebar-brand-title">The <strong>IMPACT</strong> System</div>
+  </div>
+  <div class="sidebar-nav-primary">
+    <a class="nav-item" href="index.html"><span class="nav-item-icon">—</span><span class="nav-item-name">Overview</span></a>
+    <a class="nav-item" href="copyright.html"><span class="nav-item-icon" style="font-size:9px;">©</span><span class="nav-item-name">Copyright</span></a>
+    <a class="nav-item" href="introduction.html"><span class="nav-item-icon">In</span><span class="nav-item-name">Introduction</span></a>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div class="sidebar-phase-group  open">
+    <a class="sidebar-phase-toggle" href="phase-1.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P1</span>
+      <span class="sidebar-phase-text">Phase 1 — Foundation</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps  visible">
+      <a class="step-nav-item indented" data-step="1" href="step-1-identify.html"><div class="step-dot" >1</div><div class="step-nav-label"><span class="step-nav-number">Step 1</span><span class="step-nav-name">Identify</span></div></a>
+      <a class="step-nav-item indented active" data-step="2" href="step-2-monetize.html"><div class="step-dot" style="border-color:#4A90C4; background:#4A90C4; color:white;">2</div><div class="step-nav-label"><span class="step-nav-number">Step 2</span><span class="step-nav-name">Monetize</span></div></a>
+      <a class="step-nav-item indented" data-step="3" href="step-3-productize.html"><div class="step-dot" >3</div><div class="step-nav-label"><span class="step-nav-number">Step 3</span><span class="step-nav-name">Productize</span></div></a>
+    </div>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div class="sidebar-phase-group">
+    <a class="sidebar-phase-toggle" href="phase-2.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P2</span>
+      <span class="sidebar-phase-text">Phase 2 — Growth</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps">
+      <a class="step-nav-item indented" data-step="4" href="step-4-activate.html"><div class="step-dot" >4</div><div class="step-nav-label"><span class="step-nav-number">Step 4</span><span class="step-nav-name">Activate</span></div></a>
+      <a class="step-nav-item indented" data-step="5" href="step-5-campaign.html"><div class="step-dot" >5</div><div class="step-nav-label"><span class="step-nav-number">Step 5</span><span class="step-nav-name">Campaign</span></div></a>
+      <a class="step-nav-item indented" data-step="6" href="step-6-triumph.html"><div class="step-dot" >6</div><div class="step-nav-label"><span class="step-nav-number">Step 6</span><span class="step-nav-name">Triumph</span></div></a>
+    </div>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div style="padding: 8px 0 14px;">
+    <a class="nav-item" href="guiding-loop.html"><span class="nav-item-icon">↺</span><span class="nav-item-name">The Guiding Loop</span></a>
+    <a class="nav-item" href="reference.html"><span class="nav-item-icon">≡</span><span class="nav-item-name">Glossary &amp; Reference</span></a>
+    <a class="nav-item" href="author.html"><span class="nav-item-icon">T</span><span class="nav-item-name">About the Author</span></a>
+    <a class="nav-item" href="cta.html" style="margin-top:4px;"><span class="nav-item-icon" style="border-color:#c4a35a;color:#c4a35a;">▸</span><span class="nav-item-name" style="color:rgba(196,163,90,0.8);">Get the Playbook</span></a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-text">Working Draft v1</div>
+    <a class="sidebar-site-link" href="https://stupidsimplestartup.com" target="_blank"><span class="sidebar-site-link-arrow">↗</span>stupidsimplestartup.com</a>
+  </div>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<main class="main">
+
+  <div class="step-hero" data-word="MONETIZE" style="background:linear-gradient(135deg, #2E6FA3 0%, #1e4d73 100%);">
+    <div class="step-hero-phase">Phase 1 — Build the Foundation · Steps 1–3</div>
+    <div class="step-hero-id">Step 02 · Monetize</div>
+    <h1 class="step-hero-title">Establish the Offer</h1>
+    <div class="step-hero-subtitle">Before you build anything, make sure it can pay.</div>
+    <div class="step-hero-question">"Can this make money, and how?"</div>
+  </div>
+
+  <div class="content">
+
+    <!-- 1. Core Question -->
+    <section class="section" id="core-question">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Core Question This Step Answers</h2>
+      <p>This is not about whether you deserve to be paid. It's about whether the value you're creating can be captured as revenue in a way that's sustainable for your business and fair to your customer. It's about understanding the economic structure of your offer before you build anything — so you don't create something that can't support itself.</p>
+      <div class="callout">
+        If you cannot answer this question with specific numbers and clear reasoning, you don't have a business. You have an expensive hobby with a product attached.
+      </div>
+    </section>
+
+    <!-- 2. What It Owns -->
+    <section class="section" id="responsible-for">
+      <span class="section-number">02</span>
+      <h2 class="section-title">What This Step Is Responsible For</h2>
+      <p>Monetize establishes how value is created, measured, priced, and delivered in a way that generates sustainable revenue.</p>
+      <p><strong>Monetize owns:</strong></p>
+      <ul>
+        <li>Revenue model (how money flows into the business)</li>
+        <li>Value metric (what the customer is actually paying for)</li>
+        <li>Pricing strategy (what you charge and why)</li>
+        <li>Cost structure (what it costs to deliver value)</li>
+        <li>Unit economics (profit per transaction)</li>
+        <li>Monetization goal (revenue targets that justify the effort)</li>
+        <li>Constraints and guardrails (limits that shape what's viable)</li>
+      </ul>
+      <p><strong>Monetize is NOT responsible for:</strong></p>
+      <ul>
+        <li>Validating customer demand (that's Identify)</li>
+        <li>Building the actual product or service (that's Productize)</li>
+        <li>Creating marketing materials or messaging (that's Activate)</li>
+        <li>Executing sales campaigns (that's Campaign)</li>
+        <li>Optimizing conversion rates (that's Triumph)</li>
+      </ul>
+      <div class="callout">
+        The boundary matters. Monetize establishes whether the economics work with enough specificity that you know what to build, what to charge, and what margins to expect.
+      </div>
+      <p>When you skip Monetize, you build without understanding economic viability. You spend months creating something, then discover you can't charge enough to make it worthwhile. Monetize is not overhead. It's the step that determines whether what you build can sustain itself.</p>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 3. Failure Modes -->
+    <section class="section" id="failure-modes">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Why This Step Exists — Failure Modes</h2>
+      <p>Monetize exists to eliminate one of the most common — and most avoidable — failures: building something whose economics never worked in the first place.</p>
+
+      <div class="failure-mode">
+        <div class="failure-mode-header">
+          <span class="failure-mode-badge">Failure Mode</span>
+          <span class="failure-mode-title">The "Fantasy Math" Delusion</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>The most common failure mode: building financial projections on wildly optimistic assumptions that ignore conversion reality.</p>
+          <p>"If I get 1,000 people to my landing page and just 10% buy my $97 course, that's $9,700 in revenue. If I do that every month, I'll make six figures this year!" The math is technically correct. The assumptions are fantasy.</p>
+          <p>Most first-time offers convert at 1–3%, not 10%. The result: you launch, get 800 visitors, convert at 2%, make $1,552 — and feel like a failure because you expected $9,700. The offer performed reasonably for a first launch, but the fantasy math made it look like a disaster.</p>
+        </div>
+      </div>
+
+      <div class="failure-mode">
+        <div class="failure-mode-header">
+          <span class="failure-mode-badge">Failure Mode</span>
+          <span class="failure-mode-title">The "Pricing by Fear" Trap</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>You want to charge $500, but you're worried nobody will pay that. So you charge $200. You tell yourself you're being "accessible." But you're undervaluing your expertise and training your market to see you as cheap.</p>
+          <p>Premium customers — the ones who would have paid $500 — never consider you because your low price signals low quality. Price-sensitive customers who do buy demand more and appreciate less. And you can't raise prices easily later without alienating early customers.</p>
+          <p>Pricing by fear is not strategy. It's self-sabotage with a business justification attached.</p>
+        </div>
+      </div>
+
+      <div class="failure-mode">
+        <div class="failure-mode-header">
+          <span class="failure-mode-badge">Failure Mode</span>
+          <span class="failure-mode-title">The "Revenue Model Mismatch" Problem</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>Choosing a revenue model that doesn't align with how customers want to buy or how value is delivered. You're a coach who decides to sell a $997 course because digital products scale — but your customers want personalized guidance. They'd pay $5,000 for private coaching, but they don't want your course at any price.</p>
+          <p>Revenue model mismatch creates friction at every transaction. Customers who would have bought under a different structure don't buy. You're fighting your own business model instead of leveraging it.</p>
+        </div>
+      </div>
+
+      <div class="failure-mode">
+        <div class="failure-mode-header">
+          <span class="failure-mode-badge">Failure Mode</span>
+          <span class="failure-mode-title">The "Not Knowing If Each Sale Makes Money" Failure</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>You sell a product for $50. You make 100 sales. That's $5,000 in revenue. But you never calculated costs of goods, processing fees, platform fees, acquisition cost, delivery time, or customer service. Actual profit per unit: $50 − $54.75 = −$4.75. You made 100 sales and lost $475.</p>
+          <div class="callout" style="margin: 16px 0 0;">Without understanding unit economics, you scale what loses money.</div>
+        </div>
+      </div>
+
+      <div class="failure-mode">
+        <div class="failure-mode-header">
+          <span class="failure-mode-badge">Failure Mode</span>
+          <span class="failure-mode-title">The "No Monetization Goal" Trap</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>You create something. You charge for it. People buy it. You make some amount of money. Is that good? Sufficient? You don't know — because you never defined what you needed to make for this initiative to justify your time.</p>
+          <p>Without a monetization goal, you can't decide if the initiative is viable before you start, evaluate whether to proceed or stop based on results, or rationally prioritize between multiple opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 4. The 7 Components -->
+    <section class="section" id="components">
+      <span class="section-number">04</span>
+      <h2 class="section-title">The Seven Components of Monetize</h2>
+      <p>To design an economic model that works, you need to understand seven interconnected components. Each informs the others. Together, they create a complete economic picture — or reveal that no viable model exists.</p>
+
+      <!-- Component 1: Revenue Model -->
+      <div class="component">
+        <div class="component-header">
+          <span class="component-num">01 —</span>
+          <div>
+            <div class="component-title">Revenue Model</div>
+            <div class="component-question">How does money flow into the business?</div>
+          </div>
+        </div>
+        <p>Your revenue model is the fundamental structure of how you get paid — not what you charge, but how you charge. Common revenue models:</p>
+        <ul>
+          <li>One-time purchase — Customer pays once, receives product or service once</li>
+          <li>Recurring subscription — Customer pays regularly for ongoing access or value</li>
+          <li>Usage-based — Customer pays based on consumption</li>
+          <li>Licensing — Customer pays for the right to use intellectual property</li>
+          <li>Commission/marketplace — You facilitate transactions and take a percentage</li>
+          <li>Freemium — Core offering is free, premium features cost money</li>
+          <li>Hybrid — Combination of models (e.g., one-time setup fee + monthly retainer)</li>
+        </ul>
+        <p>The right model depends on how customers naturally want to buy, how your value is delivered, what cash flow your business needs, and what's sustainable for your capacity.</p>
+        <div class="quick-check">
+          <span class="quick-check-icon">Quick Check</span>
+          <p class="quick-check-text">Does your revenue model match how customers naturally want to pay and how your value is delivered?</p>
+        </div>
+      </div>
+
+      <!-- Component 2: Value Metric -->
+      <div class="component">
+        <div class="component-header">
+          <span class="component-num">02 —</span>
+          <div>
+            <div class="component-title">Value Metric</div>
+            <div class="component-question">What is the customer actually paying for?</div>
+          </div>
+        </div>
+        <p>Your value metric is the unit of value that determines price — what scales your pricing. The best value metrics align with how customers perceive value, not just with how you deliver work.</p>
+        <ul>
+          <li>Time-based — Per hour, per day, per month</li>
+          <li>Deliverable-based — Per project, per outcome, per asset</li>
+          <li>User-based — Per seat, per user, per team</li>
+          <li>Usage-based — Per transaction, per API call, per GB</li>
+          <li>Outcome-based — Per result, per milestone achieved</li>
+          <li>Access-based — Flat fee for unlimited access</li>
+        </ul>
+        <div class="quick-check">
+          <span class="quick-check-icon">Quick Check</span>
+          <p class="quick-check-text">If you doubled your speed or expertise, would your revenue go up or down under your current value metric? If down, your pricing punishes competence.</p>
+        </div>
+      </div>
+
+      <!-- Component 3: Pricing Strategy -->
+      <div class="component">
+        <div class="component-header">
+          <span class="component-num">03 —</span>
+          <div>
+            <div class="component-title">Pricing Strategy</div>
+            <div class="component-question">What do you charge, and why?</div>
+          </div>
+        </div>
+        <p>Pricing is where value meets perception. It's not just math — it's positioning and justification. Most solo operators default to cost-plus or competitive pricing because it feels safe. Safe pricing often means underpriced positioning.</p>
+        <ul>
+          <li>Cost-plus — Calculate costs, add desired margin (common but often leaves value on the table)</li>
+          <li>Competitive — Match or undercut competitors (safe but commoditizes your offer)</li>
+          <li>Value-based — Charge based on value delivered (captures the most value but requires confidence)</li>
+          <li>Tiered — Multiple options at different price points (increases conversion through choice)</li>
+          <li>Prestige — High price signals premium quality (attracts right customers, repels wrong ones)</li>
+          <li>Penetration — Low initial price to gain market share, raise later (risky — creates bad price anchors)</li>
+        </ul>
+        <div class="quick-check">
+          <span class="quick-check-icon">Quick Check</span>
+          <p class="quick-check-text">Can you articulate why you're charging what you're charging in terms of customer value — not just what feels comfortable or what competitors charge?</p>
+        </div>
+      </div>
+
+      <!-- Component 4: Cost Structure -->
+      <div class="component">
+        <div class="component-header">
+          <span class="component-num">04 —</span>
+          <div>
+            <div class="component-title">Cost Structure</div>
+            <div class="component-question">What does it cost to deliver?</div>
+          </div>
+        </div>
+        <p>You cannot price intelligently without knowing what it costs to deliver your product or service.</p>
+        <p><strong>Direct costs</strong> (variable — scale with volume): materials or goods sold, payment processing fees (typically 2.9% + $0.30), platform or software fees that scale with usage, delivery or fulfillment costs.</p>
+        <p><strong>Indirect costs</strong> (fixed or semi-variable): tools and software subscriptions, hosting and infrastructure, marketing and advertising, your time.</p>
+        <div class="callout">
+          If you don't assign a specific hourly rate to your time, you are effectively valuing your labor at $0. This creates a dangerous illusion of profitability.
+        </div>
+        <p><strong>Hidden costs commonly missed:</strong> customer support time, refund and chargeback rates, platform revenue shares (some course platforms take 10–30%), time spent on revisions, feedback, or communication.</p>
+        <div class="quick-check">
+          <span class="quick-check-icon">Quick Check</span>
+          <p class="quick-check-text">Have you calculated your fully-loaded cost to deliver one unit, including your time at a realistic hourly rate?</p>
+        </div>
+      </div>
+
+      <!-- Component 5: Unit Economics -->
+      <div class="component">
+        <div class="component-header">
+          <span class="component-num">05 —</span>
+          <div>
+            <div class="component-title">Unit Economics</div>
+            <div class="component-question">Does each transaction generate profit?</div>
+          </div>
+        </div>
+        <p>The math that determines whether your business is viable: does each sale actually make money? <strong>Profit per unit = Revenue per unit − Total cost per unit.</strong> The standard benchmark: LTV should be at least 3× CAC.</p>
+
+        <div class="econ-table-wrap">
+          <div class="econ-table-label good">✓ Positive Unit Economics</div>
+          <table class="econ-table">
+            <tr><th>Item</th><th>Amount</th></tr>
+            <tr><td>Course price</td><td>$297</td></tr>
+            <tr><td>Payment processing</td><td>−$9</td></tr>
+            <tr><td>Platform fee (10%)</td><td>−$30</td></tr>
+            <tr><td>Customer acquisition cost</td><td>−$50</td></tr>
+            <tr><td>Delivery time allocated</td><td>−$25</td></tr>
+            <tr><td><strong>Net profit per customer</strong></td><td class="positive"><strong>$183 — LTV:CAC 3.66×</strong></td></tr>
+          </table>
+        </div>
+
+        <div class="econ-table-wrap">
+          <div class="econ-table-label bad">✗ Broken Unit Economics</div>
+          <table class="econ-table">
+            <tr><th>Item</th><th>Amount</th></tr>
+            <tr><td>Service price</td><td>$500</td></tr>
+            <tr><td>Delivery costs</td><td>−$100</td></tr>
+            <tr><td>Customer acquisition cost</td><td>−$200</td></tr>
+            <tr><td>Time to deliver (40hrs @ $7.50/hr)</td><td>−$300</td></tr>
+            <tr><td><strong>Net profit per customer</strong></td><td class="negative"><strong>−$100 — losing money on every sale</strong></td></tr>
+          </table>
+        </div>
+
+        <div class="quick-check">
+          <span class="quick-check-icon">Quick Check</span>
+          <p class="quick-check-text">If you 10× your volume tomorrow, would you be 10× more profitable — or 10× more broke?</p>
+        </div>
+      </div>
+
+      <!-- Component 6: Monetization Goal -->
+      <div class="component">
+        <div class="component-header">
+          <span class="component-num">06 —</span>
+          <div>
+            <div class="component-title">Monetization Goal</div>
+            <div class="component-question">What revenue target justifies this effort?</div>
+          </div>
+        </div>
+        <p>A monetization goal is not "make as much as possible." It's a specific revenue target that determines whether this initiative is worth pursuing.</p>
+
+        <div class="goal-tiers">
+          <div class="goal-tier">
+            <div class="goal-tier-header">
+              <div class="goal-tier-name">Minimum Viable</div>
+              <div class="goal-tier-label">Must hit this or stop</div>
+            </div>
+            <div class="goal-tier-body">Covers direct costs and proves basic demand. If you don't hit this, the economics don't work.</div>
+          </div>
+          <div class="goal-tier">
+            <div class="goal-tier-header">
+              <div class="goal-tier-name">Target</div>
+              <div class="goal-tier-label">What you're aiming for</div>
+            </div>
+            <div class="goal-tier-body">Covers costs, compensates your time, justifies continued investment.</div>
+          </div>
+          <div class="goal-tier">
+            <div class="goal-tier-header">
+              <div class="goal-tier-name">Stretch</div>
+              <div class="goal-tier-label">Signals exceptional traction</div>
+            </div>
+            <div class="goal-tier-body">Validates strong product-market fit and justifies aggressive scaling.</div>
+          </div>
+        </div>
+
+        <div class="quick-check">
+          <span class="quick-check-icon">Quick Check</span>
+          <p class="quick-check-text">If this initiative generated $X in revenue next quarter, would you consider it a success? If you can't name a specific X, you don't have a monetization goal.</p>
+        </div>
+      </div>
+
+      <!-- Component 7: Constraints -->
+      <div class="component">
+        <div class="component-header">
+          <span class="component-num">07 —</span>
+          <div>
+            <div class="component-title">Constraints and Guardrails</div>
+            <div class="component-question">What limits shape this business?</div>
+          </div>
+        </div>
+        <p>Every business operates within constraints. Identifying them early prevents building something that works on paper but fails in reality.</p>
+        <ul>
+          <li><strong>Capacity:</strong> How much time do you have to deliver? How many customers can you serve simultaneously?</li>
+          <li><strong>Market:</strong> What price can your audience realistically pay? How large is the addressable market at your price point?</li>
+          <li><strong>Operational:</strong> What infrastructure do you have access to? What legal or regulatory limits apply?</li>
+          <li><strong>Personal:</strong> What income do you need? What cash flow timing can you tolerate? What complexity are you willing to manage?</li>
+        </ul>
+        <div class="quick-check">
+          <span class="quick-check-icon">Quick Check</span>
+          <p class="quick-check-text">Have you stress-tested your model against your actual capacity, market size, and personal constraints?</p>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 5. What Good Looks Like -->
+    <section class="section" id="good-looks-like">
+      <span class="section-number">05</span>
+      <h2 class="section-title">What "Good" Looks Like</h2>
+      <p>Monetize is complete when you understand the full economic model and can defend it with numbers. The artifacts that should exist:</p>
+      <ul class="artifact-list">
+        <li><strong>Revenue Model Definition</strong>How money flows and why this model fits your value delivery and customer behavior.</li>
+        <li><strong>Value Metric Documentation</strong>What customers are paying for and why this metric aligns with value perception.</li>
+        <li><strong>Pricing Structure</strong>Specific prices, including any tiers, with justification based on value delivered, costs incurred, and competitive context.</li>
+        <li><strong>Cost Analysis</strong>Itemized breakdown of all costs — direct and indirect, fixed and variable — including your time at a realistic rate.</li>
+        <li><strong>Unit Economics Model</strong>Revenue, costs, and profit per unit. Positive unit economics confirmed.</li>
+        <li><strong>Monetization Goal</strong>Specific revenue targets (minimum viable, target, stretch) with clear rationale.</li>
+        <li><strong>Constraints Documentation</strong>Capacity, market, operational, and personal constraints identified and accounted for.</li>
+      </ul>
+      <div class="callout">
+        If you can't explain how each sale generates profit to someone with a calculator, you're not done with Monetize.
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 6. Common Traps -->
+    <section class="section" id="traps">
+      <span class="section-number">06</span>
+      <h2 class="section-title">Common Traps and Misuses</h2>
+
+      <div class="trap">
+        <div class="trap-title">Trap 1: Confusing Revenue with Profit</div>
+        <p>You celebrate $10,000 in sales. But it cost $8,000 in expenses and 80 hours of your time to generate it. At $50/hour, you netted −$2,000 after accounting for your labor.</p>
+        <div class="trap-escape"><strong>The escape:</strong> Always calculate profit, not just revenue. Track all costs, including your time. The number that matters is what you keep, not what you make.</div>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">Trap 2: Underpricing to Avoid Rejection</div>
+        <p>You want to charge $1,000 but price at $497 because you're afraid of no. You attract price-sensitive customers who demand more and appreciate less, and anchor your market at a price that's hard to raise later.</p>
+        <div class="trap-escape"><strong>The escape:</strong> Price based on the value you deliver and the customer you want to attract. If people say no, learn to articulate value better — that's more useful than hiding behind low prices.</div>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">Trap 3: Copying Competitor Pricing Without Understanding Their Model</div>
+        <p>You see a competitor charging $500, so you charge $475. But you don't know their costs, volume, positioning, or goals.</p>
+        <div class="trap-escape"><strong>The escape:</strong> Use competitive prices as data points, not decisions. Understand why they charge what they charge, then set your own price based on your economics, value proposition, and constraints.</div>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">Trap 4: Ignoring Acquisition Costs</div>
+        <p>Your offer has $150 profit per unit at 75% margin. Then you try to acquire customers. Ads cost $100 per customer. Email follow-up costs another $50. Your $150 profit is now $0.</p>
+        <div class="trap-escape"><strong>The escape:</strong> Always include customer acquisition costs in unit economics. If you don't know them yet, estimate conservatively based on channel benchmarks.</div>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">Trap 5: Setting Goals Without Checking the Math</div>
+        <p>You decide you want to make $100,000 this year. At $500 per sale with $200 profit, you need 500 sales — 42 per month. At 5% conversion, that's 840 qualified leads per month. Do you have the infrastructure for that?</p>
+        <div class="trap-escape"><strong>The escape:</strong> Work backward from your goal through the conversion math to understand what has to be true to achieve it — then validate whether those conditions are realistic.</div>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">Trap 6: Choosing the Wrong Value Metric</div>
+        <p>You charge hourly for work whose value is measured in outcomes. A strategy that takes two hours but saves a client $500,000 is worth far more than any hourly rate captures. Or you charge per project with no defined scope, and end up doing 40 hours of work for a $2,000 flat fee.</p>
+        <div class="trap-escape"><strong>The escape:</strong> Choose a value metric that scales with value perception, or one with clearly defined boundaries.</div>
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 7. Decision Checkpoint -->
+    <section class="section" id="checkpoint">
+      <span class="section-number">07</span>
+      <h2 class="section-title">Decision Checkpoint: Proceed, Loop, or Stop</h2>
+
+      <div class="checkpoint">
+        <div class="checkpoint-row">
+          <div class="checkpoint-col col-proceed">
+            <div class="checkpoint-verdict verdict-proceed">
+              <span class="verdict-dot"></span> Proceed
+            </div>
+            <ul>
+              <li>Unit economics are positive — you make money per sale after all costs</li>
+              <li>Pricing is defensible based on value delivered and market context</li>
+              <li>Monetization goal is achievable given your capacity and market size</li>
+              <li>Revenue model aligns with how customers want to buy</li>
+              <li>Constraints are identified and none are deal-breakers</li>
+              <li>You can explain the economics clearly in two to three minutes</li>
+            </ul>
+          </div>
+          <div class="checkpoint-col col-loop">
+            <div class="checkpoint-verdict verdict-loop">
+              <span class="verdict-dot"></span> Loop Back
+            </div>
+            <ul>
+              <li>Unit economics are negative or barely positive</li>
+              <li>Pricing feels arbitrary or fear-based rather than value-based</li>
+              <li>Monetization goal is unrealistic given your constraints</li>
+              <li>Revenue model creates friction with customer buying behavior</li>
+              <li>You haven't fully calculated costs, including your time</li>
+              <li>You can't justify your price with value-based reasoning</li>
+            </ul>
+          </div>
+          <div class="checkpoint-col col-stop">
+            <div class="checkpoint-verdict verdict-stop">
+              <span class="verdict-dot"></span> Stop
+            </div>
+            <ul>
+              <li>Unit economics cannot be made positive at any realistic price point</li>
+              <li>The only viable price point makes the market too small to matter</li>
+              <li>Capacity constraints make meaningful revenue impossible</li>
+              <li>Customer acquisition costs make the business unscalable</li>
+              <li>You've designed a job you'd quit if someone else offered it to you</li>
+            </ul>
+          </div>
+        </div>
+        <div class="checkpoint-principle">
+          Closing Principle: If you cannot articulate how each sale generates profit, you're not running a business — you're funding a hobby.
+        </div>
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 8. Connects to Next -->
+    <section class="section" id="connects-to">
+      <span class="section-number">08</span>
+      <h2 class="section-title">How This Step Connects to the Next</h2>
+      <p>Monetize establishes the economic constraints that the rest of Phase 1 must respect. The price you've established determines the scope of what you build.</p>
+      <div class="next-step">
+        <div class="next-step-label">Feeds directly into</div>
+        <div class="next-step-title">
+          <span class="step-badge">Step 3</span>
+          Productize
+        </div>
+        <p>Productize assumes you know what you can afford to build (cost constraints), what customers are willing to pay (price establishes scope), what "good enough" means economically, and what your value metric is — which shapes what features actually matter.</p>
+        <p style="font-family:var(--sans); font-size:14px; font-style:italic; color:var(--dimmed); margin:0; text-indent:0;">Without Monetize: You'll overbuild or underbuild. You'll create something expensive to deliver that can't command a sufficient price — or something underbuilt that doesn't justify what you charge.</p>
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 9. Workbook Handoff -->
+    <section class="section" id="workbook">
+      <span class="section-number">09</span>
+      <h2 class="section-title">Workbook Handoff</h2>
+      <p>The Monetize Workbook forces you to design an economic model that works. What the workbook will force you to decide:</p>
+      <ul>
+        <li>What revenue model matches how customers want to buy and how you deliver value?</li>
+        <li>What value metric aligns with customer perception and your pricing strategy?</li>
+        <li>What should you charge, and can you defend it based on value?</li>
+        <li>What are your actual costs, including your time at a fair rate?</li>
+        <li>Does each transaction generate profit after all costs?</li>
+        <li>What revenue target makes this initiative worth your time?</li>
+        <li>What constraints limit your model, and can you work within them?</li>
+      </ul>
+      <div class="workbook-cta">
+        <div class="workbook-cta-label">Before You Proceed</div>
+        <div class="workbook-cta-heading">Complete the Monetize Workbook</div>
+        <p>There's no fixed timeline — the complexity of your offer will dictate the pace. A simple one-product offer with straightforward economics moves faster than a tiered service model with multiple cost variables. What matters is that you do the actual math.</p>
+        <p>If Monetize feels easy, you're probably not pushing hard enough on value-based pricing or thorough cost accounting.</p>
+        <p class="cta-closing">Do not proceed to Productize until you can answer the core question with confidence: Can this make money, and how?</p>
+      </div>
+    </section>
+
+  </div><!-- /content -->
+
+
+
+  <div class="step-footer-nav">
+    <a class="step-footer-nav-btn" href="step-1-identify.html" style="margin-right:auto;">
+      <span class="step-footer-arrow" style="transform:scaleX(-1); display:inline-block;">→</span>
+      <div>
+        <div class="step-footer-nav-step" style="color:var(--identify);">Step 1</div>
+        <div class="step-footer-nav-name">Identify</div>
+      </div>
+    </a>
+    <span class="step-footer-nav-label">Next</span>
+    <a class="step-footer-nav-btn" href="step-3-productize.html">
+      <div>
+        <div class="step-footer-nav-step">Step 3</div>
+        <div class="step-footer-nav-name">Productize</div>
+      </div>
+      <span class="step-footer-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="site-footer">
+    <span>© 2026 Eight Echo Agency, LLC. All rights reserved.</span>
+    <span>Author: TADROBERT</span>
+  </div>
+
+</main>
+
+
+</body>
+</html>

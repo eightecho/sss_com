@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Picture Book Project Playbook — The IMPACT System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="impact-system.css">
+<style>
+  :root {
+    --step: #c4a35a;
+    --step-light: #fdf9f0;
+    --step-mid: #e8d9b0;
+  }
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sidebar-brand-eyebrow">Stupid Simple Startup</div>
+    <div class="sidebar-brand-title">The <strong>IMPACT</strong> System</div>
+  </div>
+  <div class="sidebar-nav-primary">
+    <a class="nav-item" href="index.html"><span class="nav-item-icon">—</span><span class="nav-item-name">Overview</span></a>
+    <a class="nav-item" href="copyright.html"><span class="nav-item-icon" style="font-size:9px;">©</span><span class="nav-item-name">Copyright</span></a>
+    <a class="nav-item" href="introduction.html"><span class="nav-item-icon">In</span><span class="nav-item-name">Introduction</span></a>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div class="sidebar-phase-group">
+    <a class="sidebar-phase-toggle" href="phase-1.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P1</span>
+      <span class="sidebar-phase-text">Phase 1 — Foundation</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps">
+      <a class="step-nav-item indented" data-step="1" href="step-1-identify.html"><div class="step-dot" >1</div><div class="step-nav-label"><span class="step-nav-number">Step 1</span><span class="step-nav-name">Identify</span></div></a>
+      <a class="step-nav-item indented" data-step="2" href="step-2-monetize.html"><div class="step-dot" >2</div><div class="step-nav-label"><span class="step-nav-number">Step 2</span><span class="step-nav-name">Monetize</span></div></a>
+      <a class="step-nav-item indented" data-step="3" href="step-3-productize.html"><div class="step-dot" >3</div><div class="step-nav-label"><span class="step-nav-number">Step 3</span><span class="step-nav-name">Productize</span></div></a>
+    </div>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div class="sidebar-phase-group">
+    <a class="sidebar-phase-toggle" href="phase-2.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P2</span>
+      <span class="sidebar-phase-text">Phase 2 — Growth</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps">
+      <a class="step-nav-item indented" data-step="4" href="step-4-activate.html"><div class="step-dot" >4</div><div class="step-nav-label"><span class="step-nav-number">Step 4</span><span class="step-nav-name">Activate</span></div></a>
+      <a class="step-nav-item indented" data-step="5" href="step-5-campaign.html"><div class="step-dot" >5</div><div class="step-nav-label"><span class="step-nav-number">Step 5</span><span class="step-nav-name">Campaign</span></div></a>
+      <a class="step-nav-item indented" data-step="6" href="step-6-triumph.html"><div class="step-dot" >6</div><div class="step-nav-label"><span class="step-nav-number">Step 6</span><span class="step-nav-name">Triumph</span></div></a>
+    </div>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div style="padding: 8px 0 14px;">
+    <a class="nav-item" href="guiding-loop.html"><span class="nav-item-icon">↺</span><span class="nav-item-name">The Guiding Loop</span></a>
+    <a class="nav-item" href="reference.html"><span class="nav-item-icon">≡</span><span class="nav-item-name">Glossary &amp; Reference</span></a>
+    <a class="nav-item" href="author.html"><span class="nav-item-icon">T</span><span class="nav-item-name">About the Author</span></a>
+    <a class="nav-item active" href="cta.html" style="margin-top:4px;"><span class="nav-item-icon" style="border-color:#c4a35a;color:#c4a35a;">▸</span><span class="nav-item-name" style="color:rgba(196,163,90,0.8);">Get the Playbook</span></a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-text">Working Draft v1</div>
+    <a class="sidebar-site-link" href="https://stupidsimplestartup.com" target="_blank"><span class="sidebar-site-link-arrow">↗</span>stupidsimplestartup.com</a>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- Hero -->
+  <div class="cta-hero">
+    <div class="cta-hero-eyebrow">The IMPACT System — Niche Playbook</div>
+    <h1 class="cta-hero-title">You've read the system.<br><em>Here's the playbook.</em></h1>
+    <p class="cta-hero-subtitle">The IMPACT System gives you the framework. The Picture Book Project Playbook gives you the decisions already made — every step applied to the specific challenge of building and launching a picture book project alongside a primary job.</p>
+  </div>
+
+  <!-- Offer block -->
+  <div class="cta-offer-block">
+    <div class="cta-offer-grid">
+
+      <!-- Left: what's inside -->
+      <div>
+        <h2 class="cta-offer-title">What the Playbook Covers</h2>
+        <p class="cta-offer-desc">The IMPACT System is universal. The Picture Book Project Playbook is specific. It walks through all six steps with the choices, timelines, and decision criteria calibrated for one archetype: a creator with a picture book idea, a primary job, limited time, and no interest in guessing.</p>
+        <p class="cta-offer-desc">Every chapter answers the same questions the IMPACT System raises — but for your context, with your constraints, at your pace.</p>
+
+        <ul class="cta-includes-list">
+          <li><strong>Identify applied:</strong> How to define your picture book's audience, problem, and positioning in a crowded market — before you write a word.</li>
+          <li><strong>Monetize applied:</strong> The economics of self-publishing a picture book. Revenue models, realistic unit economics, and pricing strategy for a physical and digital product.</li>
+          <li><strong>Productize applied:</strong> Version strategy for a picture book project. What MVP looks like, what v1 requires, and how to scope the project so it actually ships.</li>
+          <li><strong>Activate applied:</strong> The minimum infrastructure a picture book creator needs — and nothing more. Base Camp, lead capture, and the content channel that makes sense for this audience.</li>
+          <li><strong>Campaign applied:</strong> How to run a launch campaign for a picture book. Pre-sale strategy, community activation, and the campaign structure that fits a small but engaged audience.</li>
+          <li><strong>Triumph applied:</strong> How to analyze launch results, decide what comes next, and set up the loop for a second project informed by the first.</li>
+          <li><strong>Workbook access:</strong> The companion workbook set — one per step — forces the decisions and calculations each stage requires.</li>
+        </ul>
+
+        <!-- Journey note -->
+        <div style="background:#fdf9f0; border:1px solid #e8d9b0; border-radius:8px; padding:20px 24px; margin-top:24px;">
+          <div style="font-family:var(--mono); font-size:9px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:#a07820; margin-bottom:8px;">Built in Public</div>
+          <p style="font-family:var(--serif); font-size:14.5px; line-height:1.75; color:#6a5020; margin:0; text-indent:0;">This playbook isn't theoretical. TADROBERT is building a picture book project using the IMPACT System in public — on YouTube, in real time, with real decisions and real results. The playbook documents the system as it's being proven. Early readers get it at the in-progress price before the journey is complete and the full case study is in hand.</p>
+          <a href="https://tadrobert.com" target="_blank" style="display:inline-block; margin-top:12px; font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#a07820; text-decoration:none;">↗ Follow the build at tadrobert.com</a>
+        </div>
+      </div>
+
+      <!-- Right: purchase card -->
+      <div>
+        <div class="cta-purchase-card">
+          <div class="cta-purchase-card-top">
+            <div class="cta-book-title">The Picture Book Project Playbook</div>
+            <div class="cta-book-subtitle">A Niche Playbook — The IMPACT System</div>
+          </div>
+          <div class="cta-purchase-card-body">
+
+            <div class="cta-price-row">
+              <span class="cta-price-current">$97</span>
+              <span class="cta-price-original">$145</span>
+            </div>
+            <div class="cta-price-label">Reader price — for readers of the free IMPACT System</div>
+
+            <a href="#" class="cta-buy-btn">Get the Playbook — $97</a>
+
+            <div class="cta-guarantee">PDF + digital download. Instant access. If it's not what you needed, email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="244c4148484b64504540564b464156500a474b49">[email&#160;protected]</a>.</div>
+
+            <div class="cta-urgency">The price goes to $145 when the public build is complete. Readers get in at $97 because they're joining the journey, not just buying the result.</div>
+
+            <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border);">
+              <div style="font-family:var(--mono); font-size:9px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--dimmed); margin-bottom:10px;">What's included</div>
+              <div style="display:flex; flex-direction:column; gap:7px;">
+                <div style="display:flex; align-items:center; gap:8px; font-family:var(--serif); font-size:13px; color:var(--body);">
+                  <span style="color:#c4a35a; font-weight:700;">✓</span> Full six-step playbook (PDF)
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; font-family:var(--serif); font-size:13px; color:var(--body);">
+                  <span style="color:#c4a35a; font-weight:700;">✓</span> Companion workbook set (6 workbooks)
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; font-family:var(--serif); font-size:13px; color:var(--body);">
+                  <span style="color:#c4a35a; font-weight:700;">✓</span> Updates as the build progresses
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; font-family:var(--serif); font-size:13px; color:var(--body);">
+                  <span style="color:#c4a35a; font-weight:700;">✓</span> Access to the build-in-public community
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Free IMPACT System callout -->
+        <div style="margin-top:14px; padding:14px 16px; background:var(--warm-white); border:1px solid var(--border); border-radius:8px; text-align:center;">
+          <div style="font-family:var(--serif); font-size:13px; color:var(--dimmed); line-height:1.6;">Haven't read the free IMPACT System yet?</div>
+          <a href="introduction.html" style="display:inline-block; margin-top:6px; font-family:var(--sans); font-weight:700; font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--dark); text-decoration:none;">Start here — it's free →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Trust / testimonial -->
+  <div class="cta-trust-row">
+    <div class="cta-trust-title">What Readers Are Saying</div>
+    <div class="cta-testimonial-slot">
+      Testimonials will appear here as they come in from early readers.
+    </div>
+  </div>
+
+  <!-- Who it's for -->
+  <div style="padding:48px 64px; border-bottom:1px solid var(--border);">
+    <h2 style="font-family:var(--sans); font-weight:800; font-size:22px; color:var(--dark); margin-bottom:20px; letter-spacing:-0.01em;">This playbook is for you if —</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+      <div style="padding:14px 18px; background:var(--warm-white); border:1px solid var(--border); border-radius:7px; font-family:var(--serif); font-size:14.5px; line-height:1.65; color:var(--body);">You have a picture book idea and don't know how to turn it into a real project with real economics.</div>
+      <div style="padding:14px 18px; background:var(--warm-white); border:1px solid var(--border); border-radius:7px; font-family:var(--serif); font-size:14.5px; line-height:1.65; color:var(--body);">You're building alongside a primary job and need a system that respects limited time and tolerates imperfect conditions.</div>
+      <div style="padding:14px 18px; background:var(--warm-white); border:1px solid var(--border); border-radius:7px; font-family:var(--serif); font-size:14.5px; line-height:1.65; color:var(--body);">You've read the IMPACT System and want the decisions already made for your specific context instead of figuring it out from scratch.</div>
+      <div style="padding:14px 18px; background:var(--warm-white); border:1px solid var(--border); border-radius:7px; font-family:var(--serif); font-size:14.5px; line-height:1.65; color:var(--body);">You want to build something that can grow — not just complete a one-off project but establish a repeatable creative business model.</div>
+    </div>
+
+    <div style="margin-top:24px; padding:16px 20px; background:#fdf5f5; border:1px solid #e8c8c8; border-radius:7px;">
+      <div style="font-family:var(--sans); font-weight:700; font-size:13px; color:#8a2a2a; margin-bottom:6px;">This playbook is NOT for you if —</div>
+      <div style="font-family:var(--serif); font-size:14px; line-height:1.7; color:#6a3030;">You're looking for a traditional publishing route, an agent query guide, or a course on how to write and illustrate a picture book. This is a business system. It assumes you have or are developing the creative work. It focuses entirely on the business model around it.</div>
+    </div>
+  </div>
+
+  <!-- Global copyright footer -->
+
+  <!-- Footer links -->
+  <div class="cta-footer-links">
+    <a class="cta-footer-link" href="index.html">← Back to IMPACT System</a>
+    <a class="cta-footer-link" href="https://stupidsimplestartup.com" target="_blank">↗ stupidsimplestartup.com</a>
+    <a class="cta-footer-link" href="https://tadrobert.com" target="_blank">↗ tadrobert.com</a>
+    <span style="margin-left:auto; font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--dimmed);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b6ded3dada

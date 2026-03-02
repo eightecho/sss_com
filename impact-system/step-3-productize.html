@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 3: Productize — The IMPACT System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="impact-system.css">
+<style>
+  :root {
+    --step:       #E6A817;
+    --step-light: #fdf8ec;
+    --step-mid:   #f5e0a0;
+  }
+  .next-step-title .step-badge       { background: var(--activate); }
+  .step-footer-nav-btn:hover         { background: rgba(74,168,90,0.1); border-color: rgba(74,168,90,0.35); }
+  .step-footer-nav-step              { color: var(--activate); }
+</style>
+</head>
+<body>
+
+<!-- ═══ SIDEBAR ═══ -->
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sidebar-brand-eyebrow">Stupid Simple Startup</div>
+    <div class="sidebar-brand-title">The <strong>IMPACT</strong> System</div>
+  </div>
+  <div class="sidebar-nav-primary">
+    <a class="nav-item" href="index.html"><span class="nav-item-icon">—</span><span class="nav-item-name">Overview</span></a>
+    <a class="nav-item" href="copyright.html"><span class="nav-item-icon" style="font-size:9px;">©</span><span class="nav-item-name">Copyright</span></a>
+    <a class="nav-item" href="introduction.html"><span class="nav-item-icon">In</span><span class="nav-item-name">Introduction</span></a>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div class="sidebar-phase-group  open">
+    <a class="sidebar-phase-toggle" href="phase-1.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P1</span>
+      <span class="sidebar-phase-text">Phase 1 — Foundation</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps  visible">
+      <a class="step-nav-item indented" data-step="1" href="step-1-identify.html"><div class="step-dot" >1</div><div class="step-nav-label"><span class="step-nav-number">Step 1</span><span class="step-nav-name">Identify</span></div></a>
+      <a class="step-nav-item indented" data-step="2" href="step-2-monetize.html"><div class="step-dot" >2</div><div class="step-nav-label"><span class="step-nav-number">Step 2</span><span class="step-nav-name">Monetize</span></div></a>
+      <a class="step-nav-item indented active" data-step="3" href="step-3-productize.html"><div class="step-dot" style="border-color:#E6A817; background:#E6A817; color:white;">3</div><div class="step-nav-label"><span class="step-nav-number">Step 3</span><span class="step-nav-name">Productize</span></div></a>
+    </div>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div class="sidebar-phase-group">
+    <a class="sidebar-phase-toggle" href="phase-2.html" onclick="togglePhase(this.parentElement); return true;">
+      <span class="sidebar-phase-icon">P2</span>
+      <span class="sidebar-phase-text">Phase 2 — Growth</span>
+      <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
+    </a>
+    <div class="sidebar-phase-steps">
+      <a class="step-nav-item indented" data-step="4" href="step-4-activate.html"><div class="step-dot" >4</div><div class="step-nav-label"><span class="step-nav-number">Step 4</span><span class="step-nav-name">Activate</span></div></a>
+      <a class="step-nav-item indented" data-step="5" href="step-5-campaign.html"><div class="step-dot" >5</div><div class="step-nav-label"><span class="step-nav-number">Step 5</span><span class="step-nav-name">Campaign</span></div></a>
+      <a class="step-nav-item indented" data-step="6" href="step-6-triumph.html"><div class="step-dot" >6</div><div class="step-nav-label"><span class="step-nav-number">Step 6</span><span class="step-nav-name">Triumph</span></div></a>
+    </div>
+  </div>
+  <div class="sidebar-nav-divider"></div>
+  <div style="padding: 8px 0 14px;">
+    <a class="nav-item" href="guiding-loop.html"><span class="nav-item-icon">↺</span><span class="nav-item-name">The Guiding Loop</span></a>
+    <a class="nav-item" href="reference.html"><span class="nav-item-icon">≡</span><span class="nav-item-name">Glossary &amp; Reference</span></a>
+    <a class="nav-item" href="author.html"><span class="nav-item-icon">T</span><span class="nav-item-name">About the Author</span></a>
+    <a class="nav-item" href="cta.html" style="margin-top:4px;"><span class="nav-item-icon" style="border-color:#c4a35a;color:#c4a35a;">▸</span><span class="nav-item-name" style="color:rgba(196,163,90,0.8);">Get the Playbook</span></a>
+  </div>
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-text">Working Draft v1</div>
+    <a class="sidebar-site-link" href="https://stupidsimplestartup.com" target="_blank"><span class="sidebar-site-link-arrow">↗</span>stupidsimplestartup.com</a>
+  </div>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<main class="main">
+
+  <div class="step-hero" data-word="PRODUCTIZE" style="background:linear-gradient(135deg, #C08A10 0%, #8a6308 100%);">
+    <div class="step-hero-phase">Phase 1 — Build the Foundation · Steps 1–3</div>
+    <div class="step-hero-id">Step 03 · Productize</div>
+    <h1 class="step-hero-title">Create What We're Selling</h1>
+    <div class="step-hero-subtitle">Not the vision. The version you're shipping right now.</div>
+    <div class="step-hero-question">"What exactly are we selling right now?"</div>
+  </div>
+
+  <div class="content">
+
+    <!-- 1. Core Question -->
+    <section class="section" id="core-question">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Core Question This Step Answers</h2>
+      <p>Not what you could build eventually. Not what the complete vision looks like. Not what customers might want in version 5.0. Right now. In this iteration. What specific thing will a customer receive after they pay you?</p>
+      <p>This is not a question about potential or ambition. It's about drawing a clear boundary around what exists, what gets delivered, and what constitutes "done" for this version.</p>
+      <div class="callout">
+        If you cannot answer this question with a concrete deliverable — something you could hand to a customer tomorrow — you're not ready to build.
+      </div>
+    </section>
+
+    <!-- 2. What It Owns -->
+    <section class="section" id="responsible-for">
+      <span class="section-number">02</span>
+      <h2 class="section-title">What This Step Is Responsible For</h2>
+      <p>Productize creates the actual thing customers receive after purchase. It's the deliverable that fulfills the promise made at the price established in Monetize.</p>
+      <p><strong>Productize owns:</strong></p>
+      <ul>
+        <li>Product definition (what exactly this is and is not)</li>
+        <li>Version strategy (which version you're building and why)</li>
+        <li>Scope (what's included in this version and what's deferred)</li>
+        <li>Quality standards (what "good enough" means at this price point)</li>
+        <li>Delivery (how customers receive or access it)</li>
+        <li>Production timeline (when it will be ready)</li>
+        <li>Success criteria (what "done" means for this version)</li>
+      </ul>
+      <p><strong>Productize is NOT responsible for:</strong></p>
+      <ul>
+        <li>Validating customer demand (that's Identify)</li>
+        <li>Setting pricing or business model (that's Monetize)</li>
+        <li>Creating sales pages or marketing messaging (that's Activate)</li>
+        <li>Promoting or selling the product (that's Campaign)</li>
+        <li>Measuring performance or optimizing (that's Triumph)</li>
+      </ul>
+      <div class="callout">
+        Productize builds the thing. It transforms the validated opportunity from Identify and the economic model from Monetize into a concrete deliverable. Whether you're building a course, writing a book, or designing a service — the logic is identical: define what you're building, build it to a clear standard, and stop when it's done.
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 3. Failure Modes -->
+    <section class="section" id="failure-modes">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Why This Step Exists — Failure Modes</h2>
+      <p>Most failures in the building phase happen because people build the wrong thing, build too much, or build without knowing when to stop. Productize exists to prevent this.</p>
+
+      <div class="failure-mode">
+        <div class="failure-mode-header">
+          <span class="failure-mode-badge">Failure Mode</span>
+          <span class="failure-mode-title">The "Feature Creep Cemetery"</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>The most common failure mode: continuously adding features to compensate for insecurity about whether the core product delivers enough value.</p>
+          <p>You start with 4 modules. You worry it's not enough, so you add bonus modules, templates, workbooks, a private community, weekly live calls. By launch you've built a 12-module course that took six months instead of six weeks.</p>
+          <p>The result: customers are overwhelmed, don't finish module 2, and never experience the core transformation they paid for. Customers don't pay for volume. They pay for transformation. Feature creep delays launch, increases costs, complicates delivery, and paradoxically reduces perceived value.</p>
+        </div>
+      </div>
+
+      <div class="failure-mode">
+        <div class="failure-mode-header">
+          <span class="failure-mode-badge">Failure Mode</span>
+          <span class="failure-mode-title">The "Polishing the Invisible" Trap</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>The perfectionism failure mode: endlessly refining a product no customer has seen, using production quality as a shield against launching.</p>
+          <p>You spend six weeks redesigning layout and refining typography before anyone has read a word. You finally release it. Readers immediately ask for content you haven't written — and rarely notice the design work you agonized over.</p>
+          <p>The market doesn't reward invisible excellence. It rewards shipping. A guide with imperfect formatting that genuinely solves the problem is more valuable than a beautifully designed guide that doesn't.</p>
+        </div>
+      </div>
+
+      <div class="failure-mode">
+        <div class="failure-mode-header">
+          <span class="failure-mode-badge">Failure Mode</span>
+          <span class="failure-mode-title">The "Building the Bridge to Nowhere" Failure</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>The misalignment failure mode: creating a product that doesn't solve the problem identified in Identify or justify the price established in Monetize.</p>
+          <p>You identify that customers struggle with X. You price for a comprehensive transformation around X. Then you build something well-made that addresses Y and Z — related, but not X. Customers who bought based on the promise feel misled.</p>
+          <p>Your product scope must ladder to both your identified problem and your established price. Too little and you're underdelivering. Too much and you're overdelivering. Either mismatch erodes trust.</p>
+        </div>
+      </div>
+
+      <div class="failure-mode">
+        <div class="failure-mode-header">
+          <span class="failure-mode-badge">Failure Mode</span>
+          <span class="failure-mode-title">The "Premature Sophistication" Problem</span>
+        </div>
+        <div class="failure-mode-body">
+          <p>The overbuilding failure mode: creating version 3.0 before validating that version 1.0 solves the problem. You spend months on professional photography, custom layout design, companion websites, and branded packaging — before a single person has seen the core product or confirmed they want it.</p>
+          <p>When you finally release it, customers tell you the core content needs work. But you've invested so much in surrounding infrastructure that circling back feels like starting over. Premature sophistication wastes resources building for imagined future needs rather than validated current needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 4. The Three Frameworks -->
+    <section class="section" id="frameworks">
+      <span class="section-number">04</span>
+      <h2 class="section-title">The Three Frameworks of Productize</h2>
+      <p>To execute strategically, you need three interconnected frameworks: the Version Ladder (what to build when), the 5D Creation Process (how to build anything), and Scope Discipline (how to know when you're done).</p>
+
+      <!-- Version Ladder -->
+      <div class="component">
+        <div class="component-header">
+          <span class="component-num">01 —</span>
+          <div>
+            <div class="component-title">The Version Ladder</div>
+            <div class="component-question">What to build when?</div>
+          </div>
+        </div>
+        <p>Most solo operators approach product creation as binary: build the complete vision or don't build at all. This leads to overbuilding, delays, and wasted effort. The smarter approach is versioned iteration: build the minimum version that delivers value, launch it, learn from real customers, then build the next version based on evidence.</p>
+
+        <div class="version-ladder">
+
+          <div class="version-card">
+            <div class="version-card-header">
+              <span class="version-card-tag">MVP</span>
+              <span class="version-card-title">Minimum Viable Product — Prove the Core</span>
+              <span class="version-card-purpose">Weeks, not months</span>
+            </div>
+            <div class="version-card-body">
+              <p>The smallest, simplest version that delivers the core transformation at the promised value. Intentionally bare-bones. Proves the concept without polish.</p>
+              <ul>
+                <li>Minimal features — only what's essential to the transformation</li>
+                <li>Acceptable quality — good enough to deliver value, not embarrassing</li>
+                <li>Manual or semi-manual delivery — you're involved, not fully automated</li>
+                <li>Limited scalability — you might serve only 5–10 customers</li>
+              </ul>
+              <div class="quick-check">
+                <span class="quick-check-icon">Quick Check</span>
+                <p class="quick-check-text">If building this version will take more than 4–6 weeks of focused work, it's not an MVP — cut scope.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="version-card">
+            <div class="version-card-header">
+              <span class="version-card-tag">V1</span>
+              <span class="version-card-title">Version 1 — Refine the Experience</span>
+              <span class="version-card-purpose">Built from feedback</span>
+            </div>
+            <div class="version-card-body">
+              <p>The improved version built after learning from MVP customers. Fixes obvious gaps, improves rough edges, adds the 2–3 features real customers requested most.</p>
+              <ul>
+                <li>Add the 2–3 most-requested elements (based on actual feedback, not assumptions)</li>
+                <li>Improve production quality (better audio, clearer templates, smoother formatting)</li>
+                <li>Streamline delivery (reduce manual steps, simplify access)</li>
+                <li>Clarify confusing parts based on where customers got stuck</li>
+              </ul>
+              <div class="quick-check">
+                <span class="quick-check-icon">Quick Check</span>
+                <p class="quick-check-text">Every feature in v1 should answer: "customers explicitly asked for this" or "customers struggled without this." If you're adding features because they seem useful or competitors have them, stop.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="version-card">
+            <div class="version-card-header">
+              <span class="version-card-tag">V2</span>
+              <span class="version-card-title">Version 2 — Optimize for Scale</span>
+              <span class="version-card-purpose">Built from volume</span>
+            </div>
+            <div class="version-card-body">
+              <p>The sophisticated version built after v1 has proven itself with real customer volume. Adds advanced features, automation, and infrastructure that enable significant scale. Transforms a proven offer into a scalable asset.</p>
+              <div class="quick-check">
+                <span class="quick-check-icon">Quick Check</span>
+                <p class="quick-check-text">Don't build v2 until v1 has generated meaningful revenue and you have clear patterns in customer behavior showing what scale actually requires.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="callout">
+          The biggest Productize mistake is building v2 before validating MVP. MVP proves the concept. v1 refines based on feedback. v2 scales based on proven demand. Don't skip versions.
+        </div>
+      </div>
+
+      <!-- 5D Process -->
+      <div class="component">
+        <div class="component-header">
+          <span class="component-num">02 —</span>
+          <div>
+            <div class="component-title">The 5D Creation Process</div>
+            <div class="component-question">How to build anything?</div>
+          </div>
+        </div>
+        <p>Whether you're building an MVP, v1, or v2 — the production process is the same. These five phases transform any product from idea to delivered reality.</p>
+
+        <div class="process-5d">
+
+          <div class="process-phase">
+            <div class="process-phase-header">
+              <span class="process-phase-num">D1</span>
+              <span class="process-phase-label">Define</span>
+              <span class="process-phase-title">Establish Scope and Success</span>
+              <span class="process-phase-tagline">Before you create anything</span>
+            </div>
+            <div class="process-phase-body">
+              <p>Write the product definition, list required deliverables, set quality standards, establish a realistic production timeline, and define success criteria. Outputs: Product Definition Document, Deliverables Checklist, Timeline with milestones, Success criteria with a clear exit condition.</p>
+              <div class="quick-check">
+                <span class="quick-check-icon">Quick Check</span>
+                <p class="quick-check-text">If you can't write a one-page product definition stating what this is, what it includes, and what "done" means — you're not ready to build.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-phase">
+            <div class="process-phase-header">
+              <span class="process-phase-num">D2</span>
+              <span class="process-phase-label">Design</span>
+              <span class="process-phase-title">Plan Structure and Approach</span>
+              <span class="process-phase-tagline">Structure before detail</span>
+            </div>
+            <div class="process-phase-body">
+              <p>Map information architecture, create outlines or wireframes, plan the customer experience, and select tools and platforms. Design means structure before detail — you know exactly what you're building before you start building it.</p>
+              <div class="quick-check">
+                <span class="quick-check-icon">Quick Check</span>
+                <p class="quick-check-text">Can you show someone your outline or wireframe and have them understand what the final product will be? If not, design isn't complete.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-phase">
+            <div class="process-phase-header">
+              <span class="process-phase-num">D3</span>
+              <span class="process-phase-label">Develop</span>
+              <span class="process-phase-title">Build the Deliverables</span>
+              <span class="process-phase-tagline">Execute the plan</span>
+            </div>
+            <div class="process-phase-body">
+              <p>Create the content, record the videos, write the copy, design the templates — whatever your deliverables require. Build according to the design. Don't redesign mid-build. Resist scope creep — stay within defined boundaries.</p>
+              <div class="quick-check">
+                <span class="quick-check-icon">Quick Check</span>
+                <p class="quick-check-text">If you're making major structural decisions during Develop (like "should this be 4 modules or 7?"), you didn't finish Design. Stop, return to Design, finalize, then resume.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-phase">
+            <div class="process-phase-header">
+              <span class="process-phase-num">D4</span>
+              <span class="process-phase-label">Deploy</span>
+              <span class="process-phase-title">Set Up and Test Delivery</span>
+              <span class="process-phase-tagline">Get it into customers' hands</span>
+            </div>
+            <div class="process-phase-body">
+              <p>Set up delivery infrastructure, test the customer experience end-to-end as a customer would, fix any technical issues, create access instructions, and prepare basic support resources.</p>
+              <div class="quick-check">
+                <span class="quick-check-icon">Quick Check</span>
+                <p class="quick-check-text">Can you send a paying customer a link right now and have them access the complete product without your help? If not, deployment isn't complete.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-phase">
+            <div class="process-phase-header">
+              <span class="process-phase-num">D5</span>
+              <span class="process-phase-label">Deliver</span>
+              <span class="process-phase-title">Fulfill and Close</span>
+              <span class="process-phase-tagline">Ship and learn</span>
+            </div>
+            <div class="process-phase-body">
+              <p>Onboard customers, provide ongoing support, monitor usage and collect feedback, document learnings for the next version, and officially close this version as complete.</p>
+              <div class="quick-check">
+                <span class="quick-check-icon">Quick Check</span>
+                <p class="quick-check-text">Have you documented at least five specific learnings from customer delivery that would inform how you build the next version?</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scope Discipline -->
+      <div class="component">
+        <div class="component-header">
+          <span class="component-num">03 —</span>
+          <div>
+            <div class="component-title">Scope Discipline</div>
+            <div class="component-question">How to know when you're done?</div>
+          </div>
+        </div>
+        <p>The hardest part of Productize isn't building — it's stopping. Scope discipline is the practice of defining boundaries and honoring them. It's saying "this is enough for this version" and meaning it.</p>
+
+        <div class="scope-grid">
+          <div class="scope-col in-scope">
+            <div class="scope-col-header">✓ In Scope — Build it now</div>
+            <div class="scope-col-body">
+              <ul>
+                <li>Directly serves the core transformation</li>
+                <li>Required to deliver the value metric</li>
+                <li>Expected at this price point</li>
+                <li>Feasible within timeline and resources</li>
+                <li>Documented in the original product definition</li>
+              </ul>
+            </div>
+          </div>
+          <div class="scope-col out-scope">
+            <div class="scope-col-header">→ Out of Scope — Defer to next version</div>
+            <div class="scope-col-body">
+              <ul>
+                <li>"Nice to have" but not essential</li>
+                <li>Serves edge cases or future vision</li>
+                <li>Would delay launch significantly</li>
+                <li>Beyond current resources or expertise</li>
+                <li>More complex without being more valuable</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p>The discipline is in deferring good ideas — not killing them. Capture them in a "v1 Ideas" or "v2 Ideas" list. Honor them as valuable. Don't build them now.</p>
+
+        <div class="callout">
+          The "good enough" standard: Would a customer who paid your established price feel they received fair value? If yes — ship it.
+        </div>
+
+        <div class="quick-check">
+          <span class="quick-check-icon">Quick Check</span>
+          <p class="quick-check-text">If you're adding features not in your original Define document, ask: "Would this version still deliver value without this feature?" If yes, it's out of scope. Defer it.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 5. What Good Looks Like -->
+    <section class="section" id="good-looks-like">
+      <span class="section-number">05</span>
+      <h2 class="section-title">What "Good" Looks Like</h2>
+      <p>Productize is complete when you've built everything this version requires and you're ready to deliver it to paying customers.</p>
+      <ul class="artifact-list">
+        <li><strong>Product Definition Document</strong>Clear 1–2 page statement of what this product is, who it's for, what it includes, what it doesn't, and what success looks like.</li>
+        <li><strong>Version Strategy</strong>Explicit statement of which version you're building (MVP, v1, v2) and why this scope is appropriate.</li>
+        <li><strong>Deliverables Checklist</strong>Complete list of every asset, module, feature, or component — all confirmed complete.</li>
+        <li><strong>Quality Review</strong>Evidence that the product has been tested and confirmed to meet the "good enough" standard for this version and price point.</li>
+        <li><strong>Deployment Confirmation</strong>Proof that the product is accessible to customers: platform set up, access working, onboarding functional.</li>
+        <li><strong>Support Resources</strong>Basic FAQs or instructions so customers can use the product without requiring your direct involvement.</li>
+        <li><strong>Next Version Backlog</strong>Ideas and improvements deferred to the next version through scope discipline.</li>
+      </ul>
+      <div class="callout">
+        If you can't give this product to a paying customer tomorrow, you're not done with Productize.
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 6. Common Traps -->
+    <section class="section" id="traps">
+      <span class="section-number">06</span>
+      <h2 class="section-title">Common Traps and Misuses</h2>
+
+      <div class="trap">
+        <div class="trap-title">Trap 1: Building for the Imagined Customer Instead of the Validated One</div>
+        <p>You identified that customers struggle with X. While building, you get excited about solving Y and Z. You build for Y and Z. Customers who bought to solve X feel confused or misled.</p>
+        <div class="trap-escape"><strong>The escape:</strong> Refer back to your Identify work constantly. Every feature should answer: "Does this serve the core transformation we validated?" If not, defer it.</div>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">Trap 2: Confusing Activity with Progress</div>
+        <p>You've recorded 15 hours of video, designed 30 templates, and written 10,000 words of documentation. But you haven't completed a single module end-to-end. Everything is in progress. Nothing is done.</p>
+        <div class="trap-escape"><strong>The escape:</strong> Work in vertical slices. Finish module 1 completely before starting module 2. Ship complete pieces, not partial everything.</div>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">Trap 3: Redesigning Mid-Build</div>
+        <p>You're in Develop when you realize a different structure would be better. You stop, redesign, and restart. This happens three more times. Six months later, you're still in module 3.</p>
+        <div class="trap-escape"><strong>The escape:</strong> Finish Design thoroughly before starting Develop. Once building, execute the plan. Capture improvements for the next version — don't rebuild mid-build.</div>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">Trap 4: Chasing Competitor Features</div>
+        <p>You discover a competitor's product while building your MVP. They have features you don't. You panic and add them to your scope. Your MVP has now ballooned into v2 territory. You still haven't launched.</p>
+        <div class="trap-escape"><strong>The escape:</strong> Ignore competitors during Productize. You analyzed them in Identify and scoped accordingly in Define. Build your version.</div>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">Trap 5: Perfecting Before Testing</div>
+        <p>You've built a functional first draft. Before showing it to anyone, you spend two months polishing. Customers immediately request things you don't have and rarely use the things you spent two months perfecting.</p>
+        <div class="trap-escape"><strong>The escape:</strong> Launch with "good enough" quality. Let real customers tell you what actually needs improvement. Polish based on evidence, not assumption.</div>
+      </div>
+
+      <div class="trap">
+        <div class="trap-title">Trap 6: Ignoring Delivery Feasibility</div>
+        <p>You build a product with elaborate delivery requirements — weekly live calls, unlimited 1-on-1 time, personalized feedback on every submission. You price it at $500 and sell to 30 customers. Suddenly you're underwater in commitments requiring 60+ hours per week.</p>
+        <div class="trap-escape"><strong>The escape:</strong> During Design, calculate delivery load at your target volume. If you plan to serve 50 customers, can you actually deliver to 50 customers? If not, redesign before you build.</div>
+      </div>
+
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 7. Decision Checkpoint -->
+    <section class="section" id="checkpoint">
+      <span class="section-number">07</span>
+      <h2 class="section-title">Decision Checkpoint: Proceed, Loop, or Stop</h2>
+
+      <div class="checkpoint">
+        <div class="checkpoint-row">
+          <div class="checkpoint-col col-proceed">
+            <div class="checkpoint-verdict verdict-proceed">
+              <span class="verdict-dot"></span> Proceed
+            </div>
+            <ul>
+              <li>You have a complete, functional product a customer could use today</li>
+              <li>The product delivers the core transformation promised in Identify</li>
+              <li>The scope feels appropriate for the price established in Monetize</li>
+              <li>You've tested the customer experience end-to-end</li>
+              <li>All deliverables are complete and confirmed</li>
+              <li>Delivery infrastructure is set up and working</li>
+            </ul>
+          </div>
+          <div class="checkpoint-col col-loop">
+            <div class="checkpoint-verdict verdict-loop">
+              <span class="verdict-dot"></span> Loop Back
+            </div>
+            <ul>
+              <li>Critical components are missing or broken</li>
+              <li>You haven't tested the end-to-end customer experience</li>
+              <li>Product scope significantly under-delivers for the price point</li>
+              <li>You have no plan for how customers will access the product</li>
+              <li>Delivery obligations aren't sustainable at expected volume</li>
+            </ul>
+          </div>
+          <div class="checkpoint-col col-stop">
+            <div class="checkpoint-verdict verdict-stop">
+              <span class="verdict-dot"></span> Stop
+            </div>
+            <ul>
+              <li>Building reveals the product cannot deliver the promised transformation</li>
+              <li>Delivery requirements make fulfillment economically impossible</li>
+              <li>You've been building an MVP for months with no end in sight</li>
+              <li>Halfway through, you realize nobody actually wants this</li>
+              <li>The "good enough" version is far below the price point</li>
+            </ul>
+          </div>
+        </div>
+        <div class="checkpoint-principle">
+          Closing Principle: A shipped MVP that delivers value is infinitely more valuable than an unshipped masterwork that delivers nothing.
+        </div>
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 8. Connects to Next -->
+    <section class="section" id="connects-to">
+      <span class="section-number">08</span>
+      <h2 class="section-title">How This Step Connects to the Next</h2>
+      <p>Productize completes the foundation. With a finished, deliverable product in hand, the system moves from building to reaching customers. Phase 1 is done. Phase 2 begins.</p>
+      <div class="next-step">
+        <div class="next-step-label">Feeds directly into</div>
+        <div class="next-step-title">
+          <span class="step-badge">Step 4</span>
+          Activate
+        </div>
+        <p>Activate assumes you have a complete product to describe and sell, the product delivers what your messaging will promise, customers can access the product after purchase without your direct involvement, and you know what the product is well enough to explain it clearly.</p>
+        <p style="font-family:var(--sans); font-size:14px; font-style:italic; color:var(--dimmed); margin:0; text-indent:0;">Without Productize: You'll market something that doesn't exist. You'll attract customers but have nothing ready to deliver.</p>
+      </div>
+    </section>
+
+    <div class="divider">* * *</div>
+
+    <!-- 9. Workbook Handoff -->
+    <section class="section" id="workbook">
+      <span class="section-number">09</span>
+      <h2 class="section-title">Workbook Handoff</h2>
+      <p>The Productize Workbook forces you to build the right version and actually finish it. What the workbook will force you to decide:</p>
+      <ul>
+        <li>Which version are you building: MVP, v1, or v2?</li>
+        <li>What exactly is included in this version, and what's deferred?</li>
+        <li>What does "good enough" quality mean at your price point?</li>
+        <li>How will you use the 5D Process to move from idea to delivered product?</li>
+        <li>What's on your deliverables checklist, and what does "complete" mean for each piece?</li>
+        <li>How will customers access and use this product after purchase?</li>
+        <li>What scope boundaries will you hold to actually ship?</li>
+      </ul>
+      <div class="workbook-cta">
+        <div class="workbook-cta-label">Before You Proceed</div>
+        <div class="workbook-cta-heading">Complete the Productize Workbook</div>
+        <p>Complexity of the product and your version (MVP vs. v1 vs. v2) will dictate the pace. What matters more than the calendar is scope discipline. A completed MVP on a longer timeline beats an incomplete v2 that never ships.</p>
+        <p>If Productize feels comfortable and easy, you're probably overbuilding. The discomfort of shipping something "incomplete" is the signal you're doing it right.</p>
+        <p class="cta-closing">Do not proceed to Activate until you have a complete product a customer could use today: What exactly are we selling right now?</p>
+      </div>
+    </section>
+
+  </div><!-- /content -->
+
+
+
+  <div class="step-footer-nav">
+    <a class="step-footer-nav-btn" href="step-2-monetize.html" style="margin-right:auto;">
+      <span class="step-footer-arrow" style="transform:scaleX(-1); display:inline-block;">→</span>
+      <div>
+        <div class="step-footer-nav-step" style="color:var(--monetize);">Step 2</div>
+        <div class="step-footer-nav-name">Monetize</div>
+      </div>
+    </a>
+    <span class="step-footer-nav-label">Next</span>
+    <a class="step-footer-nav-btn" href="phase-2.html">
+      <div>
+        <div class="step-footer-nav-step" style="color:#8b7ab8;">Phase 2</div>
+        <div class="step-footer-nav-name">Generate Attention &amp; Sales</div>
+      </div>
+      <span class="step-footer-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="site-footer">
+    <span>© 2026 Eight Echo Agency, LLC. All rights reserved.</span>
+    <span>Author: TADROBERT</span>
+  </div>
+
+</main>
+
+
+</body>
+</html>
