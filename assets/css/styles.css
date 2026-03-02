@@ -310,7 +310,7 @@ footer{
 
 .modal{
   width: min(860px, 100%);
-  background: rgba(255,255,255,.92);
+  background: rgba(255,255,255,);
   border: 1px solid var(--line);
   border-radius: 18px;
   box-shadow: 0 24px 70px rgba(0,0,0,.18);
