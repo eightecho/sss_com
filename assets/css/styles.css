@@ -32,7 +32,7 @@ body{
 }
 
 a{ color:inherit; text-decoration:none; }
-a:focus-visible, button:focus-visible{
+a:focus-visible, button:focus-visible, input:focus-visible{
   outline:2px solid rgba(22,22,22,.55);
   outline-offset:3px;
   border-radius:10px;
@@ -285,7 +285,7 @@ footer{
   flex-wrap:wrap;
 }
 
-/* Modal (IMPORTANT: not display:none) */
+/* Modal */
 .overlay{
   position: fixed;
   inset: 0;
@@ -309,7 +309,7 @@ footer{
 }
 
 .modal{
-  width: min(720px, 100%);
+  width: min(860px, 100%);
   background: rgba(255,255,255,.92);
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -360,13 +360,6 @@ footer{
   color: var(--muted);
 }
 
-.kit-embed{
-  padding: 14px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.65);
-}
-
 .modal-footnote{
   margin-top: 10px;
   font-family: var(--mono);
@@ -374,37 +367,17 @@ footer{
   color: rgba(22,22,22,.6);
 }
 
+/* Make the Kit form sit cleanly inside our modal */
+.modal-body .formkit-form{
+  margin: 0;
+  width: 100%;
+  max-width: 100% !important;
+  border-radius: 16px !important;
+}
+
 @media (max-width: 840px){
   .two-col{ grid-template-columns: 1fr; }
   .tri-layer{ grid-template-columns: 1fr; }
   .section{ padding: 26px 20px; }
   .steps-line{ letter-spacing: .12em; }
-}
-
-/* Minimal Kit normalization (don’t force layout) */
-#kitMount input[type="email"],
-#kitMount input[type="text"]{
-  width:100% !important;
-  padding:14px 14px !important;
-  border-radius:12px !important;
-  border:1px solid var(--line) !important;
-  font-family: var(--sans) !important;
-  font-size:15px !important;
-  background: rgba(255,255,255,.85) !important;
-  color: var(--ink) !important;
-}
-
-#kitMount input[type="submit"],
-#kitMount button[type="submit"],
-#kitMount .formkit-submit{
-  width:100% !important;
-  padding:14px 16px !important;
-  border-radius:999px !important;
-  border:1px solid rgba(22,22,22,.18) !important;
-  background: var(--accent) !important;
-  color: var(--accent-ink) !important;
-  font-weight:600 !important;
-  cursor:pointer !important;
-  -webkit-appearance: none;
-  appearance: none;
 }
