@@ -285,18 +285,28 @@ footer{
   flex-wrap:wrap;
 }
 
-/* Modal */
+/* Modal (IMPORTANT: not display:none) */
 .overlay{
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,.45);
-  display: none;
+  display:flex;
   align-items: center;
   justify-content: center;
   padding: 18px;
   z-index: 9999;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .15s ease, visibility .15s ease;
 }
-.overlay.open{ display:flex; }
+
+.overlay.open{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
 .modal{
   width: min(720px, 100%);
@@ -371,12 +381,7 @@ footer{
   .steps-line{ letter-spacing: .12em; }
 }
 
-@media (prefers-reduced-motion: reduce){
-  .btn{ transition:none; }
-  .btn:hover{ transform:none; }
-}
-
-/* Minimal Kit input/button normalization (do not force layout) */
+/* Minimal Kit normalization (don’t force layout) */
 #kitMount input[type="email"],
 #kitMount input[type="text"]{
   width:100% !important;
