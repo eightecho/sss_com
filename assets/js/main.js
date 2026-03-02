@@ -1,31 +1,58 @@
-// Footer year
-const y = document.getElementById("y");
-if (y) y.textContent = new Date().getFullYear();
+(function () {
+  "use strict";
 
-// Modal
-const overlay = document.getElementById("optinOverlay");
-const openers = document.querySelectorAll("[data-open-optin]");
-const closers = document.querySelectorAll("[data-close-optin]");
+  var modal = document.getElementById("optinModal");
+  var openButtons = document.querySelectorAll("[data-open-optin]");
+  var closeButtons = document.querySelectorAll("[data-close-optin]");
+  var yearEl = document.getElementById("year");
+  var kitForm = document.getElementById("kitForm");
+  var redirectNote = document.getElementById("redirectNote");
 
-function openModal() {
-  overlay.classList.add("open");
-  overlay.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-}
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-function closeModal() {
-  overlay.classList.remove("open");
-  overlay.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-}
+  function openModal() {
+    if (!modal) return;
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
 
-openers.forEach((el) => el.addEventListener("click", openModal));
-closers.forEach((el) => el.addEventListener("click", closeModal));
+    // Try to focus the email field
+    window.setTimeout(function () {
+      var email = modal.querySelector('input[name="email_address"]');
+      if (email) email.focus();
+    }, 50);
+  }
 
-overlay.addEventListener("click", (e) => {
-  if (e.target === overlay) closeModal();
-});
+  function closeModal() {
+    if (!modal) return;
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && overlay.classList.contains("open")) closeModal();
-});
+  openButtons.forEach(function (btn) {
+    btn.addEventListener("click", openModal);
+  });
+
+  closeButtons.forEach(function (btn) {
+    btn.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeModal();
+  });
+
+  // Redirect handling:
+  // - If Kit double opt-in is ON, their redirect may not happen immediately until confirmation.
+  // - We provide a simple, predictable fallback: show a note + direct link, and do an optional timed redirect.
+  if (kitForm) {
+    kitForm.addEventListener("submit", function () {
+      // Show the note right away so the user knows what’s happening.
+      if (redirectNote) redirectNote.hidden = false;
+
+      // Optional optimistic redirect:
+      // If you want to ALWAYS wait for confirmation, delete this timeout block.
+      window.setTimeout(function () {
+        window.location.href = "https://stupidsimplestartup.com/impact-system";
+      }, 1800);
+    });
+  }
+})();
