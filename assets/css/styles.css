@@ -271,6 +271,15 @@ p{
   text-transform: uppercase;
   color: rgba(22,22,22,.86);
 }
+.kit-fallback{
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(22,22,22,.65);
+}
+.kit-fallback a{
+  text-decoration: underline;
+}
 .sep{ opacity:.45; letter-spacing: 0; }
 
 footer{
