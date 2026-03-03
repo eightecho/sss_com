@@ -3046,6 +3046,9 @@ ul.artifact-list li strong {
   /* Push body down below fixed top bar */
   body { padding-top: 52px; }
 
+  /* ── SIDEBAR: hide brand (top bar already shows the title) ── */
+  .sidebar-brand { display: none; }
+
   /* ── SIDEBAR: hide by default, slide in on open ── */
   .sidebar {
     transform: translateX(-100%);

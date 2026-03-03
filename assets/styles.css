@@ -199,7 +199,8 @@ p + p { margin-top: 1em; }
   padding-block: var(--section-gap);
 }
 
-.section + .section {
+.section + .section,
+.hero  + .section {
   border-top: 1px solid var(--border);
 }
 
