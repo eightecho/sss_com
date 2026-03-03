@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Stupid Simple Startup</title>
   <meta name="description" content="The IMPACT System: a campaign-minded business framework for Side Hustlers, Solopreneurs, and Subject Matter Experts." />
+
   <link rel="stylesheet" href="./assets/css/styles.css" />
-  <script src="./assets/js/main.js" defer></script>
+  <script defer src="./assets/js/main.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
         <a href="#stack">System</a>
       </nav>
 
-      <button class="btn btn-primary" type="button" data-open-optin>
+      <button class="btn btn-primary" type="button" data-formkit-toggle="5fd5d63b2c">
         Get the IMPACT System
       </button>
     </div>
@@ -36,10 +37,12 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">IMPACT System</p>
+
           <h1>
             A business system built for builders and creators —
             not venture-backed startups.
           </h1>
+
           <p class="subhead">
             Most frameworks assume an early-stage startup with a small team, a product roadmap,
             and a funding goal. IMPACT was built for Side Hustlers, Solopreneurs, and Subject Matter Experts
@@ -47,12 +50,10 @@
           </p>
 
           <div class="hero-actions">
-            <button class="btn btn-primary" type="button" data-open-optin>
+            <button class="btn btn-primary" type="button" data-formkit-toggle="5fd5d63b2c">
               Get the IMPACT System
             </button>
-            <a class="btn btn-ghost" href="#stack">
-              See how it works
-            </a>
+            <a class="btn btn-ghost" href="#stack">See how it works</a>
           </div>
 
           <div class="fineprint">
@@ -78,7 +79,7 @@
                 <li>Designed for solo execution</li>
               </ul>
 
-              <button class="btn btn-primary btn-full" type="button" data-open-optin>
+              <button class="btn btn-primary btn-full" type="button" data-formkit-toggle="5fd5d63b2c">
                 Get the IMPACT System
               </button>
             </div>
@@ -164,9 +165,13 @@
 
         <div class="callout">
           <div class="callout-inner">
-            <h3>One goal for V1</h3>
-            <p>Get the IMPACT System, read it on the microsite, and use it as the base layer for every niche playbook.</p>
-            <button class="btn btn-primary" type="button" data-open-optin>
+            <div>
+              <h3>One goal for V1</h3>
+              <p>
+                Get the IMPACT System, read it on the microsite, and use it as the base layer for every niche playbook.
+              </p>
+            </div>
+            <button class="btn btn-primary" type="button" data-formkit-toggle="5fd5d63b2c">
               Get the IMPACT System
             </button>
           </div>
@@ -213,7 +218,7 @@
             <h3>Start with the system.</h3>
             <p>Everything else is built on top of it.</p>
           </div>
-          <button class="btn btn-primary" type="button" data-open-optin>
+          <button class="btn btn-primary" type="button" data-formkit-toggle="5fd5d63b2c">
             Get the IMPACT System
           </button>
         </div>
@@ -226,7 +231,7 @@
         <div class="final">
           <h2>Get the IMPACT System</h2>
           <p>Opt in once. Read the system on the microsite. Then decide what playbook you want next.</p>
-          <button class="btn btn-primary" type="button" data-open-optin>
+          <button class="btn btn-primary" type="button" data-formkit-toggle="5fd5d63b2c">
             Get the IMPACT System
           </button>
         </div>
@@ -249,92 +254,98 @@
     </div>
   </footer>
 
-  <!-- OPT-IN MODAL -->
-  <div class="modal" id="optinModal" aria-hidden="true">
-    <div class="modal-backdrop" data-close-optin></div>
+  <!-- =========================
+       Kit Embed (Modal)
+       - Keep data-format="modal" for the exact Kit modal UI.
+       - CTAs trigger it via data-formkit-toggle="5fd5d63b2c".
+       ========================= -->
+  <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="optinTitle">
-      <button class="modal-close" type="button" aria-label="Close" data-close-optin>×</button>
+  <form
+    action="https://app.kit.com/forms/9153371/subscriptions"
+    style="background-color: rgb(255, 255, 255); border-radius: 20px;"
+    class="seva-form formkit-form"
+    method="post"
+    data-sv-form="9153371"
+    data-uid="5fd5d63b2c"
+    data-format="modal"
+    data-version="5"
+    data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Check your email to confirm access to the IMPACT System.&quot;,&quot;redirect_url&quot;:&quot;https://stupidsimplestartup.com/impact-system&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;scroll&quot;,&quot;scroll_percentage&quot;:&quot;100&quot;,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}"
+    min-width="400 500 600 700 800"
+  >
+    <div data-style="full">
+      <div data-element="column" style="background-image: url(&quot;//pages.convertkit.com/assets/charlotte/bg.jpg&quot;);" class="formkit-background"></div>
 
-      <div class="modal-head">
-        <h2 id="optinTitle">Get the IMPACT System</h2>
-        <p class="modal-subhead">
-          Enter your email to get access. If confirmation is enabled in Kit, you’ll confirm via email.
-        </p>
-      </div>
+      <div data-element="column" class="formkit-column">
+        <div class="formkit-header" style="color: rgb(83, 83, 83); font-size: 28px; font-weight: 700;" data-element="header">
+          <h2><strong>Get the IMPACT System</strong></h2>
+        </div>
 
-      <div class="modal-body">
-        <!-- Kit script (required; load once) -->
-        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+        <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
 
-        <!-- Kit form embed (INLINE so it renders inside your modal) -->
-        <form
-          id="kitForm"
-          action="https://app.kit.com/forms/9153371/subscriptions"
-          style="background-color: rgb(255, 255, 255); border-radius: 20px;"
-          class="seva-form formkit-form"
-          method="post"
-          data-sv-form="9153371"
-          data-uid="5fd5d63b2c"
-          data-format="inline"
-          data-version="5"
-          data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Check your email to confirm access to the IMPACT System.&quot;,&quot;redirect_url&quot;:&quot;https://stupidsimplestartup.com/impact-system&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;scroll&quot;,&quot;scroll_percentage&quot;:&quot;100&quot;,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}"
-          min-width="400 500 600 700 800"
-        >
-          <div data-style="full">
-            <div data-element="column" style="background-image: url(&quot;//pages.convertkit.com/assets/charlotte/bg.jpg&quot;);" class="formkit-background"></div>
-            <div data-element="column" class="formkit-column">
-              <div class="formkit-header" style="color: rgb(83, 83, 83); font-size: 28px; font-weight: 700;" data-element="header">
-                <h2><strong>Get the IMPACT System</strong></h2>
-              </div>
-              <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
-              <div data-element="fields" class="seva-fields formkit-fields">
-                <div class="formkit-field">
-                  <input class="formkit-input" name="email_address" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400;" aria-label="Email Address" placeholder="Email Address" required="" type="email">
-                </div>
-                <button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(0, 151, 246); border-radius: 3px; font-weight: 700;">
-                  <div class="formkit-spinner"><div></div><div></div><div></div></div>
-                  <span class="">Get the IMPACT System</span>
-                </button>
-              </div>
-              <div class="formkit-disclaimer" style="color: rgb(139, 139, 139); font-size: 13px;" data-element="disclaimer">
-                <p>We respect your privacy. Unsubscribe at anytime.</p>
-              </div>
-              <div class="formkit-powered-by-convertkit-container">
-                <a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow">Built with Kit</a>
-              </div>
-            </div>
+        <div data-element="fields" class="seva-fields formkit-fields">
+          <div class="formkit-field">
+            <input class="formkit-input" name="email_address" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400;" aria-label="Email Address" placeholder="Email Address" required="" type="email">
           </div>
 
-          <style>
-            .formkit-form[data-uid="5fd5d63b2c"] *{box-sizing:border-box;}
-            .formkit-form[data-uid="5fd5d63b2c"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
-            .formkit-form[data-uid="5fd5d63b2c"] h1,.formkit-form[data-uid="5fd5d63b2c"] h2,.formkit-form[data-uid="5fd5d63b2c"] h3,.formkit-form[data-uid="5fd5d63b2c"] h4,.formkit-form[data-uid="5fd5d63b2c"] h5,.formkit-form[data-uid="5fd5d63b2c"] h6{color:inherit;font-size:inherit;font-weight:inherit;}
-            .formkit-form[data-uid="5fd5d63b2c"] p{color:inherit;font-size:inherit;font-weight:inherit;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;line-height:1.4;margin:0;transition:border-color 300ms ease;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-input:focus{outline:none;border-color:#1677be;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-alert:empty{display:none;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner{display:flex;height:0;width:0;margin:0 auto;position:absolute;top:0;left:0;right:0;overflow:hidden;text-align:center;transition:all 300ms ease;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;animation:formkit-bouncedelay 1.4s infinite ease-in-out both;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner > div:nth-child(1){animation-delay:-0.32s;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner > div:nth-child(2){animation-delay:-0.16s;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}
-            @keyframes formkit-bouncedelay{0%,80%,100%{transform:scale(0);}40%{transform:scale(1);}}
-            .formkit-form[data-uid="5fd5d63b2c"]{box-shadow:0 0px 2px rgba(0,0,0,0.15);max-width:700px;overflow:hidden;}
-            @media only screen and (min-width:800px){.formkit-form[data-uid="5fd5d63b2c"]{min-width:600px;}}
-            .formkit-form[data-uid="5fd5d63b2c"] [data-style="full"]{width:100%;display:block;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-background{background-position:center center;background-size:cover;min-height:200px;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-column{padding:20px;position:relative;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-field{margin:0 0 10px 0;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-input{width:100%;border-left:none;border-right:none;border-top:none;padding-left:0;padding-right:0;}
-            .formkit-form[data-uid="5fd5d63b2c"] .formkit-fields .formkit-submit{margin-top:15px;width:100%;}
-          </style>
-        </form>
+          <button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(0, 151, 246); border-radius: 3px; font-weight: 700;">
+            <div class="formkit-spinner"><div></div><div></div><div></div></div>
+            <span>Get the IMPACT System</span>
+          </button>
+        </div>
+
+        <div class="formkit-disclaimer" style="color: rgb(139, 139, 139); font-size: 13px;" data-element="disclaimer">
+          <p>We respect your privacy. Unsubscribe at anytime.</p>
+        </div>
+
+        <div class="formkit-powered-by-convertkit-container">
+          <a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow">Built with Kit</a>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- Keep Kit’s embedded styles so the modal looks correct -->
+    <style>
+      .formkit-form[data-uid="5fd5d63b2c"] *{box-sizing:border-box;}
+      .formkit-form[data-uid="5fd5d63b2c"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+      .formkit-form[data-uid="5fd5d63b2c"] h1,.formkit-form[data-uid="5fd5d63b2c"] h2,.formkit-form[data-uid="5fd5d63b2c"] h3,.formkit-form[data-uid="5fd5d63b2c"] h4,.formkit-form[data-uid="5fd5d63b2c"] h5,.formkit-form[data-uid="5fd5d63b2c"] h6{color:inherit;font-size:inherit;font-weight:inherit;}
+      .formkit-form[data-uid="5fd5d63b2c"] p{color:inherit;font-size:inherit;font-weight:inherit;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-input,.formkit-form[data-uid="5fd5d63b2c"] .formkit-select,.formkit-form[data-uid="5fd5d63b2c"] .formkit-checkboxes{width:100%;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-button,.formkit-form[data-uid="5fd5d63b2c"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-button > span,.formkit-form[data-uid="5fd5d63b2c"] .formkit-submit > span{display:block;transition:all 300ms ease-in-out;padding:12px 24px;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;line-height:1.4;margin:0;transition:border-color ease-out 300ms;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-input:focus{outline:none;border-color:#1677be;transition:border-color ease 300ms;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-alert:empty{display:none;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner{display:flex;height:0;width:0;margin:0 auto;position:absolute;top:0;left:0;right:0;overflow:hidden;text-align:center;transition:all 300ms ease-in-out;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;animation:formkit-bouncedelay 1.4s infinite ease-in-out both;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner > div:nth-child(1){animation-delay:-0.32s;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner > div:nth-child(2){animation-delay:-0.16s;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}
+      @keyframes formkit-bouncedelay{0%,80%,100%{transform:scale(0);}40%{transform:scale(1);}}
+
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-modal.guard{max-width:420px;width:100%;}
+      .formkit-form[data-uid="5fd5d63b2c"]{box-shadow:0 0px 2px rgba(0,0,0,0.15);max-width:700px;overflow:hidden;}
+      @media only screen and (min-width:800px){.formkit-form[data-uid="5fd5d63b2c"]{min-width:600px;}}
+      .formkit-form[data-uid="5fd5d63b2c"] [data-style="full"]{width:100%;display:block;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-background{background-position:center center;background-size:cover;min-height:200px;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-column{padding:20px;position:relative;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-header{margin-top:0;margin-bottom:20px;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-field{margin:0 0 10px 0;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-input{width:100%;border-left:none;border-right:none;border-top:none;padding-left:0;padding-right:0;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-fields .formkit-submit{margin-top:15px;width:100%;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-disclaimer{margin:0 0 15px 0;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-disclaimer > p{margin:0;}
+      .formkit-form[data-uid="5fd5d63b2c"] .formkit-powered-by-convertkit-container{margin-bottom:0;margin-top:20px;}
+      .formkit-form[data-uid="5fd5d63b2c"][min-width~="600"] [data-style="full"],
+      .formkit-form[data-uid="5fd5d63b2c"][min-width~="700"] [data-style="full"],
+      .formkit-form[data-uid="5fd5d63b2c"][min-width~="800"] [data-style="full"]{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+      .formkit-form[data-uid="5fd5d63b2c"][min-width~="600"] .formkit-column,
+      .formkit-form[data-uid="5fd5d63b2c"][min-width~="700"] .formkit-column,
+      .formkit-form[data-uid="5fd5d63b2c"][min-width~="800"] .formkit-column{padding:40px;}
+    </style>
+  </form>
 </body>
 </html>
