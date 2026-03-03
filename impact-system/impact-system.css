@@ -3040,8 +3040,13 @@ ul.artifact-list li strong {
   /* Show mobile top bar */
   .mobile-top-bar { display: flex; }
 
-  /* Show overlay element (toggled via JS) */
-  .sidebar-overlay { display: block; }
+  /* Show overlay element (toggled via JS); pointer-events:none so the
+     invisible overlay doesn't block taps on main content when closed */
+  .sidebar-overlay {
+    display: block;
+    pointer-events: none;
+  }
+  .sidebar-overlay.is-visible { pointer-events: auto; }
 
   /* Push body down below fixed top bar */
   body { padding-top: 52px; }
@@ -3178,6 +3183,7 @@ ul.artifact-list li strong {
     padding: 24px 20px;
     flex-wrap: wrap;
     gap: 12px;
+    align-items: stretch; /* equal height even when one button wraps to two lines */
   }
 
   .step-footer-nav-btn {

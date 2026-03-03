@@ -465,7 +465,7 @@ p + p { margin-top: 1em; }
 
 .step-pill--identify   { background: var(--identify); }
 .step-pill--monetize   { background: var(--monetize); }
-.step-pill--productize { background: var(--productize); color: var(--ink); }
+.step-pill--productize { background: var(--productize); }
 .step-pill--activate   { background: var(--activate); }
 .step-pill--campaign   { background: var(--campaign); }
 .step-pill--triumph    { background: var(--triumph); }

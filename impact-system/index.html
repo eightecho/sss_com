@@ -252,6 +252,9 @@
 
   .cover-footer a:hover { color: rgba(255,255,255,0.4); }
 
+  /* Hidden by default; shown only inside media query below */
+  .cover-cta-below { display: none; }
+
   /* ── Mobile responsive ── */
   @media (max-width: 768px) {
     .cover-main {
@@ -375,7 +378,7 @@
     </div>
 
     <!-- Mobile-only CTA below steps -->
-    <div class="cover-cta-below" style="display:none;">
+    <div class="cover-cta-below">
       <a class="cover-cta" href="copyright.html">Get Started →</a>
     </div>
 
