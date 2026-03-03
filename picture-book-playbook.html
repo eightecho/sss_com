@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Picture Book Project Playbook — Stupid Simple Startup</title>
+  <meta name="description" content="A six-step business playbook for anyone who wants to create, publish, and sell a picture book. Built on the IMPACT System. Training, tools, and community included." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+
+  <!-- Script -->
+  <script defer src="./assets/main.js"></script>
+
+  <style>
+    /* Hero h2 — subtitle under the main headline */
+    .hero h2 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(17px, 2.2vw, 22px);
+      font-weight: 400;
+      color: var(--muted);
+      max-width: 38ch;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+
+    /* Larger step descriptions on the sales page — show on all screens */
+    .playbook-step-desc { display: block !important; }
+
+    /* Slightly more padding on step rows for a roomier feel */
+    .playbook-step {
+      align-items: flex-start;
+      padding: 24px 28px;
+    }
+
+    @media (max-width: 720px) {
+      .playbook-step { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- ── NAV ────────────────────────────────────────────── -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Stupid Simple Startup home">
+        Stupid Simple Startup
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="./impact-system.html">The IMPACT System</a></li>
+          <li><a href="./playbooks.html" aria-current="page">Playbooks</a> | <a href="./worksheets.html">Worksheets</a></li>
+          <li><a href="./community.html">Community</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="navDrawer" aria-label="Open navigation">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <rect y="4"  width="20" height="2" fill="currentColor"/>
+          <rect y="9"  width="20" height="2" fill="currentColor"/>
+          <rect y="14" width="20" height="2" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav id="navDrawer" class="nav-drawer" aria-label="Mobile navigation">
+      <a href="./impact-system.html">The IMPACT System</a>
+      <a href="./playbooks.html" aria-current="page">Playbooks</a>
+      <a href="./worksheets.html">Worksheets</a>
+      <a href="./community.html">Community</a>
+    </nav>
+  </header>
+
+
+  <!-- ── MAIN ───────────────────────────────────────────── -->
+  <main>
+
+    <!-- ── HERO ─────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero-eyebrow">Picture Book Project Playbook · Stage 1</p>
+        <h1>Turn your picture book idea into a profitable side hustle.</h1>
+        <h2>For anyone who wants to create, publish, and sell a picture book — without the guesswork.</h2>
+        <div class="hero-actions">
+          <a href="#buy" class="btn btn-primary">
+            Get the Playbook
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#inside" class="btn btn-ghost">See what's inside ↓</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── WHAT YOU GET ──────────────────────────────────── -->
+    <section id="inside" class="section">
+      <div class="container">
+        <p class="section-label">What you get</p>
+        <div class="section-head">
+          <h2>Training. Tools. Community.</h2>
+          <p>Everything you need to execute — not just understand — each step of the process.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <p class="card-label">01 · Training</p>
+            <h3>The Playbook</h3>
+            <p>Six chapters — one per IMPACT step — applied specifically to launching a picture book side hustle. Real decisions, real tools, documented as the work actually happens.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">02 · Tools</p>
+            <h3>Worksheets</h3>
+            <p>Structured exercises for every step. Work through each chapter with something to show for it — not just notes in the margin.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">03 · Community</p>
+            <h3>Direct Support</h3>
+            <p>Private community access via Heartbeat. Ask questions at any step, share your progress, and get direct input from TADROBERT as you build.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── THE SIX CHAPTERS ──────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <p class="section-label">Inside the playbook</p>
+        <div class="section-head">
+          <h2>Six chapters. Six steps.</h2>
+          <p>Each chapter follows one step of the IMPACT System, applied specifically to launching a picture book side hustle. Chapter 1 is free.</p>
+        </div>
+
+        <div class="playbook-steps">
+
+          <!-- Chapter I: FREE -->
+          <div class="playbook-step">
+            <span class="step-pill step-pill--identify">I</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Identify</p>
+              <p class="playbook-step-desc">Validate your picture book concept before investing time, money, or energy in the wrong direction. Covers: defining your target audience, mapping the competitive landscape, identifying your publishing angle, and confirming real market demand. The chapter ends with a validated concept and a clear market position — ready to monetize.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--free">Free</span>
+          </div>
+
+          <!-- Chapter M -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--monetize">M</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Monetize</p>
+              <p class="playbook-step-desc">Build a real revenue model before you make a single page. Covers: pricing strategy, distribution channel options (Amazon KDP, Ingram Spark, direct sales), projected revenue scenarios, and what profitability actually looks like for a picture book side hustle. You finish this chapter with a real revenue model — not a guess.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+          </div>
+
+          <!-- Chapter P -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--productize">P</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Productize</p>
+              <p class="playbook-step-desc">Produce the actual book. This is the most picture-book-specific chapter in the playbook. Covers: finding and briefing an illustrator, manuscript development, page layout and design, file preparation for print-on-demand, ISBN registration, and proof review. The goal is a shippable, sellable book — done.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+          </div>
+
+          <!-- Chapter A -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--activate">A</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Activate</p>
+              <p class="playbook-step-desc">Get your first sales without a launch plan, a big email list, or a marketing budget. Covers: pre-sales to your immediate network, early-reader outreach, collecting first reviews, and the micro-launch framework. The goal: revenue in before you've built an audience.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+          </div>
+
+          <!-- Chapter C -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--campaign">C</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Campaign</p>
+              <p class="playbook-step-desc">Build the distribution and audience systems that generate ongoing sales. Covers: Amazon listing optimization, organic content strategy for discovery, email list building, and paid promotion testing. The shift from "selling copies" to "building a repeatable sales engine."</p>
+            </div>
+            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+          </div>
+
+          <!-- Chapter T -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--triumph">T</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Triumph</p>
+              <p class="playbook-step-desc">Close the loop on the side hustle. Review revenue, costs, and results against the original Monetize plan. Identify what worked, what to cut, and what to scale. Decide whether to write another book, expand the concept, or stay at this level — with a documented decision and a clear next step.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+          </div>
+
+        </div><!-- /playbook-steps -->
+
+        <div class="playbook-ctas">
+          <a href="#" class="btn btn-primary">
+            Get Chapter 1 Free
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#buy" class="btn btn-ghost">Get the Full Playbook →</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── LIVE JOURNEY ──────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <p class="section-label">How it works</p>
+        <p class="journey-head">"Not a finished course.<br>A live document."</p>
+        <p class="journey-body">TADROBERT is working through this playbook step by step — in real time. The decisions documented here aren't theoretical. They're the actual moves made to build an actual picture book side hustle. You're not reading about what might work. You're following what is working.</p>
+        <br>
+        <p class="journey-body" style="font-size: 15px;">When you buy the playbook, you get every chapter that's been documented — plus everything added as each next step is completed. The community is where you ask questions and stay current as the work progresses.</p>
+      </div>
+    </section>
+
+
+    <!-- ── PRICE + CTA ───────────────────────────────────── -->
+    <section id="buy" class="section">
+      <div class="container">
+        <p class="section-label" style="text-align:center;">Get started</p>
+
+        <div class="price-panel">
+          <p class="price-product-name">Picture Book Project Playbook</p>
+          <!-- TODO: set final price before launch ($95–$175 range) -->
+          <p class="price-amount">$97</p>
+          <p class="price-desc">One-time purchase. Access via Heartbeat.</p>
+          <ul class="price-includes">
+            <li>Six-chapter business playbook</li>
+            <li>Worksheets for every step</li>
+            <li>Private community access</li>
+            <li>Updates as new chapters are released</li>
+          </ul>
+          <!-- TODO: replace href="#" with Heartbeat cart URL -->
+          <a href="#" class="btn btn-primary" style="width:100%; text-align:center; justify-content:center; display:flex;">
+            Get the Playbook →
+          </a>
+          <p class="price-note">Step 1 is free. <a href="#" style="color:inherit; border-bottom: 1px solid var(--border);">Get it here before you buy.</a></p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── FAQ ──────────────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <p class="section-label">Questions</p>
+        <div class="section-head">
+          <h2>Common questions</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary>Do I need to have a finished idea before I start?</summary>
+            <p class="faq-answer">You need a general direction — "I want to make a picture book about [topic]" — but that's all. Chapter 1 (Identify) is specifically designed to help you validate and sharpen the idea before you commit to anything. You don't need a finished concept to get started.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do I need to be able to illustrate?</summary>
+            <p class="faq-answer">No. Chapter 3 (Productize) covers exactly how to find, brief, and work with an illustrator — including what to look for, how to structure the agreement, and how to manage the process. Your job is the concept and story. Someone else handles the artwork.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What is the community, and how does it work?</summary>
+            <p class="faq-answer">It's a private community hosted on Heartbeat. Access is included when you purchase the playbook. TADROBERT is active there — ask questions at any step, share your progress, and get feedback as you work through each chapter.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is the playbook complete, or is it still being documented?</summary>
+            <p class="faq-answer">Both. The playbook is a live document — TADROBERT is actively working through each step in real time. Chapters are documented and released as the work is completed. When you purchase, you get immediate access to everything that's been released, plus all future chapters as they're added.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do I need the free IMPACT System first?</summary>
+            <p class="faq-answer">Not required, but recommended. The <a href="./impact-system.html">IMPACT System</a> explains the full six-step framework at a high level — understanding it first gives context that makes each chapter of the playbook sharper. It's free and takes about 20 minutes to read.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is this only for picture books, or can I use it for other types of books?</summary>
+            <p class="faq-answer">This playbook is built specifically for picture books — every step, every example, and every worksheet is picture-book-specific. The Productize chapter especially goes deep on picture book production. If you're self-publishing a different type of book, the underlying IMPACT System framework still applies, but this playbook won't be a perfect fit.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CTA STRIP ─────────────────────────────────────── -->
+    <section class="cta-strip">
+      <div class="container">
+        <p class="section-label">Not sure yet?</p>
+        <h2>Start with Chapter 1 — free.</h2>
+        <p>Get the Identify chapter at no cost. See the format, the depth, and the approach before you commit.</p>
+        <!-- TODO: replace href with dedicated Step 1 opt-in URL -->
+        <a href="#" class="btn btn-primary-light">
+          Get Chapter 1 Free
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; <span id="year"></span> Stupid Simple Startup</p>
+      <ul class="footer-links">
+        <li><a href="./impact-system.html">The IMPACT System</a></li>
+        <li><a href="./playbooks.html">Playbooks</a></li>
+        <li><a href="./worksheets.html">Worksheets</a></li>
+        <li><a href="./community.html">Community</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+</body>
+</html>

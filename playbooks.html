@@ -18,112 +18,10 @@
   <script defer src="./assets/main.js"></script>
 
   <style>
-
-    /* ── PLAYBOOK STEPS LIST ────────────────────────────────── */
-    .playbook-steps {
-      border: 1px solid var(--border);
-      margin: 0 0 40px;
+    /* Page-specific: hide step descriptions on mobile to keep rows tight */
+    @media (max-width: 720px) {
+      .playbook-step-desc { display: none; }
     }
-
-    .playbook-step {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      padding: 22px 24px;
-      background: var(--card);
-    }
-
-    .playbook-step + .playbook-step {
-      border-top: 1px solid var(--border);
-    }
-
-    .playbook-step-body {
-      flex: 1;
-    }
-
-    .playbook-step-name {
-      font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-      margin-bottom: 3px;
-    }
-
-    .playbook-step-desc {
-      font-family: var(--serif);
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    /* Paid steps: keep pills vibrant, soften text */
-    .playbook-step--paid .playbook-step-name {
-      color: var(--muted);
-    }
-
-    .playbook-badge {
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 5px 11px;
-      flex-shrink: 0;
-      white-space: nowrap;
-    }
-
-    .playbook-badge--free {
-      background: var(--activate);
-      color: #fff;
-    }
-
-    .playbook-badge--paid {
-      background: transparent;
-      color: var(--muted);
-      border: 1px solid var(--border);
-    }
-
-    /* CTAs row */
-    .playbook-ctas {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    /* Attribution line */
-    .playbook-byline {
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-
-    /* ── MOBILE ─────────────────────────────────────────────── */
-    @media (max-width: 640px) {
-      .playbook-step {
-        padding: 18px 20px;
-        gap: 13px;
-        align-items: flex-start;
-      }
-
-      .playbook-badge {
-        font-size: 8px;
-        padding: 4px 9px;
-        align-self: center;
-      }
-
-      .playbook-step-desc {
-        display: none; /* keep rows tight on small screens */
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -264,8 +162,13 @@
               <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <a href="#" class="btn btn-ghost">Get the Full Playbook →</a>
+          <a href="./picture-book-playbook.html" class="btn btn-ghost">Learn More →</a>
         </div>
+
+        <p class="playbook-ctas-sub">
+          Ready to buy? <a href="#" target="_blank">Go straight to checkout →</a>
+          <!-- TODO: replace href="#" with Heartbeat cart URL -->
+        </p>
 
         <p class="playbook-byline">Documented by TADROBERT</p>
 
