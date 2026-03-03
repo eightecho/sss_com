@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Playbooks — Stupid Simple Startup</title>
-  <meta name="description" content="Step-by-step playbooks built on the IMPACT System. Coming soon." />
+  <meta name="description" content="Step-by-step playbooks that apply the IMPACT System to a specific business type — documented in real time as the work actually happens." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,8 +16,118 @@
 
   <!-- Script -->
   <script defer src="./assets/main.js"></script>
+
+  <style>
+
+    /* ── PLAYBOOK STEPS LIST ────────────────────────────────── */
+    .playbook-steps {
+      border: 1px solid var(--border);
+      margin: 0 0 40px;
+    }
+
+    .playbook-step {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 24px;
+      background: var(--card);
+    }
+
+    .playbook-step + .playbook-step {
+      border-top: 1px solid var(--border);
+    }
+
+    .playbook-step-body {
+      flex: 1;
+    }
+
+    .playbook-step-name {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .playbook-step-desc {
+      font-family: var(--serif);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Paid steps: keep pills vibrant, soften text */
+    .playbook-step--paid .playbook-step-name {
+      color: var(--muted);
+    }
+
+    .playbook-badge {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .playbook-badge--free {
+      background: var(--activate);
+      color: #fff;
+    }
+
+    .playbook-badge--paid {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    /* CTAs row */
+    .playbook-ctas {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    /* Attribution line */
+    .playbook-byline {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+
+    /* ── MOBILE ─────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .playbook-step {
+        padding: 18px 20px;
+        gap: 13px;
+        align-items: flex-start;
+      }
+
+      .playbook-badge {
+        font-size: 8px;
+        padding: 4px 9px;
+        align-self: center;
+      }
+
+      .playbook-step-desc {
+        display: none; /* keep rows tight on small screens */
+      }
+    }
+
+  </style>
 </head>
 <body>
+
 
   <!-- ── NAV ────────────────────────────────────────────── -->
   <header class="site-nav">
@@ -54,21 +164,125 @@
 
   <!-- ── MAIN ───────────────────────────────────────────── -->
   <main>
+
+    <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <p class="hero-eyebrow">Coming soon</p>
-        <h1>Playbooks</h1>
-        <p class="hero-sub">Step-by-step guides built on the IMPACT System. Each one covers a specific job — pricing, launching, building an audience, running a campaign — with enough detail to actually execute.</p>
+        <p class="hero-eyebrow">Playbooks</p>
+        <h1>The IMPACT System,<br>in action.</h1>
+        <p class="hero-sub">Each playbook applies the full IMPACT framework to a specific business type — with every step documented in real time as the work actually happens.</p>
         <div class="hero-actions">
-          <a href="./impact-system.html" class="btn btn-ghost">
-            Start with the IMPACT System
+          <a href="#playbook" class="btn btn-ghost">
+            See the Playbook
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 2v10M3 8.5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
         </div>
       </div>
     </section>
+
+
+    <!-- Picture Book Project Playbook -->
+    <section id="playbook" class="section">
+      <div class="container">
+
+        <p class="section-label">Stage 1 · Side Hustle</p>
+        <div class="section-head">
+          <h2>Picture Book Project Playbook</h2>
+          <p>Launch a picture book side hustle — from validating the idea to getting your first sales — using all six steps of the IMPACT System. Every decision, tool, and deliverable documented in real time.</p>
+        </div>
+
+        <div class="playbook-steps">
+
+          <!-- Step I: FREE -->
+          <div class="playbook-step">
+            <span class="step-pill step-pill--identify">I</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Investigate</p>
+              <p class="playbook-step-desc">Validate the niche, understand the customer, and clarify exactly what you're building — before investing time in the wrong thing.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--free">Free</span>
+          </div>
+
+          <!-- Step M: Full Playbook -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--monetize">M</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Monetize</p>
+              <p class="playbook-step-desc">Build a revenue model before you make a single page. Price, packaging, and proof of demand.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+          </div>
+
+          <!-- Step P: Full Playbook -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--productize">P</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Productize</p>
+              <p class="playbook-step-desc">Write, illustrate, and produce a picture book that's ready to sell — fast, focused, and shippable.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+          </div>
+
+          <!-- Step A: Full Playbook -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--activate">A</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Activate</p>
+              <p class="playbook-step-desc">Get your first copies into customers' hands without a big launch, a big ad spend, or a big audience.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+          </div>
+
+          <!-- Step C: Full Playbook -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--campaign">C</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Campaign</p>
+              <p class="playbook-step-desc">Build the distribution, the audience, and the long-term sales system that keeps working after launch.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+          </div>
+
+          <!-- Step T: Full Playbook -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--triumph">T</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Triumph</p>
+              <p class="playbook-step-desc">Review what worked, double down on what didn't, and plan the next book with everything you've learned.</p>
+            </div>
+            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+          </div>
+
+        </div><!-- /playbook-steps -->
+
+        <div class="playbook-ctas">
+          <a href="#" class="btn btn-primary">
+            Get Step 1 — Free
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#" class="btn btn-ghost">Get the Full Playbook →</a>
+        </div>
+
+        <p class="playbook-byline">Documented by TADROBERT</p>
+
+      </div>
+    </section>
+
+
+    <!-- CTA Strip -->
+    <section class="cta-strip">
+      <div class="container">
+        <p class="section-label">Before the Playbook</p>
+        <h2>Start with the IMPACT System.</h2>
+        <p>The framework is free. Understanding it first makes every step of the playbook sharper.</p>
+        <button class="btn btn-primary-light" data-open-optin>Get the IMPACT System</button>
+      </div>
+    </section>
+
   </main>
 
 
@@ -84,6 +298,91 @@
       </ul>
     </div>
   </footer>
+
+
+  <!-- ── OPT-IN MODAL ───────────────────────────────────── -->
+  <div class="modal" id="optinModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-optin></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <p class="modal-title" id="modalTitle">The IMPACT System</p>
+        <button class="modal-close" data-close-optin aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Kit script (load once per page) -->
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+
+        <!-- Kit form embed -->
+        <form
+          id="kitForm"
+          action="https://app.kit.com/forms/9153371/subscriptions"
+          style="background-color: rgb(255, 255, 255); border-radius: 0;"
+          class="seva-form formkit-form"
+          method="post"
+          data-sv-form="9153371"
+          data-uid="5fd5d63b2c"
+          data-format="inline"
+          data-version="5"
+          data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Check your email to confirm access to the IMPACT System.&quot;,&quot;redirect_url&quot;:&quot;https://stupidsimplestartup.com/impact-system&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;scroll&quot;,&quot;scroll_percentage&quot;:&quot;100&quot;,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}"
+          min-width="400 500 600 700 800"
+        >
+          <div data-style="full">
+            <div data-element="column" class="formkit-background"></div>
+            <div data-element="column" class="formkit-column">
+              <div class="formkit-header" style="color: rgb(83, 83, 83); font-size: 28px; font-weight: 700;" data-element="header">
+                <h2><strong>Get the IMPACT System</strong></h2>
+              </div>
+              <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+              <div data-element="fields" class="seva-fields formkit-fields">
+                <div class="formkit-field">
+                  <input class="formkit-input" name="email_address" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400;" aria-label="Email Address" placeholder="Email Address" required="" type="email" />
+                </div>
+                <button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(28, 26, 23); border-radius: 0; font-weight: 700;">
+                  <div class="formkit-spinner"><div></div><div></div><div></div></div>
+                  <span>Get the IMPACT System</span>
+                </button>
+              </div>
+              <div class="formkit-disclaimer" style="color: rgb(139, 139, 139); font-size: 13px;" data-element="disclaimer">
+                <p>We respect your privacy. Unsubscribe at any time.</p>
+              </div>
+              <div class="formkit-powered-by-convertkit-container">
+                <a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow">Built with Kit</a>
+              </div>
+            </div>
+          </div>
+          <style>
+            .formkit-form[data-uid="5fd5d63b2c"] *{box-sizing:border-box;}
+            .formkit-form[data-uid="5fd5d63b2c"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+            .formkit-form[data-uid="5fd5d63b2c"] h1,.formkit-form[data-uid="5fd5d63b2c"] h2,.formkit-form[data-uid="5fd5d63b2c"] h3,.formkit-form[data-uid="5fd5d63b2c"] h4,.formkit-form[data-uid="5fd5d63b2c"] h5,.formkit-form[data-uid="5fd5d63b2c"] h6{color:inherit;font-size:inherit;font-weight:inherit;}
+            .formkit-form[data-uid="5fd5d63b2c"] p{color:inherit;font-size:inherit;font-weight:inherit;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;line-height:1.4;margin:0;transition:border-color 300ms ease;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-input:focus{outline:none;border-color:#1c1a17;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:0;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-alert:empty{display:none;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner{display:flex;height:0;width:0;margin:0 auto;position:absolute;top:0;left:0;right:0;overflow:hidden;text-align:center;transition:all 300ms ease;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;animation:formkit-bouncedelay 1.4s infinite ease-in-out both;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner > div:nth-child(1){animation-delay:-0.32s;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-spinner > div:nth-child(2){animation-delay:-0.16s;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}
+            @keyframes formkit-bouncedelay{0%,80%,100%{transform:scale(0);}40%{transform:scale(1);}}
+            .formkit-form[data-uid="5fd5d63b2c"]{box-shadow:none;max-width:700px;overflow:hidden;}
+            @media only screen and (min-width:800px){.formkit-form[data-uid="5fd5d63b2c"]{min-width:600px;}}
+            .formkit-form[data-uid="5fd5d63b2c"] [data-style="full"]{width:100%;display:block;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-background{display:none;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-column{padding:20px;position:relative;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-field{margin:0 0 10px 0;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-input{width:100%;border-left:none;border-right:none;border-top:none;padding-left:0;padding-right:0;}
+            .formkit-form[data-uid="5fd5d63b2c"] .formkit-fields .formkit-submit{margin-top:15px;width:100%;}
+          </style>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
 
 </body>
 </html>
