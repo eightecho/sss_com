@@ -1,58 +1,60 @@
-(function () {
-  "use strict";
-
-  var modal = document.getElementById("optinModal");
-  var openButtons = document.querySelectorAll("[data-open-optin]");
-  var closeButtons = document.querySelectorAll("[data-close-optin]");
-  var yearEl = document.getElementById("year");
-  var kitForm = document.getElementById("kitForm");
-  var redirectNote = document.getElementById("redirectNote");
-
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
-  function openModal() {
-    if (!modal) return;
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-
-    // Try to focus the email field
-    window.setTimeout(function () {
-      var email = modal.querySelector('input[name="email_address"]');
-      if (email) email.focus();
-    }, 50);
+(() => {
+  function qs(sel, root = document) {
+    return root.querySelector(sel);
+  }
+  function qsa(sel, root = document) {
+    return Array.from(root.querySelectorAll(sel));
   }
 
-  function closeModal() {
-    if (!modal) return;
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+  function setYear() {
+    const el = qs("#year");
+    if (el) el.textContent = String(new Date().getFullYear());
   }
 
-  openButtons.forEach(function (btn) {
-    btn.addEventListener("click", openModal);
-  });
+  function setupOptinModal() {
+    const modal = qs("#optinModal");
+    if (!modal) return;
 
-  closeButtons.forEach(function (btn) {
-    btn.addEventListener("click", closeModal);
-  });
+    const openers = qsa("[data-open-optin]");
+    const closers = qsa("[data-close-optin]");
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeModal();
-  });
+    function openModal() {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
 
-  // Redirect handling:
-  // - If Kit double opt-in is ON, their redirect may not happen immediately until confirmation.
-  // - We provide a simple, predictable fallback: show a note + direct link, and do an optional timed redirect.
-  if (kitForm) {
-    kitForm.addEventListener("submit", function () {
-      // Show the note right away so the user knows what’s happening.
-      if (redirectNote) redirectNote.hidden = false;
+      // focus email field if present
+      const email = qs('input[name="email_address"]', modal);
+      if (email) setTimeout(() => email.focus(), 50);
+    }
 
-      // Optional optimistic redirect:
-      // If you want to ALWAYS wait for confirmation, delete this timeout block.
-      window.setTimeout(function () {
-        window.location.href = "https://stupidsimplestartup.com/impact-system";
-      }, 1800);
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    openers.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    closers.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeModal();
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
     });
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setYear();
+    setupOptinModal();
+  });
 })();
