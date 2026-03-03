@@ -1,0 +1,698 @@
+/* ═══════════════════════════════════════════════════════════
+   STUPID SIMPLE STARTUP — Stylesheet
+   stupidsimplestartup.com
+   Fonts: Montserrat (structure/UI) · Libre Baskerville (titles/body)
+   Palette: IS warm white + warm dark, no SSS accent color
+   IS step colors appear only on impact-system.html
+═══════════════════════════════════════════════════════════ */
+
+
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg:       #faf8f4;
+  --card:     #ffffff;
+  --ink-bg:   #1c1a17;   /* dark strip / footer */
+
+  /* Text */
+  --ink:      #1c1a17;
+  --muted:    #6b6966;
+  --on-dark:  rgba(255,255,255,0.88);
+  --on-dark-m: rgba(255,255,255,0.45);
+
+  /* Borders */
+  --border:   rgba(28,26,23,0.13);
+
+  /* Typography */
+  --sans:     'Montserrat', sans-serif;
+  --serif:    'Libre Baskerville', Georgia, serif;
+
+  /* Layout */
+  --max:      960px;
+  --pad:      clamp(20px, 5vw, 60px);
+  --section-gap: clamp(64px, 10vw, 120px);
+
+  /* IS step colors — used only on impact-system.html */
+  --identify:   #E05252;
+  --monetize:   #4A90C4;
+  --productize: #E6A817;
+  --activate:   #4AA85A;
+  --campaign:   #E07830;
+  --triumph:    #9B5CC4;
+}
+
+
+/* ── RESET ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+/* ── BASE ────────────────────────────────────────────────── */
+body {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+p + p { margin-top: 1em; }
+
+
+/* ── LAYOUT HELPERS ──────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+
+/* ── NAVIGATION ──────────────────────────────────────────── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+/* Wordmark */
+.brand {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.brand:hover { text-decoration: none; }
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* Hamburger (mobile) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--ink);
+}
+
+.nav-toggle svg { display: block; }
+
+/* Mobile nav drawer */
+.nav-drawer {
+  display: none;
+  border-top: 1px solid var(--border);
+  padding: 16px 0;
+}
+
+.nav-drawer.is-open {
+  display: block;
+}
+
+.nav-drawer a {
+  display: block;
+  padding: 10px var(--pad);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav-drawer a:hover { color: var(--ink); }
+
+
+/* ── SECTION BASE ────────────────────────────────────────── */
+.section {
+  padding-block: var(--section-gap);
+}
+
+.section + .section {
+  border-top: 1px solid var(--border);
+}
+
+.section-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.section-head {
+  margin-bottom: 48px;
+}
+
+.section-head h2 {
+  font-family: var(--sans);
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.section-head p {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+
+/* ── HERO ────────────────────────────────────────────────── */
+.hero {
+  padding-top: clamp(64px, 10vw, 120px);
+  padding-bottom: clamp(64px, 10vw, 120px);
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: var(--sans);
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--ink);
+  max-width: 14ch;
+  margin-bottom: 24px;
+}
+
+.hero-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--muted);
+  max-width: 46ch;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+
+/* ── CARDS ───────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  padding: 32px 28px;
+}
+
+.card-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+
+/* ── WHO CARDS ───────────────────────────────────────────── */
+.who-card {
+  background: var(--card);
+  padding: 32px 28px;
+}
+
+.who-card h3 {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.who-card p {
+  font-family: var(--serif);
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+
+/* ── WHY / ROADMAP ───────────────────────────────────────── */
+.why-body {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink);
+  max-width: 52ch;
+  margin-bottom: 32px;
+}
+
+.why-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 2px;
+  transition: opacity 0.15s;
+}
+
+.why-link:hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+
+/* ── CTA STRIP (dark) ────────────────────────────────────── */
+.cta-strip {
+  background: var(--ink-bg);
+  padding-block: clamp(56px, 8vw, 96px);
+  text-align: center;
+}
+
+.cta-strip .section-label {
+  color: var(--on-dark-m);
+}
+
+.cta-strip h2 {
+  font-family: var(--sans);
+  font-size: clamp(22px, 3.5vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--on-dark);
+  margin-bottom: 12px;
+}
+
+.cta-strip p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--on-dark-m);
+  margin-bottom: 36px;
+  max-width: 44ch;
+  margin-inline: auto;
+}
+
+
+/* ── BUTTONS ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+
+.btn:hover { opacity: 0.75; text-decoration: none; }
+
+.btn-primary {
+  background: var(--ink);
+  color: #fff;
+  padding: 14px 28px;
+}
+
+.btn-primary-light {
+  background: var(--on-dark);
+  color: var(--ink);
+  padding: 14px 28px;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  padding: 14px 0;
+  border-bottom: 1.5px solid var(--ink);
+}
+
+
+/* ── IS STEP PILLS (impact-system.html only) ─────────────── */
+.step-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.step-pill {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.step-pill--identify   { background: var(--identify); }
+.step-pill--monetize   { background: var(--monetize); }
+.step-pill--productize { background: var(--productize); color: var(--ink); }
+.step-pill--activate   { background: var(--activate); }
+.step-pill--campaign   { background: var(--campaign); }
+.step-pill--triumph    { background: var(--triumph); }
+
+
+/* ── IS STEPS LIST (impact-system.html only) ─────────────── */
+.steps-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.step-item {
+  background: var(--card);
+  padding: 28px 24px;
+  border-left: 3px solid transparent;
+}
+
+.step-item--identify   { border-left-color: var(--identify); }
+.step-item--monetize   { border-left-color: var(--monetize); }
+.step-item--productize { border-left-color: var(--productize); }
+.step-item--activate   { border-left-color: var(--activate); }
+.step-item--campaign   { border-left-color: var(--campaign); }
+.step-item--triumph    { border-left-color: var(--triumph); }
+
+.step-num {
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.step-name {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-family: var(--serif);
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+
+/* ── IMPACT WORDMARK (impact-system.html hero) ───────────── */
+.impact-wordmark {
+  /* Inherits parent font — color cascades from step pills */
+}
+
+/* Subtle step-color striping on the IMPACT letters */
+.impact-i  { color: var(--identify); }
+.impact-m  { color: var(--monetize); }
+.impact-p  { color: var(--productize); }
+.impact-a  { color: var(--activate); }
+.impact-c  { color: var(--campaign); }
+.impact-t  { color: var(--triumph); }
+
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.site-footer {
+  background: var(--ink-bg);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-block: 32px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-dark-m);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.footer-links a {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-dark-m);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover { color: var(--on-dark); }
+
+
+/* ── MODAL ───────────────────────────────────────────────── */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+}
+
+.modal.is-open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(28,26,23,0.65);
+}
+
+.modal-dialog {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  width: min(680px, calc(100% - 32px));
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-header {
+  padding: 28px 28px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.modal-title {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 20px;
+  line-height: 1;
+  padding: 0;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.modal-close:hover { color: var(--ink); }
+
+.modal-body {
+  padding: 16px 28px 28px;
+}
+
+/* Kit form overrides — strip the stock UI chrome */
+.modal-body .formkit-form[data-uid="5fd5d63b2c"] {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.modal-body .formkit-background {
+  display: none !important;
+}
+
+body.modal-open { overflow: hidden; }
+
+
+/* ── UTILITIES ───────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+
+/* ── MOBILE ──────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .modal-header,
+  .modal-body {
+    padding-inline: 20px;
+  }
+}

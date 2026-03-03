@@ -1,0 +1,19 @@
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Misc
+Thumbs.db
+ehthumbs.db
