@@ -275,6 +275,13 @@
     /* hide italic question text — too cramped at mobile */
     .cover-step-q { display: none; }
 
+    /* Move CTA below steps: hide in-left button, show below button */
+    .cover-left .cover-cta { display: none; }
+    .cover-cta-below {
+      display: block;
+      padding: 28px 28px 0;
+    }
+
     .cover-footer {
       padding: 13px 28px;
       flex-wrap: wrap;
@@ -366,6 +373,12 @@
       </div>
 
     </div>
+
+    <!-- Mobile-only CTA below steps -->
+    <div class="cover-cta-below" style="display:none;">
+      <a class="cover-cta" href="copyright.html">Get Started →</a>
+    </div>
+
   </div>
 
   <div class="cover-footer">
