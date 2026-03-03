@@ -250,6 +250,50 @@
   }
 
   .cover-footer a:hover { color: rgba(255,255,255,0.4); }
+
+  /* ── Mobile ── */
+  @media (max-width: 768px) {
+    /* Flatten grid — cover-left becomes transparent so its children
+       flow directly into cover-main's flex context */
+    .cover-main {
+      display: flex;
+      flex-direction: column;
+      min-height: unset;
+    }
+
+    .cover-left {
+      display: contents; /* children become direct flex children of cover-main */
+    }
+
+    .cover-left::after { display: none; }
+
+    /* Order: brand → title block → steps → cta-wrap → author */
+    .cover-brand      { order: 1; padding: 32px 24px 0; }
+    .cover-title-block { order: 2; padding: 16px 24px 0; }
+    .cover-right      { order: 3; padding: 24px 24px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+    .cover-cta-wrap   { order: 4; padding: 28px 24px 0; }
+    .cover-author     { order: 5; padding: 20px 24px 32px; }
+
+    .cover-title { font-size: clamp(48px, 14vw, 80px); }
+    .cover-title-sub { font-size: clamp(26px, 8vw, 44px); }
+    .cover-desc { font-size: 16px; margin-bottom: 0; }
+
+    /* Hide italic question text on mobile */
+    .cover-step-q { display: none; }
+
+    .cover-step { gap: 14px; padding: 12px 0; }
+    .cover-step-name { font-size: 15px; }
+
+    .cover-footer {
+      padding: 16px 24px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cover-footer a[style*="margin-left:auto"] {
+      margin-left: 0 !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -266,8 +310,9 @@
         <h1 class="cover-title">IMPACT</h1>
         <div class="cover-title-sub">System</div>
         <p class="cover-desc">Six sequential steps for solo operators who need to know what to do, in what order, and how to know when it's working.</p>
-        <a class="cover-cta" href="copyright.html">Get Started →</a>
       </div>
+
+      <div class="cover-cta-wrap"><a class="cover-cta" href="copyright.html">Get Started →</a></div>
 
       <div class="cover-author">By TADROBERT &nbsp;·&nbsp; stupidsimplestartup.com</div>
     </div>

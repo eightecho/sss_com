@@ -2923,23 +2923,25 @@ ul.artifact-list li strong {
   color: var(--body);
 }
 
-
 /* ═══════════════════════════════════════════════════════════
-   MOBILE NAV TOGGLE BUTTON
-   Fixed top bar that replaces sidebar on small screens
+   MOBILE RESPONSIVE LAYER
+   Breakpoint: 768px
+   stupidsimplestartup.com
 ═══════════════════════════════════════════════════════════ */
 
+/* ── Mobile Top Bar (hidden on desktop) ── */
 .mobile-top-bar {
   display: none;
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 52px;
   background: var(--dark);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 16px;
   z-index: 200;
+  box-sizing: border-box;
 }
 
 .mobile-top-bar-brand {
@@ -2951,25 +2953,26 @@ ul.artifact-list li strong {
 .mobile-top-bar-eyebrow {
   font-family: var(--mono);
   font-size: 8px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.4);
   line-height: 1;
 }
 
 .mobile-top-bar-title {
   font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.55);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.92);
   line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 
 .mobile-top-bar-title strong {
   font-weight: 800;
-  color: var(--white);
 }
 
+/* ── Hamburger Button ── */
 .mobile-hamburger {
   display: flex;
   flex-direction: column;
@@ -2977,254 +2980,229 @@ ul.artifact-list li strong {
   gap: 5px;
   width: 36px;
   height: 36px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 6px;
+  background: none;
+  border: none;
   cursor: pointer;
-  padding: 8px 9px;
+  padding: 6px;
+  border-radius: 6px;
   flex-shrink: 0;
-  transition: background 0.15s;
 }
 
-.mobile-hamburger:hover { background: rgba(255,255,255,0.1); }
+.mobile-hamburger:hover {
+  background: rgba(255,255,255,0.08);
+}
 
 .mobile-hamburger span {
   display: block;
-  height: 1.5px;
-  background: rgba(255,255,255,0.65);
+  width: 20px;
+  height: 2px;
+  background: rgba(255,255,255,0.8);
   border-radius: 2px;
-  transition: all 0.22s ease;
+  transition: transform 0.22s ease, opacity 0.22s ease;
   transform-origin: center;
 }
 
-/* Hamburger → X animation */
-.mobile-hamburger.is-open span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
-}
-.mobile-hamburger.is-open span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-.mobile-hamburger.is-open span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
-}
+.mobile-hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mobile-hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.mobile-hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-
-/* ═══════════════════════════════════════════════════════════
-   SIDEBAR OVERLAY (mobile only)
-═══════════════════════════════════════════════════════════ */
-
+/* ── Sidebar Overlay ── */
 .sidebar-overlay {
   display: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(2px);
   z-index: 149;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.25s ease;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
 }
 
 .sidebar-overlay.is-visible {
   opacity: 1;
+  pointer-events: auto;
 }
 
-
-/* ═══════════════════════════════════════════════════════════
-   RESPONSIVE BREAKPOINTS
-═══════════════════════════════════════════════════════════ */
-
+/* ══════════════════════════════════════════
+   MOBILE BREAKPOINT
+══════════════════════════════════════════ */
 @media (max-width: 768px) {
 
   /* Show mobile top bar */
   .mobile-top-bar { display: flex; }
 
-  /* Show overlay element (toggled via JS) */
+  /* Show overlay container */
   .sidebar-overlay { display: block; }
 
   /* Push body down below fixed top bar */
   body { padding-top: 52px; }
 
-  /* ── SIDEBAR: hide by default, slide in on open ── */
+  /* ── Sidebar: slide in from left ── */
   .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 280px;
+    height: 100vh;
     transform: translateX(-100%);
     transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 150;
-    /* Keep all existing sidebar styles, just control visibility */
+    overflow-y: auto;
+    box-shadow: none;
   }
 
   .sidebar.is-open {
     transform: translateX(0);
+    box-shadow: 4px 0 32px rgba(0,0,0,0.35);
   }
 
-  /* ── MAIN: full width, no left margin ── */
+  /* ── Main content: full width ── */
   .main {
     margin-left: 0;
+    width: 100%;
   }
 
-  /* ── STEP HERO ── */
-  .step-hero {
-    padding: 36px 24px 32px;
-  }
-
-  .step-hero::before {
-    font-size: 80px;
-    right: -10px;
-    color: rgba(0,0,0,0.07);
-  }
-
-  .step-hero-title { font-size: clamp(28px, 8vw, 42px); }
-  .step-hero-subtitle { font-size: 15px; }
-  .step-hero-question { font-size: 16px; }
-
-  /* ── CONTENT ── */
+  /* ── Layout containers ── */
   .content {
-    padding: 36px 24px 64px;
+    padding: 48px 24px 64px;
   }
 
-  /* ── PHASE HERO ── */
+  /* ── Hero sections ── */
+  .step-hero {
+    padding: 40px 24px 48px;
+  }
+
+  .step-hero-title {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+  }
+
   .phase-hero {
-    padding: 36px 24px 32px;
+    padding: 40px 24px 48px;
   }
 
-  .phase-hero-title { font-size: clamp(28px, 8vw, 42px); }
-  .phase-hero-subtitle { font-size: 16px; }
-
-  /* ── PHASE STEPS ROW: stack vertically ── */
-  .phase-steps-row {
-    flex-direction: column;
-    gap: 8px;
-    padding: 20px 24px;
+  .phase-hero-title {
+    font-size: clamp(2rem, 7vw, 3rem);
   }
 
-  /* ── INTRO STEP GRID: single column ── */
-  .intro-step-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
+  .intro-hero {
+    padding: 40px 24px 48px;
   }
 
-  /* ── CHECKPOINT: stack columns ── */
+  .intro-hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+  }
+
+  .cta-hero {
+    padding: 48px 24px 56px;
+  }
+
+  .utility-hero {
+    padding: 40px 24px 48px;
+  }
+
+  /* ── Section titles ── */
+  .section-title {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+  }
+
+  /* ── Decision checkpoint grid: 3-col → 1-col ── */
   .checkpoint-row {
-    grid-template-columns: 1fr;
-  }
-
-  .checkpoint-col {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .checkpoint-col:last-child { border-bottom: none; }
-
-  /* ── GOAL TIERS: single column ── */
-  .goal-tiers {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  /* ── SCOPE GRID: single column ── */
-  .scope-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* ── GLOSSARY GRID: single column ── */
-  .glossary-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* ── LOOP TYPES GRID: single column ── */
-  .loop-types-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* ── DECISION MATRIX: adjust grid ── */
-  .decision-matrix-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .dm-question:nth-child(2n) { border-right: none; }
-  .dm-question:nth-child(4n) { border-right: 1px solid var(--border); }
-  .dm-question:nth-last-child(-n+2) { border-bottom: none; }
-  .dm-question:nth-last-child(-n+4) { border-bottom: 1px solid var(--border); }
-
-  /* ── ABOUT BLOCK: single column ── */
-  .about-block {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  /* ── VERSION CARD: hide purpose from header ── */
-  .version-card-purpose { display: none; }
-  .anatomy-phase-timeline { display: none; }
-  .process-phase-tagline { display: none; }
-  .triumph-tool-question { display: none; }
-  .campaign-category-note { display: none; }
-  .campaign-type-purpose { display: none; }
-  .step-review-trigger { display: none; }
-  .quick-ref-question { display: none; }
-  .pillar-tagline { display: none; }
-
-  /* ── PROCESS PHASE BODY: reduce indent ── */
-  .process-phase-body { padding: 0 16px 16px 16px; }
-  .anatomy-phase-body { padding: 0 16px 16px 16px; }
-
-  /* ── FOOTER NAV ── */
-  .step-footer-nav {
-    padding: 24px 20px;
-    flex-wrap: wrap;
+  /* ── Intro step grid: 2-col → 1-col (then 2-col at 480px) ── */
+  .intro-step-grid {
+    grid-template-columns: 1fr;
     gap: 12px;
   }
 
-  .step-footer-nav-btn {
-    padding: 12px 16px;
-    flex: 1;
-    min-width: 130px;
+  @media (min-width: 480px) {
+    .intro-step-grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
-  /* ── SITE FOOTER ── */
-  .site-footer {
-    padding: 14px 24px;
-    flex-wrap: wrap;
-    gap: 8px;
+  /* ── Goal tiers: 3-col → 1-col ── */
+  .goal-tiers {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  /* ── CTA PAGE ── */
-  .cta-hero {
-    padding: 40px 24px 36px;
+  /* ── Scope grid: 2-col → 1-col ── */
+  .scope-grid {
+    grid-template-columns: 1fr;
   }
 
-  .cta-hero-title { font-size: clamp(24px, 7vw, 36px); }
-  .cta-hero-subtitle { font-size: 16px; }
-
-  .cta-offer-block {
-    padding: 32px 24px;
+  /* ── Glossary grid: 2-col → 1-col ── */
+  .glossary-grid {
+    grid-template-columns: 1fr;
   }
 
+  /* ── Loop types grid: 3-col → 1-col ── */
+  .loop-types-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* ── Decision matrix grid: 4-col → 2-col ── */
+  .decision-matrix-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ── CTA offer grid: 2-col → 1-col ── */
   .cta-offer-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
 
-  .cta-purchase-card {
-    position: static; /* remove sticky on mobile */
+  /* ── Sticky purchase card: unstick on mobile ── */
+  .purchase-card {
+    position: static;
   }
 
-  .cta-trust-row { padding: 32px 24px; }
-  .cta-footer-links {
-    padding: 24px 24px;
+  /* ── Footer nav ── */
+  .step-footer-nav {
+    padding: 24px 20px;
+    gap: 12px;
     flex-wrap: wrap;
-    gap: 14px;
+    align-items: stretch;
   }
 
-  /* ── QUICK REF HEADER: stack on small screens ── */
-  .quick-ref-header {
-    flex-wrap: wrap;
-    gap: 6px;
+  .step-footer-nav-label {
+    display: none;
+  }
+
+  .step-footer-nav-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 14px;
+    align-items: flex-start;
+  }
+
+  /* ── Site footer ── */
+  .site-footer {
+    padding: 14px 24px;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  /* ── Hide secondary text to save space ── */
+  .version-card-purpose,
+  .anatomy-phase-timeline,
+  .process-phase-tagline,
+  .triumph-tool-question,
+  .campaign-category-note,
+  .step-review-trigger,
+  .pillar-tagline {
+    display: none;
   }
 
 }
 
-/* Slightly wider mobile: allow some 2-col layouts back */
-@media (max-width: 768px) and (min-width: 480px) {
-  .intro-step-grid { grid-template-columns: 1fr 1fr; }
+/* Remove browser default focus outline on hamburger, use custom */
+.mobile-hamburger:focus { outline: none; }
+.mobile-hamburger:focus-visible {
+  outline: 2px solid rgba(196,163,90,0.6);
+  outline-offset: 2px;
 }
-
