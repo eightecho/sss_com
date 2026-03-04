@@ -223,7 +223,11 @@
       background: var(--pb-accent);
       color: #fff;
       padding: 4px 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
     }
+    .worksheet-preview-badge:hover { opacity: 0.82; }
 
     .worksheet-preview-body {
       padding: 24px 28px;
@@ -317,7 +321,7 @@
     }
 
     .worksheet-preview-footer {
-      padding: 14px 28px;
+      padding: 14px 28px 18px;
       border-top: 1px solid var(--border);
       background: var(--surface);
     }
@@ -328,6 +332,26 @@
       margin: 0;
       font-style: italic;
     }
+
+    .worksheet-preview-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pb-accent);
+      background: none;
+      border: none;
+      border-bottom: 1.5px solid var(--pb-accent);
+      padding: 0 0 1px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .worksheet-preview-cta:hover { opacity: 0.7; }
 
     @media (max-width: 720px) {
       .playbook-step { padding: 20px; }
@@ -527,7 +551,7 @@
               <p class="worksheet-preview-label">Step 1 Worksheet</p>
               <p class="worksheet-preview-title">Identify</p>
             </div>
-            <span class="worksheet-preview-badge">Included Free</span>
+            <button class="worksheet-preview-badge" data-open-optin>Included Free</button>
           </div>
 
           <div class="worksheet-preview-body">
@@ -584,6 +608,12 @@
 
           <div class="worksheet-preview-footer">
             <p>Every chapter includes a worksheet like this — structured exercises you complete, not PDFs you file away. Six chapters, six worksheets, all included.</p>
+            <button class="worksheet-preview-cta" data-open-optin>
+              Get the Worksheet Free
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden="true">
+                <path d="M1 5h10M7 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </div>
 
         </div>
