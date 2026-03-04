@@ -679,9 +679,10 @@ p + p { margin-top: 1em; }
 }
 
 /* Kit form overrides — strip the stock UI chrome */
-.modal-body .formkit-form[data-uid="5fd5d63b2c"] {
+.modal-body .formkit-form[data-uid="195ac6fa15"] {
   box-shadow: none !important;
   border-radius: 0 !important;
+  border: none !important;
 }
 
 .modal-body .formkit-background {
