@@ -21,13 +21,15 @@
     /* No border between What We Offer and IMPACT section */
     #what + .section { border-top: none; }
 
-    /* "One Powerful Framework" intro line */
+    /* "One Powerful Framework" — matches section h2 style */
     .impact-frame-head {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(15px, 2vw, 19px);
-      color: var(--muted);
-      margin-bottom: 14px;
+      font-family: var(--sans);
+      font-size: clamp(22px, 3.5vw, 34px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 20px;
     }
 
     /* Large IMPACT colored letters */
@@ -67,15 +69,24 @@
       margin-bottom: 8px;
     }
 
+    /* Colored step bar */
     .isp-num {
       font-family: var(--sans);
-      font-size: 8px;
+      font-size: 9px;
       font-weight: 700;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
+      color: #fff;
+      padding: 7px 12px;
+      margin-bottom: 14px;
     }
+
+    .isp-row--identify   .isp-num { background: var(--identify); }
+    .isp-row--monetize   .isp-num { background: var(--monetize); }
+    .isp-row--productize .isp-num { background: var(--productize); }
+    .isp-row--activate   .isp-num { background: var(--activate); }
+    .isp-row--campaign   .isp-num { background: var(--campaign); }
+    .isp-row--triumph    .isp-num { background: var(--triumph); }
 
     .isp-name {
       font-family: var(--sans);
@@ -190,32 +201,32 @@
         <p class="impact-desc">A free, complete framework for building a business from scratch. Do the steps in order. The work gets simpler when you stop guessing what comes next.</p>
 
         <div class="impact-steps-prose">
-          <div class="isp-row">
+          <div class="isp-row isp-row--identify">
             <p class="isp-num">Step 1 · Identify</p>
             <p class="isp-name">Validate before you build.</p>
             <p class="isp-desc">Lock in the idea, understand the customer, and confirm real demand — before you invest time or money in the wrong direction.</p>
           </div>
-          <div class="isp-row">
+          <div class="isp-row isp-row--monetize">
             <p class="isp-num">Step 2 · Monetize</p>
             <p class="isp-name">Price before you produce.</p>
             <p class="isp-desc">Build a real revenue model before you create a single deliverable. Price, packaging, and proof of demand come first.</p>
           </div>
-          <div class="isp-row">
+          <div class="isp-row isp-row--productize">
             <p class="isp-num">Step 3 · Productize</p>
             <p class="isp-name">Build what you've already sold.</p>
             <p class="isp-desc">Create the actual thing — scoped, focused, and shippable. Done is the goal. Perfect is not.</p>
           </div>
-          <div class="isp-row">
+          <div class="isp-row isp-row--activate">
             <p class="isp-num">Step 4 · Activate</p>
             <p class="isp-name">Get first sales without a launch.</p>
             <p class="isp-desc">Revenue before the audience, the ad spend, or the big launch event. First customers through direct effort.</p>
           </div>
-          <div class="isp-row">
+          <div class="isp-row isp-row--campaign">
             <p class="isp-num">Step 5 · Campaign</p>
             <p class="isp-name">Build the sales engine.</p>
             <p class="isp-desc">Develop the distribution and audience systems that generate ongoing, repeatable revenue long after launch.</p>
           </div>
-          <div class="isp-row">
+          <div class="isp-row isp-row--triumph">
             <p class="isp-num">Step 6 · Triumph</p>
             <p class="isp-name">Review, decide, and repeat.</p>
             <p class="isp-desc">Close the loop. What worked, what didn't, and what comes next — documented and decided before moving on.</p>
