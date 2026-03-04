@@ -123,7 +123,7 @@ p + p { margin-top: 1em; }
 .brand {
   font-family: var(--sans);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
@@ -214,7 +214,7 @@ p + p { margin-top: 1em; }
 .section-label {
   font-family: var(--sans);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -253,7 +253,7 @@ p + p { margin-top: 1em; }
 .hero-eyebrow {
   font-family: var(--sans);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -264,7 +264,7 @@ p + p { margin-top: 1em; }
   font-family: var(--sans);
   font-size: clamp(32px, 6vw, 64px);
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: .01em;
   line-height: 1.05;
   color: var(--ink);
   max-width: 14ch;
@@ -297,7 +297,7 @@ p + p { margin-top: 1em; }
 .card-label {
   font-family: var(--sans);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -307,8 +307,8 @@ p + p { margin-top: 1em; }
 .card h3 {
   font-family: var(--sans);
   font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: .01em;
   color: var(--ink);
   margin-bottom: 10px;
 }
@@ -330,7 +330,7 @@ p + p { margin-top: 1em; }
 .who-card h3 {
   font-family: var(--sans);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--ink);
   margin-bottom: 6px;
@@ -360,7 +360,7 @@ p + p { margin-top: 1em; }
   gap: 8px;
   font-family: var(--sans);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink);
@@ -393,7 +393,7 @@ p + p { margin-top: 1em; }
   font-family: var(--sans);
   font-size: clamp(22px, 3.5vw, 36px);
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: .01em;
   color: var(--ink);
   margin-bottom: 12px;
 }
@@ -446,7 +446,7 @@ p + p { margin-top: 1em; }
   gap: 8px;
   font-family: var(--sans);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
@@ -489,7 +489,7 @@ p + p { margin-top: 1em; }
 .step-pill {
   font-family: var(--sans);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #fff;
@@ -530,7 +530,7 @@ p + p { margin-top: 1em; }
 .step-num {
   font-family: var(--sans);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
@@ -540,8 +540,8 @@ p + p { margin-top: 1em; }
 .step-name {
   font-family: var(--sans);
   font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: .01em;
   color: var(--ink);
   margin-bottom: 8px;
 }
@@ -653,7 +653,7 @@ p + p { margin-top: 1em; }
 .modal-title {
   font-family: var(--sans);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
@@ -719,8 +719,8 @@ body.modal-open { overflow: hidden; }
 .playbook-step-name {
   font-family: var(--sans);
   font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: .01em;
   color: var(--ink);
   margin-bottom: 3px;
 }
@@ -741,7 +741,7 @@ body.modal-open { overflow: hidden; }
 .playbook-badge {
   font-family: var(--sans);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 5px 11px;
@@ -785,7 +785,7 @@ body.modal-open { overflow: hidden; }
 .playbook-byline {
   font-family: var(--sans);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
@@ -826,7 +826,7 @@ body.modal-open { overflow: hidden; }
 .price-product-name {
   font-family: var(--sans);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
@@ -837,7 +837,7 @@ body.modal-open { overflow: hidden; }
   font-family: var(--sans);
   font-size: clamp(40px, 6vw, 56px);
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: .01em;
   color: var(--ink);
   line-height: 1;
   margin-bottom: 8px;
@@ -871,7 +871,7 @@ body.modal-open { overflow: hidden; }
   content: '✓';
   font-family: var(--sans);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--activate);
   flex-shrink: 0;
 }
@@ -901,8 +901,8 @@ body.modal-open { overflow: hidden; }
 .faq-item summary {
   font-family: var(--sans);
   font-size: 15px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: .01em;
   color: var(--ink);
   padding: 18px 0;
   cursor: pointer;
@@ -958,7 +958,7 @@ body.modal-open { overflow: hidden; }
   font-family: var(--sans);
   font-size: clamp(18px, 2.5vw, 24px);
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: .01em;
   color: var(--ink);
   line-height: 1.2;
   margin-top: 10px;
@@ -991,7 +991,7 @@ body.modal-open { overflow: hidden; }
   content: '→';
   font-family: var(--sans);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--muted);
   flex-shrink: 0;
 }
@@ -1009,7 +1009,7 @@ body.modal-open { overflow: hidden; }
 .playbook-library-cta-name {
   font-family: var(--sans);
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1154,7 +1154,7 @@ body.modal-open { overflow: hidden; }
 #pb-library .pb-cta-label {
   margin: 0;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--muted, #5a5a5a);
@@ -1163,7 +1163,7 @@ body.modal-open { overflow: hidden; }
 #pb-library .pb-kicker {
   margin: 0 0 12px;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--muted, #5a5a5a);
@@ -1174,8 +1174,8 @@ body.modal-open { overflow: hidden; }
   font-size: 24px;
   line-height: 1.15;
   color: var(--text, #111);
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: .01em;
 }
 
 #pb-library .pb-sub {
