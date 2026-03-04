@@ -177,9 +177,164 @@
       margin-top: 32px;
     }
 
+    /* ── Worksheet preview mockup ── */
+    .worksheet-preview {
+      max-width: 680px;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--pb);
+      box-shadow: 0 4px 28px rgba(0, 0, 0, 0.07);
+    }
+
+    .worksheet-preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .worksheet-preview-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pb);
+      margin: 0 0 4px;
+    }
+
+    .worksheet-preview-title {
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .worksheet-preview-badge {
+      flex-shrink: 0;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--pb-accent);
+      color: #fff;
+      padding: 4px 10px;
+    }
+
+    .worksheet-preview-body {
+      padding: 24px 28px;
+      background: #fff;
+    }
+
+    .worksheet-section {
+      margin-bottom: 22px;
+    }
+    .worksheet-section:last-child { margin-bottom: 0; }
+
+    .worksheet-section-title {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .worksheet-checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .worksheet-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .worksheet-check-item--done {
+      color: var(--muted);
+      text-decoration-line: none;
+    }
+
+    .worksheet-checkbox {
+      flex-shrink: 0;
+      width: 17px;
+      height: 17px;
+      border: 1.5px solid #ccc;
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .worksheet-checkbox--done {
+      background: var(--pb);
+      border-color: var(--pb);
+    }
+
+    .worksheet-field-prompt {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+
+    .worksheet-field-mock {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .worksheet-field-blank {
+      display: inline-block;
+      min-width: 90px;
+      border-bottom: 1.5px solid var(--ink);
+      color: var(--muted);
+      font-style: normal;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      vertical-align: baseline;
+      margin: 0 2px;
+    }
+
+    .worksheet-preview-footer {
+      padding: 14px 28px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .worksheet-preview-footer p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+      font-style: italic;
+    }
+
     @media (max-width: 720px) {
       .playbook-step { padding: 20px; }
       .pillar-divider { margin-top: 40px; }
+      .worksheet-preview-header,
+      .worksheet-preview-body,
+      .worksheet-preview-footer { padding-left: 20px; padding-right: 20px; }
     }
   </style>
 </head>
@@ -365,27 +520,72 @@
           <p class="pillar-intro">Every chapter comes with structured worksheets built for that step — not generic exercises, but the exact tools used to do the work. You finish each chapter with something tangible, not just notes in the margin.</p>
         </div>
 
-        <div class="grid-2">
-          <div class="card">
-            <p class="card-label">Step 1 · Identify</p>
-            <h3>Audience Profile + Competitor Map</h3>
-            <p>Define your target reader in detail and map the competitive landscape — so you know exactly where your book fits and why someone would buy yours over what's already there.</p>
+        <div class="worksheet-preview">
+
+          <div class="worksheet-preview-header">
+            <div>
+              <p class="worksheet-preview-label">Step 1 Worksheet</p>
+              <p class="worksheet-preview-title">Identify</p>
+            </div>
+            <span class="worksheet-preview-badge">Included Free</span>
           </div>
-          <div class="card">
-            <p class="card-label">Step 2 · Monetize</p>
-            <h3>Revenue Model Builder</h3>
-            <p>Run the real numbers: pricing, channel margins, cost of production, and projected revenue across three scenarios. Know what profitability looks like before you commission a single illustration.</p>
+
+          <div class="worksheet-preview-body">
+
+            <div class="worksheet-section">
+              <p class="worksheet-section-title">Target Audience</p>
+              <ul class="worksheet-checklist">
+                <li class="worksheet-check-item worksheet-check-item--done">
+                  <span class="worksheet-checkbox worksheet-checkbox--done" aria-hidden="true">
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3L9 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span>Define your primary reader — age range, reading level, and format (board book, picture book, early reader)</span>
+                </li>
+                <li class="worksheet-check-item worksheet-check-item--done">
+                  <span class="worksheet-checkbox worksheet-checkbox--done" aria-hidden="true">
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3L9 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span>Identify the buyer — who actually makes the purchase? (parent, grandparent, teacher, librarian)</span>
+                </li>
+                <li class="worksheet-check-item">
+                  <span class="worksheet-checkbox" aria-hidden="true"></span>
+                  <span>List 3 adjacent audiences your book could serve beyond the primary reader</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="worksheet-section">
+              <p class="worksheet-section-title">Market Research</p>
+              <ul class="worksheet-checklist">
+                <li class="worksheet-check-item worksheet-check-item--done">
+                  <span class="worksheet-checkbox worksheet-checkbox--done" aria-hidden="true">
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3L9 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span>Find 5 comparable titles on Amazon — record title, author, price, review count, and BSR</span>
+                </li>
+                <li class="worksheet-check-item">
+                  <span class="worksheet-checkbox" aria-hidden="true"></span>
+                  <span>Note the categories each title ranks in and whether the niche is saturated or accessible</span>
+                </li>
+                <li class="worksheet-check-item">
+                  <span class="worksheet-checkbox" aria-hidden="true"></span>
+                  <span>Identify the gap — what are reviewers asking for that the top titles don't deliver?</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="worksheet-section">
+              <p class="worksheet-section-title">Your Publishing Angle</p>
+              <p class="worksheet-field-prompt">Complete this sentence before moving to Step 2:</p>
+              <div class="worksheet-field-mock">My book is for <span class="worksheet-field-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> who want <span class="worksheet-field-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>, but can't find a book that <span class="worksheet-field-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+            </div>
+
           </div>
-          <div class="card">
-            <p class="card-label">Step 3 · Productize</p>
-            <h3>Illustrator Brief + Production Checklist</h3>
-            <p>Everything you need to find the right illustrator, communicate the vision clearly, and get a finished book ready for print-on-demand — without the production horror stories.</p>
+
+          <div class="worksheet-preview-footer">
+            <p>Every chapter includes a worksheet like this — structured exercises you complete, not PDFs you file away. Six chapters, six worksheets, all included.</p>
           </div>
-          <div class="card">
-            <p class="card-label">Steps 4–6 · Activate, Campaign, Triumph</p>
-            <h3>Launch, Growth &amp; Review Tools</h3>
-            <p>Pre-launch outreach tracker, Amazon listing optimizer, campaign planner, and final results review worksheet. Every step has a tool designed to make the work executable, not just understandable.</p>
-          </div>
+
         </div>
 
 
