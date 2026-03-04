@@ -1305,6 +1305,63 @@ body.modal-open { overflow: hidden; }
 }
 
 
+/* ── FROM THE CREATOR ────────────────────────────────────── */
+.creator-wrap {
+  display: flex;
+  gap: 52px;
+  align-items: flex-start;
+  margin-top: 32px;
+}
+
+.creator-photo {
+  flex: 0 0 200px;
+}
+
+.creator-photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.creator-bio {
+  flex: 1;
+  max-width: 56ch;
+}
+
+.creator-bio p {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+
+.creator-bio p:last-child { margin-bottom: 0; }
+
+.creator-bio strong {
+  font-family: var(--sans);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.creator-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s;
+}
+
+.creator-link:hover { color: var(--pb); }
+
+@media (max-width: 720px) {
+  .creator-wrap { flex-direction: column; gap: 28px; }
+  .creator-photo { flex: 0 0 auto; width: 140px; }
+}
+
+
 /* ── Picture Book Project Playbook (.pbpp) ───────────────── */
 
 /* Hero — teal bg */
