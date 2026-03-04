@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Picture Book Project Playbook — Stupid Simple Startup</title>
-  <meta name="description" content="A six-step business playbook for anyone who wants to create, publish, and sell a picture book. Built on the IMPACT System. Training, tools, and community included." />
+  <title>Picture Book Project Playbook — Live Build | Stupid Simple Startup</title>
+  <meta name="description" content="A live execution playbook for building a picture book side hustle using the IMPACT System. Watch a real book get built from scratch — training, worksheets, and community included." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -191,6 +191,46 @@
       margin-top: 32px;
     }
 
+    /* ── Tools examples list ── */
+    .tools-examples {
+      list-style: none;
+      padding: 0;
+      margin: -8px 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .tools-examples li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .tools-examples li::before {
+      content: "→";
+      font-style: normal;
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--pb-accent);
+      flex-shrink: 0;
+    }
+
+    .tools-tagline {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin: 0 0 32px;
+    }
+
     /* ── Worksheet preview mockup ── */
     .worksheet-preview {
       max-width: 680px;
@@ -285,7 +325,6 @@
 
     .worksheet-check-item--done {
       color: var(--muted);
-      text-decoration-line: none;
     }
 
     .worksheet-checkbox {
@@ -440,9 +479,9 @@
       <div class="container">
         <p class="section-label">The Problem</p>
         <p class="journey-head">The Self-Publishing<br>Money Pit.</p>
-        <p class="journey-body">Most aspiring picture book authors follow the same path: fall in love with an idea, hire an illustrator, publish to Amazon, and wait. The illustrations cost $500–$3,000. The launch is a post to Facebook. The sales are 47 copies — mostly family.</p>
+        <p class="journey-body">Self-publishing is famous for being a black hole for your time and money. You spend months writing, weeks formatting, and thousands on art — only to realize you have no way to reach customers. You're left with a garage full of boxes (or a digital shelf of zeros) and a deflated dream.</p>
         <br>
-        <p class="journey-body" style="font-size: 15px;">The problem isn't the book. It's that they built the book before they built the business. No market validation. No revenue model. No audience. No launch strategy. Just a dream and a beautiful file that cost more than it will ever earn.</p>
+        <p class="journey-body" style="font-size: 15px;">It doesn't have to be that way.</p>
       </div>
     </section>
 
@@ -453,8 +492,9 @@
         <p class="section-label">The Solution</p>
         <div class="section-head">
           <h2>The Picture Book Project Playbook</h2>
-          <p>A live execution playbook for building a picture book side hustle the right way — market validation first, book second. Each chapter follows one step of the IMPACT System, applied specifically to picture books, and documented in real time as the work is actually being done. You're not reading theory. You're watching the decisions happen.</p>
+          <p>I am currently building a real picture book from scratch. I'm using the IMPACT System to ensure every hour I spend and every dollar I invest is tied to a revenue goal.</p>
         </div>
+        <p class="why-body">This isn't a theoretical program. It's a Live Execution Playbook. You are watching me work, seeing my actual files, and using my exact worksheets to build your own.</p>
       </div>
     </section>
 
@@ -465,15 +505,15 @@
         <p class="section-label">One Program. Three Pillars of Execution.</p>
         <div class="section-head">
           <h2>Training. Tools. Community.</h2>
-          <p>Everything you need to execute — not just understand — each step of the build.</p>
+          <p>The Playbook is the tactical core of Stupid Simple Startup. When you join, you get the full toolkit to move from idea to income.</p>
         </div>
 
 
         <!-- ── Pillar 1: Training ── -->
         <div class="pillar-divider">
           <p class="pillar-num">01 · Training</p>
-          <p class="pillar-head">The Six-Step Build</p>
-          <p class="pillar-intro">Six chapters. One per step of the IMPACT System. Each chapter is the actual decision-making process for that stage — not a lecture, a live record. You get every chapter that's been documented today, plus all future chapters as they're completed.</p>
+          <p class="pillar-head">The 6-Step Build</p>
+          <p class="pillar-intro">I document every step of my self-publishing workflow as I do it. No fluff, just the sequence:</p>
         </div>
 
         <div class="playbook-steps">
@@ -483,7 +523,7 @@
             <span class="step-pill step-pill--identify">I</span>
             <div class="playbook-step-body">
               <p class="playbook-step-name">Identify</p>
-              <p class="playbook-step-desc">Validate your picture book concept before spending a dollar. Covers: defining your target reader, mapping the competitive landscape, finding your publishing angle, and confirming real market demand. You finish with a validated concept and a clear market position.</p>
+              <p class="playbook-step-desc">See how I validated my niche and "proofed" the demand before writing a word.</p>
             </div>
             <a href="#" data-open-optin class="playbook-badge playbook-badge--free">Included Free</a>
           </div>
@@ -493,7 +533,7 @@
             <span class="step-pill step-pill--monetize">M</span>
             <div class="playbook-step-body">
               <p class="playbook-step-name">Monetize</p>
-              <p class="playbook-step-desc">Build a real revenue model before you make a single page. Covers: pricing strategy, distribution channels (Amazon KDP, Ingram Spark, direct), projected revenue scenarios, and what profitability actually looks like for a picture book side hustle. You finish with a real revenue model — not a guess.</p>
+              <p class="playbook-step-desc">My "Green Light" spreadsheet. I show you exactly how I price for profit on Amazon and beyond.</p>
             </div>
             <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
           </div>
@@ -503,7 +543,7 @@
             <span class="step-pill step-pill--productize">P</span>
             <div class="playbook-step-body">
               <p class="playbook-step-name">Productize</p>
-              <p class="playbook-step-desc">Produce the actual book. This is the most picture-book-specific chapter in the playbook. Covers: finding and briefing an illustrator, manuscript development, page layout and design, file prep for print-on-demand, ISBN registration, and proof review. The goal: a shippable, sellable book — done.</p>
+              <p class="playbook-step-desc">My full production workflow. I'll show you how I handle the technical side — from creating my own illustrations or hiring an artist on a budget, to interior layout, cover design, and the file specs required to actually get a book into print.</p>
             </div>
             <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
           </div>
@@ -513,7 +553,7 @@
             <span class="step-pill step-pill--activate">A</span>
             <div class="playbook-step-body">
               <p class="playbook-step-name">Activate</p>
-              <p class="playbook-step-desc">Get your first sales without a launch plan, a big audience, or a marketing budget. Covers: pre-sales to your network, early-reader outreach, collecting first reviews, and the micro-launch framework. Revenue in before the audience is built.</p>
+              <p class="playbook-step-desc">Building the "Minimum Viable Presence." I show you how I set up the sales infrastructure and gather interested readers without spending a dollar on ads.</p>
             </div>
             <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
           </div>
@@ -523,7 +563,7 @@
             <span class="step-pill step-pill--campaign">C</span>
             <div class="playbook-step-body">
               <p class="playbook-step-name">Campaign</p>
-              <p class="playbook-step-desc">Build the distribution and discovery systems that generate ongoing sales. Covers: Amazon listing optimization, organic content strategy, email list building, and paid promotion testing. The shift from selling copies to running a repeatable sales engine.</p>
+              <p class="playbook-step-desc">The sales engine. You get the exact email scripts, social posts, and the campaign timing I use to generate repeatable selling pressure.</p>
             </div>
             <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
           </div>
@@ -533,7 +573,7 @@
             <span class="step-pill step-pill--triumph">T</span>
             <div class="playbook-step-body">
               <p class="playbook-step-name">Triumph</p>
-              <p class="playbook-step-desc">Close the loop. Review revenue, costs, and results against the original Monetize plan. Identify what worked, what to cut, and what to scale. Decide whether to write another book, expand the concept, or stay put — with data to back the decision.</p>
+              <p class="playbook-step-desc">The final numbers. What worked, what didn't, and how I'll scale the next one.</p>
             </div>
             <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
           </div>
@@ -555,8 +595,15 @@
         <div class="pillar-divider">
           <p class="pillar-num">02 · Tools</p>
           <p class="pillar-head">Task-Specific Worksheets</p>
-          <p class="pillar-intro">Every chapter comes with structured worksheets built for that step — not generic exercises, but the exact tools used to do the work. You finish each chapter with something tangible, not just notes in the margin.</p>
+          <p class="pillar-intro">I don't give you the answers — I give you the questions. You get my full library of worksheets designed to help you find the right answers for your specific project. These are structured, fill-in-the-blank documents for every task in the build.</p>
         </div>
+
+        <ul class="tools-examples">
+          <li>Need to vet an artist? Use the worksheet to know what to ask.</li>
+          <li>Need to calculate your margins? Use the worksheet to see which numbers matter.</li>
+        </ul>
+
+        <p class="tools-tagline">You don't just read — you execute.</p>
 
         <div class="worksheet-preview">
 
@@ -636,25 +683,25 @@
         <!-- ── Pillar 3: Community ── -->
         <div class="pillar-divider">
           <p class="pillar-num">03 · Tactical Support</p>
-          <p class="pillar-head">Live Community Access</p>
-          <p class="pillar-intro">Private community access is included with every playbook purchase — hosted on Heartbeat, accessible from any browser or mobile. This isn't a forum to scroll. It's a focused space for people actively doing the work.</p>
+          <p class="pillar-head">The Community</p>
+          <p class="pillar-intro">You aren't doing this alone. When you buy the playbook, you get access to the Private Community.</p>
         </div>
 
         <div class="grid-3">
           <div class="card">
-            <p class="card-label">Ask anything</p>
-            <h3>Direct answers</h3>
-            <p>Stuck at a step? Post it. Questions are answered directly as they come up — not with a canned FAQ or a link to the help center.</p>
+            <p class="card-label">Live updates</p>
+            <h3>See it happen in real time</h3>
+            <p>See my progress and pivots as they happen — not a polished recap after the fact.</p>
           </div>
           <div class="card">
-            <p class="card-label">Stay current</p>
-            <h3>Live updates</h3>
-            <p>New chapters, decisions, and context get shared in the community first. You're not waiting for an email newsletter — you're in the room where it's happening.</p>
+            <p class="card-label">Direct answers</p>
+            <h3>Ask me directly</h3>
+            <p>Stuck on your niche or need a second eye on a cover? Post it in the community and get a direct answer.</p>
           </div>
           <div class="card">
-            <p class="card-label">Share progress</p>
-            <h3>Real feedback</h3>
-            <p>Post your work, share what you're building, and get feedback from people doing the same thing at the same stage. Not cheerleading — actual input.</p>
+            <p class="card-label">Focused space</p>
+            <h3>No distractions</h3>
+            <p>No noise, no spam, no tangents. Just a group of people building real businesses using the same system.</p>
           </div>
         </div>
 
@@ -665,11 +712,11 @@
     <!-- ── WHY LIVE BUILD ─────────────────────────────────── -->
     <section class="section">
       <div class="container">
-        <p class="section-label">Why follow a Live Build?</p>
-        <p class="journey-head">"You're not reading about<br>what worked. You're watching<br>it happen."</p>
-        <p class="journey-body">Most courses teach what worked for someone else, documented after the fact, in a context you can't replicate. A live build is different. Every chapter is written as the decision is actually being made — including what didn't work and why the approach changed.</p>
+        <p class="section-label">Why follow a "Live Build"?</p>
+        <p class="journey-head">Because the digital<br>landscape moves fast.</p>
+        <p class="journey-body">A static course recorded years ago won't tell you how to leverage what's working on social media today or show you the latest techniques for capturing leads and building an audience from scratch. By following a live project, you see the real-time decisions.</p>
         <br>
-        <p class="journey-body" style="font-size: 15px;">When you follow a live build, you're not getting a polished retrospective. You're getting the real process — the dead ends, the pivots, the moments where the plan met reality. That's the kind of roadmap you can actually follow.</p>
+        <p class="journey-body" style="font-size: 15px;">You see the "boring" technicalities that actually result in a paycheck.</p>
       </div>
     </section>
 
@@ -678,7 +725,7 @@
     <section class="section">
       <div class="container">
         <p class="section-label">The Stupid Simple Standard</p>
-        <p class="why-body">Every piece of this playbook is built to one standard: it has to be useful before it becomes a product. No filler chapters. No padded worksheets. No modules that exist to justify the price. If a step is documented here, it's because executing it produced a real result. That's the only criteria for inclusion.</p>
+        <p class="why-body">I'm not here to do the work for you, and I'm not here to sell you a "magic button." I'm here to show you the process. My worksheets won't give you the answers — they'll give you the right questions and the method to find the answers for yourself. If you follow the steps, do the research, and use the tools, you will end up with a professional, market-validated book. It's that simple.</p>
       </div>
     </section>
 
@@ -705,51 +752,6 @@
           <p class="price-note">Not ready to commit? <button data-open-optin style="background:none;border:none;cursor:pointer;color:inherit;border-bottom:1px solid var(--border);padding:0;font-family:inherit;font-size:inherit;">Read Step 1 for FREE</button> and see how I validate an idea.</p>
         </div>
 
-      </div>
-    </section>
-
-
-    <!-- ── FAQ ──────────────────────────────────────────── -->
-    <section class="section">
-      <div class="container">
-        <p class="section-label">Questions</p>
-        <div class="section-head">
-          <h2>Common questions</h2>
-        </div>
-
-        <div class="faq-list">
-
-          <details class="faq-item">
-            <summary>Do I need to have a finished idea before I start?</summary>
-            <p class="faq-answer">You need a general direction — "I want to make a picture book about [topic]" — but that's all. Chapter 1 (Identify) is specifically designed to help you validate and sharpen the idea before you commit to anything. You don't need a finished concept to get started.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Do I need to be able to illustrate?</summary>
-            <p class="faq-answer">No. Chapter 3 (Productize) covers exactly how to find, brief, and work with an illustrator — including what to look for, how to structure the agreement, and how to manage the process. Your job is the concept and story. Someone else handles the artwork.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>What is the community, and how does it work?</summary>
-            <p class="faq-answer">It's a private community hosted on Heartbeat. Access is included when you purchase the playbook. Ask questions at any step, share your progress, and get direct feedback as you work through each chapter.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Is the playbook complete, or is it still being documented?</summary>
-            <p class="faq-answer">Both. The playbook is a live document — each step is being actively worked through in real time. Chapters are documented and released as the work is completed. When you purchase, you get immediate access to everything that's been released, plus all future chapters as they're added.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Do I need the free IMPACT System first?</summary>
-            <p class="faq-answer">Not required, but recommended. The <a href="./impact-system.html">IMPACT System</a> explains the full six-step framework at a high level — understanding it first gives context that makes each chapter of the playbook sharper. It's free and takes about 20 minutes to read.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Is this only for picture books, or can I use it for other types of books?</summary>
-            <p class="faq-answer">This playbook is built specifically for picture books — every step, every example, and every worksheet is picture-book-specific. The Productize chapter especially goes deep on picture book production. If you're self-publishing a different type of book, the underlying IMPACT System framework still applies, but this playbook won't be a perfect fit.</p>
-          </details>
-
-        </div>
       </div>
     </section>
 
