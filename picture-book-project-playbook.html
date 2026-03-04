@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Picture Book Project Playbook — Live Build | Stupid Simple Startup</title>
+  <meta name="description" content="A live execution playbook for building a picture book side hustle using the IMPACT System. Watch a real book get built from scratch — training, worksheets, and community included." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+
+  <!-- Script -->
+  <script defer src="./assets/main.js"></script>
+
+  <style>
+    /* ── Picture Book Project Playbook — Brand Persona ───────
+       Brand: deep teal (#1B5E5A) + warm coral (#D4643A)
+       Scope: page-only overrides, nav/footer untouched
+    ─────────────────────────────────────────────────────── */
+
+    :root {
+      --pb:        #1B5E5A;   /* deep teal — hero, accents  */
+      --pb-accent: #D4643A;   /* warm coral — CTAs, badges  */
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--pb);
+    }
+
+    .hero-eyebrow {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Serif italic H1 — storybook, not startup */
+    .hero h1 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 700;
+      color: #fff;
+      max-width: 24ch;
+    }
+
+    /* Subtitle h2 */
+    .hero h2 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 42ch;
+      line-height: 1.55;
+      margin-bottom: 40px;
+    }
+
+    /* Coral primary button in hero */
+    .hero .btn-primary {
+      background: var(--pb-accent);
+      color: #fff;
+    }
+
+    /* Ghost button on dark hero bg */
+    .hero .btn-ghost {
+      color: rgba(255, 255, 255, 0.88);
+      border-bottom-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ── Section labels — teal throughout ── */
+    .section-label {
+      color: var(--pb);
+    }
+
+    /* ── Card labels ── */
+    .card-label {
+      color: var(--pb);
+    }
+
+    /* ── Free badge — coral ── */
+    .playbook-badge--free {
+      background: var(--pb-accent);
+    }
+
+    /* ── Equal-width badges + link behaviour ── */
+    .playbook-badge {
+      min-width: 108px;
+      text-align: center;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .playbook-badge:hover { opacity: 0.75; text-decoration: none; }
+
+    /* ── Step descriptions — always visible ── */
+    .playbook-step-desc { display: block !important; }
+
+    /* Slightly more padding on step rows */
+    .playbook-step {
+      align-items: flex-start;
+      padding: 24px 28px;
+    }
+
+    /* ── Larger step-pill boxes ── */
+    .playbook-steps .step-pill {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      padding: 0;
+      margin-top: 2px;
+    }
+
+    /* ── Live Journey — teal heading ── */
+    .journey-head {
+      color: var(--pb);
+    }
+
+    /* ── Price panel — teal top border ── */
+    .price-panel {
+      border-top: 3px solid var(--pb);
+    }
+
+    .price-includes li::before {
+      color: var(--pb);
+    }
+
+    /* ── Buy section label — centered ── */
+    #buy .section-label {
+      text-align: center;
+    }
+
+    /* ── CTA strip — teal, bookends with hero ── */
+    .cta-strip {
+      background: var(--pb);
+    }
+
+    /* ── PBPP opt-in modal — coral submit button ── */
+    #optinModal .formkit-form[data-uid="7d2826bed8"] .formkit-submit {
+      background-color: var(--pb-accent) !important;
+      border-radius: 0 !important;
+    }
+    #optinModal .formkit-form[data-uid="7d2826bed8"] .formkit-submit > span {
+      background-color: transparent !important;
+    }
+
+    /* ── Pillar sub-section dividers ── */
+    .pillar-divider {
+      margin: 52px 0 28px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .pillar-num {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pb);
+      margin: 0 0 8px;
+    }
+
+    .pillar-head {
+      font-family: var(--sans);
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 12px;
+    }
+
+    .pillar-intro {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 58ch;
+      margin: 0 0 28px;
+    }
+
+    .pillar-cta-line {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    /* ── Tools examples list ── */
+    .tools-examples {
+      list-style: none;
+      padding: 0;
+      margin: -8px 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .tools-examples li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .tools-examples li::before {
+      content: "→";
+      font-style: normal;
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--pb-accent);
+      flex-shrink: 0;
+    }
+
+    .tools-tagline {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin: 0 0 32px;
+    }
+
+    /* ── Worksheet preview mockup ── */
+    .worksheet-preview {
+      max-width: 680px;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--pb);
+      box-shadow: 0 4px 28px rgba(0, 0, 0, 0.07);
+    }
+
+    .worksheet-preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .worksheet-preview-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pb);
+      margin: 0 0 4px;
+    }
+
+    .worksheet-preview-title {
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .worksheet-preview-badge {
+      flex-shrink: 0;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--pb-accent);
+      color: #fff;
+      padding: 4px 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .worksheet-preview-badge:hover { opacity: 0.82; }
+
+    .worksheet-preview-body {
+      padding: 24px 28px;
+      background: #fff;
+    }
+
+    .worksheet-section {
+      margin-bottom: 22px;
+    }
+    .worksheet-section:last-child { margin-bottom: 0; }
+
+    .worksheet-section-title {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .worksheet-checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .worksheet-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .worksheet-check-item--done {
+      color: var(--muted);
+    }
+
+    .worksheet-checkbox {
+      flex-shrink: 0;
+      width: 17px;
+      height: 17px;
+      border: 1.5px solid #ccc;
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .worksheet-checkbox--done {
+      background: var(--pb);
+      border-color: var(--pb);
+    }
+
+    .worksheet-field-prompt {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+
+    .worksheet-field-mock {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    .worksheet-field-blank {
+      display: inline-block;
+      min-width: 90px;
+      border-bottom: 1.5px solid var(--ink);
+      color: var(--muted);
+      font-style: normal;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      vertical-align: baseline;
+      margin: 0 2px;
+    }
+
+    .worksheet-preview-footer {
+      padding: 14px 28px 18px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .worksheet-preview-footer p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+      font-style: italic;
+    }
+
+    .worksheet-preview-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pb-accent);
+      background: none;
+      border: none;
+      border-bottom: 1.5px solid var(--pb-accent);
+      padding: 0 0 1px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .worksheet-preview-cta:hover { opacity: 0.7; }
+
+    @media (max-width: 720px) {
+      .playbook-step { padding: 20px; }
+      .pillar-divider { margin-top: 40px; }
+      .worksheet-preview-header,
+      .worksheet-preview-body,
+      .worksheet-preview-footer { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- ── NAV ────────────────────────────────────────────── -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Stupid Simple Startup home">
+        Stupid Simple Startup
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="./impact-system.html">The IMPACT System</a></li>
+          <li><a href="./playbooks.html" aria-current="page">Playbooks</a></li>
+          <li><a href="./worksheets.html">Worksheets</a></li>
+          <li><a href="./community.html">Community</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="navDrawer" aria-label="Open navigation">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <rect y="4"  width="20" height="2" fill="currentColor"/>
+          <rect y="9"  width="20" height="2" fill="currentColor"/>
+          <rect y="14" width="20" height="2" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav id="navDrawer" class="nav-drawer" aria-label="Mobile navigation">
+      <a href="./impact-system.html">The IMPACT System</a>
+      <a href="./playbooks.html" aria-current="page">Playbooks</a>
+      <a href="./worksheets.html">Worksheets</a>
+      <a href="./community.html">Community</a>
+    </nav>
+  </header>
+
+
+  <!-- ── MAIN ───────────────────────────────────────────── -->
+  <main>
+
+    <!-- ── HERO ─────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero-eyebrow">Picture Book Project Playbook · Stage 1</p>
+        <h1>Stop wondering if your book will sell. Watch me build one that does.</h1>
+        <h2>Most aspiring authors spend $2,000 on illustrations for a book that earns $200. They follow "inspiration" instead of a roadmap. I'm here to show you how to build a book that actually sells.</h2>
+        <div class="hero-actions">
+          <a href="#buy" class="btn btn-primary">
+            Get the Playbook
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#inside" class="btn btn-ghost">See what's inside ↓</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── THE PROBLEM ───────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <p class="section-label">The Problem</p>
+        <p class="journey-head">The Self-Publishing<br>Money Pit.</p>
+        <p class="journey-body">Self-publishing is famous for being a black hole for your time and money. You spend months writing, weeks formatting, and thousands on art — only to realize you have no way to reach customers. You're left with a garage full of boxes (or a digital shelf of zeros) and a deflated dream.</p>
+        <br>
+        <p class="journey-body" style="font-size: 15px;">It doesn't have to be that way.</p>
+      </div>
+    </section>
+
+
+    <!-- ── THE SOLUTION ──────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <p class="section-label">The Solution</p>
+        <div class="section-head">
+          <h2>The Picture Book Project Playbook</h2>
+          <p>I am currently building a real picture book from scratch. I'm using the IMPACT System to ensure every hour I spend and every dollar I invest is tied to a revenue goal.</p>
+        </div>
+        <p class="why-body">This isn't a theoretical program. It's a Live Execution Playbook. You are watching me work, seeing my actual files, and using my exact worksheets to build your own.</p>
+      </div>
+    </section>
+
+
+    <!-- ── THREE PILLARS ─────────────────────────────────── -->
+    <section id="inside" class="section">
+      <div class="container">
+        <p class="section-label">One Program. Three Pillars of Execution.</p>
+        <div class="section-head">
+          <h2>Training. Tools. Community.</h2>
+          <p>The Playbook is the tactical core of Stupid Simple Startup. When you join, you get the full toolkit to move from idea to income.</p>
+        </div>
+
+
+        <!-- ── Pillar 1: Training ── -->
+        <div class="pillar-divider">
+          <p class="pillar-num">01 · Training</p>
+          <p class="pillar-head">The 6-Step Build</p>
+          <p class="pillar-intro">I document every step of my self-publishing workflow as I do it. No fluff, just the sequence:</p>
+        </div>
+
+        <div class="playbook-steps">
+
+          <!-- Step I: FREE -->
+          <div class="playbook-step">
+            <span class="step-pill step-pill--identify">I</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Identify</p>
+              <p class="playbook-step-desc">See how I validated my niche and "proofed" the demand before writing a word.</p>
+            </div>
+            <a href="#" data-open-optin class="playbook-badge playbook-badge--free">Included Free</a>
+          </div>
+
+          <!-- Step M -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--monetize">M</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Monetize</p>
+              <p class="playbook-step-desc">My "Green Light" spreadsheet. I show you exactly how I price for profit on Amazon and beyond.</p>
+            </div>
+            <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
+          </div>
+
+          <!-- Step P -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--productize">P</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Productize</p>
+              <p class="playbook-step-desc">My full production workflow. I'll show you how I handle the technical side — from creating my own illustrations or hiring an artist on a budget, to interior layout, cover design, and the file specs required to actually get a book into print.</p>
+            </div>
+            <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
+          </div>
+
+          <!-- Step A -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--activate">A</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Activate</p>
+              <p class="playbook-step-desc">Building the "Minimum Viable Presence." I show you how I set up the sales infrastructure and gather interested readers without spending a dollar on ads.</p>
+            </div>
+            <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
+          </div>
+
+          <!-- Step C -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--campaign">C</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Campaign</p>
+              <p class="playbook-step-desc">The sales engine. You get the exact email scripts, social posts, and the campaign timing I use to generate repeatable selling pressure.</p>
+            </div>
+            <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
+          </div>
+
+          <!-- Step T -->
+          <div class="playbook-step playbook-step--paid">
+            <span class="step-pill step-pill--triumph">T</span>
+            <div class="playbook-step-body">
+              <p class="playbook-step-name">Triumph</p>
+              <p class="playbook-step-desc">The final numbers. What worked, what didn't, and how I'll scale the next one.</p>
+            </div>
+            <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
+          </div>
+
+        </div><!-- /playbook-steps -->
+
+        <div class="pillar-cta-line">
+          <button class="btn btn-primary" data-open-optin>
+            Get Chapter 1 Free
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <a href="#buy" class="btn btn-ghost">Get the Full Playbook →</a>
+        </div>
+
+
+        <!-- ── Pillar 2: Tools ── -->
+        <div class="pillar-divider">
+          <p class="pillar-num">02 · Tools</p>
+          <p class="pillar-head">Task-Specific Worksheets</p>
+          <p class="pillar-intro">I don't give you the answers — I give you the questions. You get my full library of worksheets designed to help you find the right answers for your specific project. These are structured, fill-in-the-blank documents for every task in the build.</p>
+        </div>
+
+        <ul class="tools-examples">
+          <li>Need to vet an artist? Use the worksheet to know what to ask.</li>
+          <li>Need to calculate your margins? Use the worksheet to see which numbers matter.</li>
+        </ul>
+
+        <p class="tools-tagline">You don't just read — you execute.</p>
+
+        <div class="worksheet-preview">
+
+          <div class="worksheet-preview-header">
+            <div>
+              <p class="worksheet-preview-label">Step 1 Worksheet</p>
+              <p class="worksheet-preview-title">Identify</p>
+            </div>
+            <button class="worksheet-preview-badge" data-open-optin>Included Free</button>
+          </div>
+
+          <div class="worksheet-preview-body">
+
+            <div class="worksheet-section">
+              <p class="worksheet-section-title">Target Audience</p>
+              <ul class="worksheet-checklist">
+                <li class="worksheet-check-item worksheet-check-item--done">
+                  <span class="worksheet-checkbox worksheet-checkbox--done" aria-hidden="true">
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3L9 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span>Define your primary reader — age range, reading level, and format (board book, picture book, early reader)</span>
+                </li>
+                <li class="worksheet-check-item worksheet-check-item--done">
+                  <span class="worksheet-checkbox worksheet-checkbox--done" aria-hidden="true">
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3L9 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span>Identify the buyer — who actually makes the purchase? (parent, grandparent, teacher, librarian)</span>
+                </li>
+                <li class="worksheet-check-item">
+                  <span class="worksheet-checkbox" aria-hidden="true"></span>
+                  <span>List 3 adjacent audiences your book could serve beyond the primary reader</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="worksheet-section">
+              <p class="worksheet-section-title">Market Research</p>
+              <ul class="worksheet-checklist">
+                <li class="worksheet-check-item worksheet-check-item--done">
+                  <span class="worksheet-checkbox worksheet-checkbox--done" aria-hidden="true">
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3L9 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span>Find 5 comparable titles on Amazon — record title, author, price, review count, and BSR</span>
+                </li>
+                <li class="worksheet-check-item">
+                  <span class="worksheet-checkbox" aria-hidden="true"></span>
+                  <span>Note the categories each title ranks in and whether the niche is saturated or accessible</span>
+                </li>
+                <li class="worksheet-check-item">
+                  <span class="worksheet-checkbox" aria-hidden="true"></span>
+                  <span>Identify the gap — what are reviewers asking for that the top titles don't deliver?</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="worksheet-section">
+              <p class="worksheet-section-title">Your Publishing Angle</p>
+              <p class="worksheet-field-prompt">Complete this sentence before moving to Step 2:</p>
+              <div class="worksheet-field-mock">My book is for <span class="worksheet-field-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> who want <span class="worksheet-field-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>, but can't find a book that <span class="worksheet-field-blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.</div>
+            </div>
+
+          </div>
+
+          <div class="worksheet-preview-footer">
+            <p>Every chapter includes a worksheet like this — structured exercises you complete, not PDFs you file away. Six chapters, six worksheets, all included.</p>
+            <button class="worksheet-preview-cta" data-open-optin>
+              Get the Worksheet Free
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden="true">
+                <path d="M1 5h10M7 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+
+
+        <!-- ── Pillar 3: Community ── -->
+        <div class="pillar-divider">
+          <p class="pillar-num">03 · Tactical Support</p>
+          <p class="pillar-head">The Community</p>
+          <p class="pillar-intro">You aren't doing this alone. When you buy the playbook, you get access to the Private Community.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <p class="card-label">Live updates</p>
+            <h3>See it happen in real time</h3>
+            <p>See my progress and pivots as they happen — not a polished recap after the fact.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">Direct answers</p>
+            <h3>Ask me directly</h3>
+            <p>Stuck on your niche or need a second eye on a cover? Post it in the community and get a direct answer.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">Focused space</p>
+            <h3>No distractions</h3>
+            <p>No noise, no spam, no tangents. Just a group of people building real businesses using the same system.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── WHY LIVE BUILD ─────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <p class="section-label">Why follow a "Live Build"?</p>
+        <p class="journey-head">Because the digital<br>landscape moves fast.</p>
+        <p class="journey-body">A static course recorded years ago won't tell you how to leverage what's working on social media today or show you the latest techniques for capturing leads and building an audience from scratch. By following a live project, you see the real-time decisions.</p>
+        <br>
+        <p class="journey-body" style="font-size: 15px;">You see the "boring" technicalities that actually result in a paycheck.</p>
+      </div>
+    </section>
+
+
+    <!-- ── STUPID SIMPLE STANDARD ────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <p class="section-label">The Stupid Simple Standard</p>
+        <p class="why-body">I'm not here to do the work for you, and I'm not here to sell you a "magic button." I'm here to show you the process. My worksheets won't give you the answers — they'll give you the right questions and the method to find the answers for yourself. If you follow the steps, do the research, and use the tools, you will end up with a professional, market-validated book. It's that simple.</p>
+      </div>
+    </section>
+
+
+    <!-- ── PRICE + CTA ───────────────────────────────────── -->
+    <section id="buy" class="section">
+      <div class="container">
+        <p class="section-label" style="text-align:center;">Get started</p>
+
+        <div class="price-panel">
+          <p class="price-product-name">Picture Book Project Playbook</p>
+          <p class="price-amount">$147</p>
+          <p class="price-desc">One-time purchase. Immediate access.</p>
+          <ul class="price-includes">
+            <li>Six-chapter business playbook</li>
+            <li>Worksheets for every step</li>
+            <li>Private community access</li>
+            <li>Updates as new chapters are released</li>
+          </ul>
+          <!-- TODO: replace href="#" with Heartbeat cart URL -->
+          <a href="#" class="btn btn-primary" style="width:100%; text-align:center; justify-content:center; display:flex;">
+            Get the Playbook, All Worksheets, and Community Access — $147
+          </a>
+          <p class="price-note">Not ready to commit? <button data-open-optin style="background:none;border:none;cursor:pointer;color:inherit;border-bottom:1px solid var(--border);padding:0;font-family:inherit;font-size:inherit;">Read Step 1 for FREE</button> and see how I validate an idea.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── CTA STRIP ─────────────────────────────────────── -->
+    <section class="cta-strip">
+      <div class="container">
+        <p class="section-label">Not sure yet?</p>
+        <h2>Read Step 1 for free.</h2>
+        <p>Get the Identify chapter at no cost. See the format, the depth, and the approach before you decide.</p>
+        <button class="btn btn-primary-light" data-open-optin>
+          Read Step 1 Free
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; <span id="year"></span> Stupid Simple Startup</p>
+      <ul class="footer-links">
+        <li><a href="./impact-system.html">The IMPACT System</a></li>
+        <li><a href="./playbooks.html">Playbooks</a></li>
+        <li><a href="./worksheets.html">Worksheets</a></li>
+        <li><a href="./community.html">Community</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <!-- ── OPT-IN MODAL ───────────────────────────────────── -->
+  <div class="modal" id="optinModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-optin></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <p class="modal-title" id="modalTitle">Picture Book Project Playbook</p>
+        <button class="modal-close" data-close-optin aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Kit script (load once per page) -->
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+
+        <!-- Kit form embed — PBPP Step 1 Free (UID: 7d2826bed8) -->
+        <form action="https://app.kit.com/forms/9158754/subscriptions" style="background-color: rgb(249, 250, 251); border-radius: 0;" class="seva-form formkit-form" method="post" data-sv-form="9158754" data-uid="7d2826bed8" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div style="opacity: 0.2;" class="formkit-background"></div><div data-style="minimal"><div class="formkit-header" style="color: rgb(77, 77, 77); font-size: 27px; font-weight: 700;" data-element="header"><h2>Picture Book Project Playbook</h2></div><div class="formkit-subheader" style="color: rgb(104, 104, 104); font-size: 26px;" data-element="subheader"><p>Get Step 1: Identify for Free</p></div><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;" aria-label="Email Address" placeholder="Email Address" required="" type="email"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span class="">Subscribe</span></button></div><div class="formkit-guarantee" style="color: rgb(77, 77, 77); font-size: 13px; font-weight: 400;" data-element="guarantee">We won't send you spam. Unsubscribe at any time.</div><div class="formkit-powered-by-convertkit-container"><a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow">Built with Kit</a></div></div><style>.formkit-form[data-uid="7d2826bed8"] *{box-sizing:border-box;}.formkit-form[data-uid="7d2826bed8"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.formkit-form[data-uid="7d2826bed8"] h1,.formkit-form[data-uid="7d2826bed8"] h2,.formkit-form[data-uid="7d2826bed8"] h3,.formkit-form[data-uid="7d2826bed8"] h4,.formkit-form[data-uid="7d2826bed8"] h5,.formkit-form[data-uid="7d2826bed8"] h6{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="7d2826bed8"] p{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="7d2826bed8"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;}.formkit-form[data-uid="7d2826bed8"] .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="7d2826bed8"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="7d2826bed8"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="7d2826bed8"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="7d2826bed8"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="7d2826bed8"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-7d2826bed8- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-7d2826bed8- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="7d2826bed8"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="7d2826bed8"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="7d2826bed8"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="7d2826bed8"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-7d2826bed8-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes formkit-bouncedelay-formkit-form-data-uid-7d2826bed8-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}.formkit-form[data-uid="7d2826bed8"] .formkit-button,.formkit-form[data-uid="7d2826bed8"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}.formkit-form[data-uid="7d2826bed8"] .formkit-button > span,.formkit-form[data-uid="7d2826bed8"] .formkit-submit > span{display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;}.formkit-form[data-uid="7d2826bed8"]{max-width:700px;position:relative;overflow:hidden;}.formkit-form[data-uid="7d2826bed8"] .formkit-background{width:100%;height:100%;position:absolute;top:0;left:0;background-size:cover;background-position:center;opacity:0.3;}.formkit-form[data-uid="7d2826bed8"] [data-style="minimal"]{padding:20px;width:100%;position:relative;}.formkit-form[data-uid="7d2826bed8"] .formkit-header{margin:0 0 27px 0;text-align:center;}.formkit-form[data-uid="7d2826bed8"] .formkit-subheader{margin:18px 0;text-align:center;}.formkit-form[data-uid="7d2826bed8"] .formkit-guarantee{font-size:13px;margin:10px 0 15px 0;text-align:center;}.formkit-form[data-uid="7d2826bed8"] .formkit-guarantee > p{margin:0;}.formkit-form[data-uid="7d2826bed8"] .formkit-powered-by-convertkit-container{margin-bottom:0;}.formkit-form[data-uid="7d2826bed8"] .formkit-fields{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:25px auto 0 auto;}.formkit-form[data-uid="7d2826bed8"] .formkit-field{min-width:220px;}.formkit-form[data-uid="7d2826bed8"] .formkit-field,.formkit-form[data-uid="7d2826bed8"] .formkit-submit{margin:0 0 15px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}.formkit-form[data-uid="7d2826bed8"][min-width~="600"] [data-style="minimal"]{padding:40px;}.formkit-form[data-uid="7d2826bed8"][min-width~="600"] .formkit-fields[data-stacked="false"]{margin-left:-5px;margin-right:-5px;}.formkit-form[data-uid="7d2826bed8"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="7d2826bed8"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-submit{margin:0 5px 15px 5px;}.formkit-form[data-uid="7d2826bed8"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-field{-webkit-flex:100 1 auto;-ms-flex:100 1 auto;flex:100 1 auto;}.formkit-form[data-uid="7d2826bed8"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-submit{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;}</style></form>
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
