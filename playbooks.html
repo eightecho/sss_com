@@ -17,6 +17,20 @@
   <!-- Script -->
   <script defer src="./assets/main.js"></script>
 
+  <style>
+    /* ── Picture Book Project Playbook brand — scoped to library section ── */
+    :root {
+      --pb:        #1B5E5A;
+      --pb-accent: #D4643A;
+    }
+
+    #pb-library .section-label           { color: var(--pb); }
+    #pb-library .playbook-library-meta h3 { color: var(--pb); }
+    #pb-library .playbook-library-bullets li::before { color: var(--pb-accent); }
+    #pb-library .playbook-library-cta    { border-top: 3px solid var(--pb); }
+    #pb-library .btn-primary             { background: var(--pb); }
+    #pb-library .playbook-library-cta-sub a { color: var(--pb); border-bottom-color: var(--pb); }
+  </style>
 
 </head>
 <body>
@@ -111,7 +125,7 @@
       <div class="container">
         <p class="section-label">Inside a playbook</p>
         <p class="journey-head">"Not a finished course.<br>A live document."</p>
-        <p class="journey-body">Every playbook follows the same structure: six chapters, one per IMPACT step, applied to a specific business type. The difference is how it's made — TADROBERT is working through each one in real time. The decisions documented here aren't theoretical. You're following what is actually being built.</p>
+        <p class="journey-body">Every playbook follows the same structure: six chapters, one per IMPACT step, applied to a specific business type. The difference is how it's made — each one is worked through in real time. The decisions documented here aren't theoretical. You're following what is actually being built.</p>
         <br>
         <p class="journey-body" style="font-size: 15px;">Every playbook includes worksheets for every step and access to the private community — so you have the tools and the support to execute, not just read.</p>
       </div>
@@ -119,7 +133,7 @@
 
 
     <!-- Playbook Library -->
-    <section class="section">
+    <section id="pb-library" class="section">
       <div class="container">
         <p class="section-label">Playbook Library</p>
 
