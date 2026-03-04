@@ -24,12 +24,103 @@
       --pb-accent: #D4643A;
     }
 
-    #pb-library .section-label           { color: var(--pb); }
-    #pb-library .playbook-library-meta h3 { color: var(--pb); }
-    #pb-library .playbook-library-bullets li::before { color: var(--pb-accent); }
-    #pb-library .playbook-library-cta    { border-top: 3px solid var(--pb); }
-    #pb-library .btn-primary             { background: var(--pb); }
-    #pb-library .playbook-library-cta-sub a { color: var(--pb); border-bottom-color: var(--pb); }
+    /* Section background — teal, creates a clear visual break */
+    #pb-library {
+      background: var(--pb);
+      border-top: none;
+    }
+
+    /* Centered section label on teal */
+    #pb-library .section-label {
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Stage stacked on left — two separate elements */
+    #pb-library .pb-stage-num {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 10px;
+    }
+
+    #pb-library .pb-stage-name {
+      font-family: var(--sans);
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.1;
+    }
+
+    /* Playbook title above the right column */
+    #pb-library .pb-lib-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    /* Body text on teal */
+    #pb-library .playbook-library-body > p:first-of-type {
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Bullets on teal */
+    #pb-library .playbook-library-bullets li {
+      color: rgba(255,255,255,0.6);
+      border-top-color: rgba(255,255,255,0.15);
+    }
+
+    #pb-library .playbook-library-bullets li::before {
+      color: var(--pb-accent);
+    }
+
+    /* entry border on teal */
+    #pb-library .playbook-library-entry {
+      border-bottom-color: rgba(255,255,255,0.15);
+    }
+
+    /* CTA box — white panel on teal */
+    #pb-library .playbook-library-cta {
+      border: none;
+      border-top: 4px solid var(--pb-accent);
+      background: #fff;
+      padding: 48px 56px;
+      max-width: 580px;
+    }
+
+    #pb-library .playbook-library-cta-name {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--pb);
+      margin-bottom: 20px;
+    }
+
+    /* Bigger primary button */
+    #pb-library .btn-primary {
+      background: var(--pb);
+      padding: 18px 40px;
+      font-size: 12px;
+    }
+
+    #pb-library .playbook-library-cta-sub a {
+      color: var(--pb);
+      border-bottom-color: var(--pb);
+    }
+
+    @media (max-width: 720px) {
+      #pb-library .playbook-library-cta {
+        padding: 32px 28px;
+      }
+    }
   </style>
 
 </head>
@@ -139,14 +230,15 @@
 
         <div class="playbook-library-entry">
 
-          <!-- Left: stage + title -->
+          <!-- Left: stage stacked -->
           <div class="playbook-library-meta">
-            <p class="section-label">Stage 1 · Side Hustle</p>
-            <h3>Picture Book<br>Project Playbook</h3>
+            <p class="pb-stage-num">Stage 1</p>
+            <p class="pb-stage-name">Side<br>Hustle</p>
           </div>
 
-          <!-- Right: audience + bullets -->
+          <!-- Right: title above, audience + bullets below -->
           <div class="playbook-library-body">
+            <h3 class="pb-lib-title">Picture Book<br>Project Playbook</h3>
             <p>For anyone who wants to create, publish, and sell a picture book — without the guesswork.</p>
             <ul class="playbook-library-bullets">
               <li>Validate your idea before spending time or money on the wrong one</li>

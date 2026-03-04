@@ -16,6 +16,87 @@
 
   <!-- Script -->
   <script defer src="./assets/main.js"></script>
+
+  <style>
+    /* No border between What We Offer and IMPACT section */
+    #what + .section { border-top: none; }
+
+    /* "One Powerful Framework" intro line */
+    .impact-frame-head {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(15px, 2vw, 19px);
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    /* Large IMPACT colored letters */
+    .impact-letters {
+      font-family: var(--sans);
+      font-size: clamp(52px, 9vw, 88px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    /* "Six steps. One sequence." — non-competing serif italic */
+    .impact-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    /* Descriptor copy */
+    .impact-desc {
+      font-family: var(--serif);
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    /* Two-column prose steps — no card boxes */
+    .impact-steps-prose {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px 64px;
+      margin-bottom: 8px;
+    }
+
+    .isp-num {
+      font-family: var(--sans);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .isp-name {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .isp-desc {
+      font-family: var(--serif);
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      .impact-steps-prose { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -98,47 +179,46 @@
 
 
     <!-- The IMPACT System -->
-    <section class="section">
+    <section id="impact" class="section">
       <div class="container">
         <p class="section-label">The IMPACT System</p>
-        <div class="section-head">
-          <h2>
-            <span class="impact-i">I</span><span class="impact-m">M</span><span class="impact-p">P</span><span class="impact-a">A</span><span class="impact-c">C</span><span class="impact-t">T</span>.
-            Six steps. One sequence.
-          </h2>
-          <p>A free, complete framework for building a business from scratch. Do the steps in order. The work gets simpler when you stop guessing what comes next.</p>
-        </div>
+        <p class="impact-frame-head">One Powerful Framework</p>
+        <h2 class="impact-letters">
+          <span class="impact-i">I</span><span class="impact-m">M</span><span class="impact-p">P</span><span class="impact-a">A</span><span class="impact-c">C</span><span class="impact-t">T</span>.
+        </h2>
+        <p class="impact-tagline">Six steps. One sequence.</p>
+        <p class="impact-desc">A free, complete framework for building a business from scratch. Do the steps in order. The work gets simpler when you stop guessing what comes next.</p>
 
-        <div class="steps-list">
-          <div class="step-item step-item--identify">
-            <p class="step-num">Step 1 · Identify</p>
-            <p class="step-name">Validate before you build.</p>
-            <p class="step-desc">Lock in the idea, understand the customer, and confirm real demand — before you invest time or money in the wrong direction.</p>
+        <div class="impact-steps-prose">
+          <div class="isp-row">
+            <p class="isp-num">Step 1 · Identify</p>
+            <p class="isp-name">Validate before you build.</p>
+            <p class="isp-desc">Lock in the idea, understand the customer, and confirm real demand — before you invest time or money in the wrong direction.</p>
           </div>
-          <div class="step-item step-item--monetize">
-            <p class="step-num">Step 2 · Monetize</p>
-            <p class="step-name">Price before you produce.</p>
-            <p class="step-desc">Build a real revenue model before you create a single deliverable. Price, packaging, and proof of demand come first.</p>
+          <div class="isp-row">
+            <p class="isp-num">Step 2 · Monetize</p>
+            <p class="isp-name">Price before you produce.</p>
+            <p class="isp-desc">Build a real revenue model before you create a single deliverable. Price, packaging, and proof of demand come first.</p>
           </div>
-          <div class="step-item step-item--productize">
-            <p class="step-num">Step 3 · Productize</p>
-            <p class="step-name">Build what you've already sold.</p>
-            <p class="step-desc">Create the actual thing — scoped, focused, and shippable. Done is the goal. Perfect is not.</p>
+          <div class="isp-row">
+            <p class="isp-num">Step 3 · Productize</p>
+            <p class="isp-name">Build what you've already sold.</p>
+            <p class="isp-desc">Create the actual thing — scoped, focused, and shippable. Done is the goal. Perfect is not.</p>
           </div>
-          <div class="step-item step-item--activate">
-            <p class="step-num">Step 4 · Activate</p>
-            <p class="step-name">Get first sales without a launch.</p>
-            <p class="step-desc">Revenue before the audience, the ad spend, or the big launch event. First customers through direct effort.</p>
+          <div class="isp-row">
+            <p class="isp-num">Step 4 · Activate</p>
+            <p class="isp-name">Get first sales without a launch.</p>
+            <p class="isp-desc">Revenue before the audience, the ad spend, or the big launch event. First customers through direct effort.</p>
           </div>
-          <div class="step-item step-item--campaign">
-            <p class="step-num">Step 5 · Campaign</p>
-            <p class="step-name">Build the sales engine.</p>
-            <p class="step-desc">Develop the distribution and audience systems that generate ongoing, repeatable revenue long after launch.</p>
+          <div class="isp-row">
+            <p class="isp-num">Step 5 · Campaign</p>
+            <p class="isp-name">Build the sales engine.</p>
+            <p class="isp-desc">Develop the distribution and audience systems that generate ongoing, repeatable revenue long after launch.</p>
           </div>
-          <div class="step-item step-item--triumph">
-            <p class="step-num">Step 6 · Triumph</p>
-            <p class="step-name">Review, decide, and repeat.</p>
-            <p class="step-desc">Close the loop. What worked, what didn't, and what comes next — documented and decided before moving on.</p>
+          <div class="isp-row">
+            <p class="isp-num">Step 6 · Triumph</p>
+            <p class="isp-name">Review, decide, and repeat.</p>
+            <p class="isp-desc">Close the loop. What worked, what didn't, and what comes next — documented and decided before moving on.</p>
           </div>
         </div>
 
