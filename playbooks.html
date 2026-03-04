@@ -17,115 +17,8 @@
   <!-- Script -->
   <script defer src="./assets/main.js"></script>
 
-  <style>
-    /* ── Picture Book Project Playbook brand — scoped to library section ── */
-    :root {
-      --pb:        #1B5E5A;
-      --pb-accent: #D4643A;
-    }
-
-    /* Section background — teal, creates a clear visual break */
-    #pb-library {
-      background: var(--pb);
-      border-top: none;
-    }
-
-    /* Centered section label on teal */
-    #pb-library .section-label {
-      color: rgba(255,255,255,0.55);
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    /* Stage stacked on left — two separate elements */
-    #pb-library .pb-stage-num {
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 10px;
-    }
-
-    #pb-library .pb-stage-name {
-      font-family: var(--sans);
-      font-size: clamp(24px, 3.5vw, 36px);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.1;
-    }
-
-    /* Playbook title above the right column */
-    #pb-library .pb-lib-title {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(20px, 2.5vw, 26px);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
-
-    /* Body text on teal */
-    #pb-library .playbook-library-body > p:first-of-type {
-      color: rgba(255,255,255,0.7);
-    }
-
-    /* Bullets on teal */
-    #pb-library .playbook-library-bullets li {
-      color: rgba(255,255,255,0.6);
-      border-top-color: rgba(255,255,255,0.15);
-    }
-
-    #pb-library .playbook-library-bullets li::before {
-      color: var(--pb-accent);
-    }
-
-    /* entry border on teal */
-    #pb-library .playbook-library-entry {
-      border-bottom-color: rgba(255,255,255,0.15);
-    }
-
-    /* CTA box — white panel on teal */
-    #pb-library .playbook-library-cta {
-      border: none;
-      border-top: 4px solid var(--pb-accent);
-      background: #fff;
-      padding: 48px 56px;
-      max-width: 580px;
-    }
-
-    #pb-library .playbook-library-cta-name {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      color: var(--pb);
-      margin-bottom: 20px;
-    }
-
-    /* Bigger primary button */
-    #pb-library .btn-primary {
-      background: var(--pb);
-      padding: 18px 40px;
-      font-size: 12px;
-    }
-
-    #pb-library .playbook-library-cta-sub a {
-      color: var(--pb);
-      border-bottom-color: var(--pb);
-    }
-
-    @media (max-width: 720px) {
-      #pb-library .playbook-library-cta {
-        padding: 32px 28px;
-      }
-    }
-  </style>
-
 </head>
 <body>
-
 
   <!-- ── NAV ────────────────────────────────────────────── -->
   <header class="site-nav">
@@ -160,7 +53,6 @@
     </nav>
   </header>
 
-
   <!-- ── MAIN ───────────────────────────────────────────── -->
   <main>
 
@@ -180,7 +72,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- Strategy → Tactics → Execution -->
     <section id="what" class="section">
@@ -210,7 +101,6 @@
       </div>
     </section>
 
-
     <!-- What's inside -->
     <section class="section">
       <div class="container">
@@ -222,52 +112,66 @@
       </div>
     </section>
 
-
+    <!-- Playbook Library (REPLACED + NEW CARDS ADDED) -->
     <!-- Playbook Library -->
-    <section id="pb-library" class="section">
-      <div class="container">
-        <p class="section-label">Playbook Library</p>
+<section id="pb-library" class="section">
+  <div class="container">
+    <p class="section-label">Playbook Library</p>
 
-        <div class="playbook-library-entry">
+    <div class="section-head" style="margin-bottom: 10px;">
+      <h2>The right Playbook for the right project.</h2>
+      <p>
+        The IMPACT System brings the strategy. The Playbooks zero in on the tactics — each one targeted at a specific business opportunity.
+        <br><br>
+        This library will grow over time. For now, one playbook is being built in public. The Picture Book Project Playbook.
+      </p>
+    </div>
 
-          <!-- Left: stage stacked -->
-          <div class="playbook-library-meta">
-            <p class="pb-stage-num">Stage 1</p>
-            <p class="pb-stage-name">Side<br>Hustle</p>
-          </div>
-
-          <!-- Right: title above, audience + bullets below -->
-          <div class="playbook-library-body">
-            <h3 class="pb-lib-title">Picture Book<br>Project Playbook</h3>
-            <p>For anyone who wants to create, publish, and sell a picture book — without the guesswork.</p>
-            <ul class="playbook-library-bullets">
-              <li>Validate your idea before spending time or money on the wrong one</li>
-              <li>Build a real revenue model before you make a single page</li>
-              <li>Find and work with an illustrator — no art skills required</li>
-              <li>Get your first sales without a launch plan, a big email list, or a marketing budget</li>
-              <li>Build the ongoing sales engine that keeps working after launch</li>
-            </ul>
-          </div>
-
-        </div><!-- /playbook-library-entry -->
-
-        <!-- CTA box -->
-        <div class="playbook-library-cta">
-          <p class="playbook-library-cta-name">Picture Book Project Playbook</p>
-          <div class="playbook-library-cta-actions">
-            <a href="./picture-book-playbook.html" class="btn btn-primary">
-              See the Playbook
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-          <p class="playbook-library-cta-sub">Step 1 is free. <a href="./picture-book-playbook.html#inside">See what's inside first →</a></p>
-        </div>
-
+    <!-- PBP single-row, two-column layout -->
+    <div class="pb-row" aria-label="Picture Book Project Playbook row">
+      <!-- Left: text -->
+      <div class="pb-row-text">
+        <p class="pb-kicker">Side Hustle / Self Publishing</p>
+        <h3 class="pb-title">Picture Book Project Playbook</h3>
+        <p class="pb-sub">Create, publish, and sell a picture book — without guesswork.</p>
+        <p class="pb-sub">The training, tools, and tactical support you need to succeed, self publishing your first picture book.</p>
       </div>
-    </section>
 
+      <!-- Right: CTA box -->
+      <aside class="pb-row-cta" aria-label="Get the Picture Book Project Playbook">
+        <p class="pb-cta-label">Access the Picture Book Project Playbook</p>
+        <a class="btn btn-primary" href="./picture-book-playbook.html">
+          Get It Here
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <p class="pb-kicker">
+        <a href="./picture-book-playbook.html">Learn more</a>
+        </p>
+      </aside>
+    </div>
+  </div>
+  <div class="container" style="margin-top:50px;">
+    <p class="section-label">In The Works</p>
+
+    <div class="section-head" style="margin-bottom: 10px;">
+      <h3>The Solopreneur Playbook</h3>
+      <p>
+        In this Playbook we'll use the IMPACT System to transition our side hustle from part time imcome into a recuring revenue generating business.
+      </p>
+    </div>
+    <div class="section-head" style="margin-top: 20px;">
+      <h3>The Subject Matter Expert Playbook</h3>
+      <p>
+        In this Playbook we'll turn your knowledge and experience into revenue generating products using your EIP (Expert Intellectual Property).
+      </p>
+    </div>
+      <p class="pb-footnote">
+      Get notified when new playbooks drop? <a href="#" data-open-optin>Join the list</a>.
+    </p>
+  </div>
+</section>
 
     <!-- CTA Strip -->
     <section class="cta-strip">
@@ -281,7 +185,6 @@
 
   </main>
 
-
   <!-- ── FOOTER ─────────────────────────────────────────── -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -294,7 +197,6 @@
       </ul>
     </div>
   </footer>
-
 
   <!-- ── OPT-IN MODAL ───────────────────────────────────── -->
   <div class="modal" id="optinModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -323,6 +225,7 @@
           data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}"
           min-width="400 500 600 700 800"
         >
+          <!-- (your Kit embed stays unchanged) -->
           <div data-style="full">
             <div data-element="column" class="formkit-background"></div>
             <div data-element="column" class="formkit-column">
@@ -350,6 +253,8 @@
               </div>
             </div>
           </div>
+
+          <!-- keep the Kit embed’s internal CSS exactly as provided -->
           <style>
             .formkit-form[data-uid="195ac6fa15"] *{box-sizing:border-box;}
             .formkit-form[data-uid="195ac6fa15"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
@@ -381,7 +286,6 @@
       </div>
     </div>
   </div>
-
 
 </body>
 </html>
