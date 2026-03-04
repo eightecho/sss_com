@@ -693,7 +693,7 @@ body.modal-open { overflow: hidden; }
 
 
 /* ── PLAYBOOK STEP LIST ──────────────────────────────────── */
-/* Used on playbooks.html (index) and picture-book-playbook.html */
+/* Used on playbooks.html (index) and playbooks/picture-book-project.html */
 
 .playbook-steps {
   border: 1px solid var(--border);
