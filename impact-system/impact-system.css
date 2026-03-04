@@ -35,6 +35,7 @@
 
 /* ── RESET ───────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+em, i { font-style: normal; }
 html { scroll-behavior: smooth; }
 
 body {
@@ -283,7 +284,6 @@ body {
 
 .step-hero-subtitle {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 17px;
   color: rgba(255,255,255,0.55);
   margin-bottom: 36px;
@@ -291,7 +291,6 @@ body {
 
 .step-hero-question {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 18px;
   font-weight: 400;
   color: rgba(255,255,255,0.9);
@@ -365,7 +364,6 @@ p + p { text-indent: 1.2em; }
 /* ── CALLOUT / PRINCIPLE ─────────────────────────────────── */
 .callout {
   font-family: var(--sans);
-  font-style: italic;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
@@ -403,7 +401,6 @@ p + p { text-indent: 1.2em; }
 
 .quick-check-text {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 15px;
   line-height: 1.75;
   letter-spacing: 0.05em
@@ -445,7 +442,6 @@ p + p { text-indent: 1.2em; }
 .component-question {
   font-family: var(--sans);
   font-weight: 400;
-  font-style: italic;
   font-size: 13px;
   color: var(--dimmed);
   letter-spacing: 0.02em;
@@ -678,7 +674,6 @@ ul.artifact-list li strong {
   background: var(--dark);
   padding: 22px 26px;
   font-family: var(--sans);
-  font-style: italic;
   font-size: 14px;
   color: rgba(255,255,255,0.65);
   line-height: 1.65;
@@ -770,7 +765,6 @@ ul.artifact-list li strong {
 .workbook-cta p.cta-closing {
   font-family: var(--sans);
   font-weight: 600;
-  font-style: italic;
   font-size: 15px;
   color: var(--step);
   margin-bottom: 0;
@@ -989,7 +983,6 @@ ul.artifact-list li strong {
 
 .version-card-purpose {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 12px;
   color: rgba(255,255,255,0.4);
   margin-left: auto;
@@ -1069,7 +1062,6 @@ ul.artifact-list li strong {
 
 .process-phase-tagline {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 13px;
   color: var(--dimmed);
   margin-left: auto;
@@ -1174,7 +1166,6 @@ ul.artifact-list li strong {
 
 .pillar-tagline {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 13px;
   color: var(--dimmed);
   margin-left: auto;
@@ -1271,7 +1262,6 @@ ul.artifact-list li strong {
 
 .campaign-category-note {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 13px;
   color: var(--dimmed);
   margin-left: auto;
@@ -1319,7 +1309,6 @@ ul.artifact-list li strong {
 
 .campaign-type-purpose {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 12px;
   color: rgba(255,255,255,0.4);
   margin-left: auto;
@@ -1519,7 +1508,6 @@ ul.artifact-list li strong {
 
 .triumph-tool-question {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 12.5px;
   color: var(--dimmed);
   margin-left: auto;
@@ -1714,7 +1702,6 @@ ul.artifact-list li strong {
 
 .step-review-trigger {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 12px;
   color: rgba(255,255,255,0.4);
   margin-left: auto;
@@ -2021,7 +2008,6 @@ ul.artifact-list li strong {
 
 .intro-step-card-question {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 12.5px;
   color: var(--dimmed);
   line-height: 1.5;
@@ -2102,7 +2088,6 @@ ul.artifact-list li strong {
 
 .phase-step-chip-q {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 11.5px;
   color: var(--dimmed);
   line-height: 1.4;
@@ -2317,7 +2302,6 @@ ul.artifact-list li strong {
 
 .quick-ref-question {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 12.5px;
   color: var(--dimmed);
   margin-left: auto;
@@ -2523,7 +2507,6 @@ ul.artifact-list li strong {
   font-size: 13px;
   color: var(--dimmed);
   margin-bottom: 20px;
-  font-style: italic;
 }
 
 .cta-buy-btn {
@@ -2554,7 +2537,6 @@ ul.artifact-list li strong {
   font-size: 12.5px;
   color: var(--dimmed);
   text-align: center;
-  font-style: italic;
   line-height: 1.5;
 }
 
@@ -2568,7 +2550,6 @@ ul.artifact-list li strong {
   font-size: 13px;
   line-height: 1.55;
   color: #7a6030;
-  font-style: italic;
 }
 
 .cta-trust-row {
@@ -2594,7 +2575,6 @@ ul.artifact-list li strong {
   text-align: center;
   color: var(--dimmed);
   font-family: var(--serif);
-  font-style: italic;
   font-size: 14px;
 }
 
@@ -2775,7 +2755,6 @@ ul.artifact-list li strong {
 
 .index-step-q {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 13px;
   color: var(--dimmed);
   line-height: 1.55;
@@ -2817,7 +2796,6 @@ ul.artifact-list li strong {
   font-size: 13px;
   color: var(--dimmed);
   margin-left: auto;
-  font-style: italic;
 }
 
 .index-about-section {
@@ -3289,7 +3267,6 @@ ul.artifact-list li strong {
 
 .sp-byline {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 17px;
   line-height: 1.6;
   color: var(--dimmed);
@@ -3395,7 +3372,6 @@ ul.artifact-list li strong {
 }
 .sp-dedication p {
   font-family: var(--serif);
-  font-style: italic;
   font-size: 17px;
   line-height: 1.9;
   color: var(--dimmed);
