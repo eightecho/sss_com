@@ -18,8 +18,13 @@
   <script defer src="./assets/main.js"></script>
 
   <style>
-    /* No border between What We Offer and IMPACT section */
+    /* No border, and tighten the gap between What We Offer and IMPACT */
     #what + .section { border-top: none; }
+    #what   { padding-bottom: clamp(32px, 4vw, 48px); }
+    #impact { padding-top:    clamp(32px, 4vw, 48px); }
+
+    /* Center the IMPACT section CTAs */
+    #impact .hero-actions { justify-content: center; }
 
     /* "One Powerful Framework" — matches section h2 style */
     .impact-frame-head {

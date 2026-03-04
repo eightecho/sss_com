@@ -85,6 +85,15 @@
       background: var(--pb-accent);
     }
 
+    /* ── Equal-width badges + link behaviour ── */
+    .playbook-badge {
+      min-width: 108px;
+      text-align: center;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .playbook-badge:hover { opacity: 0.75; text-decoration: none; }
+
     /* ── Step descriptions — always visible ── */
     .playbook-step-desc { display: block !important; }
 
@@ -229,7 +238,7 @@
               <p class="playbook-step-name">Identify</p>
               <p class="playbook-step-desc">Validate your picture book concept before investing time, money, or energy in the wrong direction. Covers: defining your target audience, mapping the competitive landscape, identifying your publishing angle, and confirming real market demand. The chapter ends with a validated concept and a clear market position — ready to monetize.</p>
             </div>
-            <span class="playbook-badge playbook-badge--free">Free</span>
+            <a href="#" data-open-optin class="playbook-badge playbook-badge--free">Free</a>
           </div>
 
           <!-- Chapter M -->
@@ -239,7 +248,7 @@
               <p class="playbook-step-name">Monetize</p>
               <p class="playbook-step-desc">Build a real revenue model before you make a single page. Covers: pricing strategy, distribution channel options (Amazon KDP, Ingram Spark, direct sales), projected revenue scenarios, and what profitability actually looks like for a picture book side hustle. You finish this chapter with a real revenue model — not a guess.</p>
             </div>
-            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+            <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
           </div>
 
           <!-- Chapter P -->
@@ -249,7 +258,7 @@
               <p class="playbook-step-name">Productize</p>
               <p class="playbook-step-desc">Produce the actual book. This is the most picture-book-specific chapter in the playbook. Covers: finding and briefing an illustrator, manuscript development, page layout and design, file preparation for print-on-demand, ISBN registration, and proof review. The goal is a shippable, sellable book — done.</p>
             </div>
-            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+            <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
           </div>
 
           <!-- Chapter A -->
@@ -259,7 +268,7 @@
               <p class="playbook-step-name">Activate</p>
               <p class="playbook-step-desc">Get your first sales without a launch plan, a big email list, or a marketing budget. Covers: pre-sales to your immediate network, early-reader outreach, collecting first reviews, and the micro-launch framework. The goal: revenue in before you've built an audience.</p>
             </div>
-            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+            <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
           </div>
 
           <!-- Chapter C -->
@@ -269,7 +278,7 @@
               <p class="playbook-step-name">Campaign</p>
               <p class="playbook-step-desc">Build the distribution and audience systems that generate ongoing sales. Covers: Amazon listing optimization, organic content strategy for discovery, email list building, and paid promotion testing. The shift from "selling copies" to "building a repeatable sales engine."</p>
             </div>
-            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+            <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
           </div>
 
           <!-- Chapter T -->
@@ -279,7 +288,7 @@
               <p class="playbook-step-name">Triumph</p>
               <p class="playbook-step-desc">Close the loop on the side hustle. Review revenue, costs, and results against the original Monetize plan. Identify what worked, what to cut, and what to scale. Decide whether to write another book, expand the concept, or stay at this level — with a documented decision and a clear next step.</p>
             </div>
-            <span class="playbook-badge playbook-badge--paid">Full Playbook</span>
+            <a href="#buy" class="playbook-badge playbook-badge--paid">Full Playbook</a>
           </div>
 
         </div><!-- /playbook-steps -->
