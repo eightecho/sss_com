@@ -18,25 +18,104 @@
   <script defer src="./assets/main.js"></script>
 
   <style>
-    /* Hero h2 — subtitle under the main headline */
+    /* ── Picture Book Project Playbook — Brand Persona ───────
+       Brand: deep teal (#1B5E5A) + warm coral (#D4643A)
+       Scope: page-only overrides, nav/footer untouched
+    ─────────────────────────────────────────────────────── */
+
+    :root {
+      --pb:        #1B5E5A;   /* deep teal — hero, accents  */
+      --pb-accent: #D4643A;   /* warm coral — CTAs, badges  */
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--pb);
+    }
+
+    .hero-eyebrow {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Serif italic H1 — storybook, not startup */
+    .hero h1 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 700;
+      color: #fff;
+      max-width: 20ch;
+    }
+
+    /* Subtitle h2 */
     .hero h2 {
       font-family: var(--serif);
       font-style: italic;
-      font-size: clamp(17px, 2.2vw, 22px);
+      font-size: clamp(16px, 2vw, 20px);
       font-weight: 400;
-      color: var(--muted);
-      max-width: 38ch;
-      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 42ch;
+      line-height: 1.55;
       margin-bottom: 40px;
     }
 
-    /* Larger step descriptions on the sales page — show on all screens */
+    /* Coral primary button in hero */
+    .hero .btn-primary {
+      background: var(--pb-accent);
+      color: #fff;
+    }
+
+    /* Ghost button on dark hero bg */
+    .hero .btn-ghost {
+      color: rgba(255, 255, 255, 0.88);
+      border-bottom-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ── Section labels — teal throughout ── */
+    .section-label {
+      color: var(--pb);
+    }
+
+    /* ── Card labels ── */
+    .card-label {
+      color: var(--pb);
+    }
+
+    /* ── Free badge — coral ── */
+    .playbook-badge--free {
+      background: var(--pb-accent);
+    }
+
+    /* ── Step descriptions — always visible ── */
     .playbook-step-desc { display: block !important; }
 
-    /* Slightly more padding on step rows for a roomier feel */
+    /* Slightly more padding on step rows */
     .playbook-step {
       align-items: flex-start;
       padding: 24px 28px;
+    }
+
+    /* ── Live Journey — teal heading ── */
+    .journey-head {
+      color: var(--pb);
+    }
+
+    /* ── Price panel — teal top border ── */
+    .price-panel {
+      border-top: 3px solid var(--pb);
+    }
+
+    .price-includes li::before {
+      color: var(--pb);
+    }
+
+    /* ── Buy section label — centered ── */
+    #buy .section-label {
+      text-align: center;
+    }
+
+    /* ── CTA strip — teal, bookends with hero ── */
+    .cta-strip {
+      background: var(--pb);
     }
 
     @media (max-width: 720px) {
