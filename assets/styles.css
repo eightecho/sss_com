@@ -678,8 +678,8 @@ p + p { margin-top: 1em; }
   padding: 16px 28px 28px;
 }
 
-/* Kit form overrides — strip the stock UI chrome */
-.modal-body .formkit-form[data-uid="195ac6fa15"] {
+/* Kit form overrides — strip stock UI chrome from any Kit form in the modal */
+.modal-body .formkit-form {
   box-shadow: none !important;
   border-radius: 0 !important;
   border: none !important;
