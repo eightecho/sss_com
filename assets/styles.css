@@ -2017,8 +2017,10 @@ body.modal-open { overflow: hidden; }
   font-weight: 700;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.38);
+  color: rgba(255,255,255,.55);
   margin-bottom: 6px;
+  text-align: justify;
+  text-align-last: justify;
 }
 
 .pbpp-cover-title {
@@ -2033,18 +2035,18 @@ body.modal-open { overflow: hidden; }
 .pbpp-cover-rule {
   width: 24px;
   height: 2px;
-  background: var(--pb-accent);
+  background: #E6A817;
   margin: 8px 0 7px;
   flex-shrink: 0;
 }
 
 .pbpp-cover-sub {
   font-family: var(--sans);
-  font-size: 6.5px;
+  font-size: 8px;
   font-weight: 800;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.72);
 }
 
 /* Cream lower section */
@@ -2059,12 +2061,13 @@ body.modal-open { overflow: hidden; }
 
 .pbpp-cover-system-label {
   font-family: var(--sans);
-  font-size: 5.5px;
+  font-size: 6.5px;
   font-weight: 700;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: #bbb;
+  color: #888;
   margin-bottom: 6px;
+  line-height: 1.55;
 }
 
 .pbpp-cover-dots {
@@ -2103,7 +2106,7 @@ body.modal-open { overflow: hidden; }
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: #ccc;
+  color: #777;
 }
 
 /* ── Size: Small (library thumbnail) ──────────────────── */
