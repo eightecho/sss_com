@@ -133,6 +133,33 @@
         </div>
 
         <div style="margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border);">
+          <p class="section-label">Cookies</p>
+          <div class="section-head">
+            <h2>How we use cookies.</h2>
+            <p>This site uses a small number of cookies and browser storage to function. No advertising or tracking cookies are used.</p>
+          </div>
+          <div class="grid-2" style="margin-top: 32px;">
+            <div class="card">
+              <p class="card-label">Functional</p>
+              <h3>Email Sign-Up Forms</h3>
+              <p>When you accept cookies, we load a script from Kit (ConvertKit) that powers the email sign-up form. This script may set cookies to support form submission and prevent duplicate sign-ups. If you decline, the form still works as a standard HTML form but without Kit's enhanced experience.</p>
+            </div>
+            <div class="card">
+              <p class="card-label">Preference</p>
+              <h3>Your Consent Choice</h3>
+              <p>We store your cookie consent decision in your browser's <code style="font-size:13px; background:var(--alt); padding:1px 5px; border-radius:3px;">localStorage</code> under the key <code style="font-size:13px; background:var(--alt); padding:1px 5px; border-radius:3px;">sss_cookie_consent</code>. This is never sent to a server. You can reset your choice at any time by <button id="resetConsent" style="background:none;border:none;padding:0;font-family:inherit;font-size:inherit;color:var(--ink);text-decoration:underline;text-underline-offset:2px;cursor:pointer;">clicking here</button>.</p>
+            </div>
+          </div>
+          <script>
+            document.getElementById('resetConsent').addEventListener('click', function() {
+              try { localStorage.removeItem('sss_cookie_consent'); } catch(e) {}
+              this.textContent = 'Done — reload the page to see the banner again.';
+              this.style.cursor = 'default';
+            });
+          </script>
+        </div>
+
+        <div style="margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border);">
           <p class="section-label">Your Rights</p>
           <div class="section-head">
             <h2>You're always in control.</h2>

@@ -1,6 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
    STUPID SIMPLE STARTUP — main.js
-   Handles: mobile nav toggle, opt-in modal, footer year
+   Handles: mobile nav toggle, opt-in modal, footer year,
+            cookie consent banner
 ═══════════════════════════════════════════════════════════ */
 
 (function () {
@@ -109,12 +110,101 @@
   }
 
 
+  /* ── Cookie Consent ──────────────────────────────────── */
+  var CONSENT_KEY = 'sss_cookie_consent';
+
+  /* Load ConvertKit script dynamically — called only after consent */
+  function loadConvertKit() {
+    if (qs('script[src*="convertkit"]')) return; /* already loaded */
+    var s = document.createElement('script');
+    s.src = 'https://f.convertkit.com/ckjs/ck.5.js';
+    document.head.appendChild(s);
+  }
+
+  function getConsent() {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  }
+
+  function saveConsent(val) {
+    try { localStorage.setItem(CONSENT_KEY, val); } catch (e) {}
+  }
+
+  function dismissBanner() {
+    var banner = qs('#cookieBanner');
+    if (!banner) return;
+    banner.classList.add('is-hiding');
+    setTimeout(function () { if (banner.parentNode) banner.parentNode.removeChild(banner); }, 350);
+  }
+
+  function acceptCookies() {
+    saveConsent('accepted');
+    dismissBanner();
+    loadConvertKit();
+  }
+
+  function declineCookies() {
+    saveConsent('declined');
+    dismissBanner();
+  }
+
+  function buildBanner() {
+    /* Resolve relative path to privacy policy based on page depth */
+    var inSubdir = window.location.pathname.indexOf('/playbooks/') !== -1;
+    var privacyHref = inSubdir ? '../privacy.html' : './privacy.html';
+
+    var banner = document.createElement('div');
+    banner.id = 'cookieBanner';
+    banner.setAttribute('role', 'region');
+    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.innerHTML =
+      '<div class="cookie-inner">' +
+        '<p class="cookie-text">' +
+          'We use cookies to power our email sign-up forms. ' +
+          '<a href="' + privacyHref + '" class="cookie-link">Privacy&nbsp;Policy</a>.' +
+        '</p>' +
+        '<div class="cookie-actions">' +
+          '<button class="btn-cookie-accept" data-cookie-accept>Accept</button>' +
+          '<button class="btn-cookie-decline" data-cookie-decline>Decline</button>' +
+        '</div>' +
+      '</div>';
+    return banner;
+  }
+
+  function setupCookieConsent() {
+    var stored = getConsent();
+
+    if (stored === 'accepted') {
+      loadConvertKit();
+      return;
+    }
+
+    if (stored === 'declined') {
+      return; /* respect existing choice, don't show banner */
+    }
+
+    /* No stored preference — inject and show banner */
+    var banner = buildBanner();
+    document.body.appendChild(banner);
+
+    /* Trigger slide-up animation after paint */
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        banner.classList.add('is-visible');
+      });
+    });
+
+    qs('[data-cookie-accept]', banner).addEventListener('click', acceptCookies);
+    qs('[data-cookie-decline]', banner).addEventListener('click', declineCookies);
+  }
+
+
   /* ── Init ────────────────────────────────────────────── */
   function init() {
     setupNav();
     setupModal();
     setupLearnHowModal();
     setYear();
+    setupCookieConsent();
   }
 
   document.addEventListener('DOMContentLoaded', init);
