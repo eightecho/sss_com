@@ -518,6 +518,54 @@ p + p { margin-top: 1em; }
 .step-pill--triumph    { background: var(--triumph); }
 
 
+/* ── IMPACT phases flow diagram ─────────────────────────── */
+.impact-phases {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.impact-phase-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.impact-phase-tag {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 132px;
+  flex-shrink: 0;
+}
+
+.impact-phase-div {
+  font-size: 18px;
+  color: var(--border);
+  margin: 8px 0 8px 140px;
+  line-height: 1;
+}
+
+.impact-loop-badge {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  padding: 5px 10px;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+
+
 /* ── IS STEPS LIST (impact-system.html only) ─────────────── */
 .steps-list {
   display: grid;
