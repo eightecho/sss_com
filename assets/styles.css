@@ -252,6 +252,7 @@ p + p { margin-top: 1em; }
 .hero {
   padding-top: clamp(64px, 10vw, 120px);
   padding-bottom: clamp(64px, 10vw, 120px);
+  background: #f0ede8;
 }
 
 .hero-eyebrow {
@@ -414,7 +415,7 @@ p + p { margin-top: 1em; }
 
 /* ── CTA STRIP (dark) ────────────────────────────────────── */
 .cta-strip {
-  background: #252220;   /* one shade lighter than footer so they separate */
+  background: #4a3c32;   /* warm dark brown — distinct from page and footer */
   padding-block: clamp(56px, 8vw, 96px);
   text-align: center;
 }
@@ -927,6 +928,153 @@ body.modal-open { overflow: hidden; }
 .wf-workbook--campaign   { border-color: var(--campaign);   color: var(--campaign);   }
 .wf-workbook--triumph    { border-color: var(--triumph);    color: var(--triumph);    }
 
+/* ── Workbook tree diagram ───────────────────────────── */
+.wf-tree {
+  margin-top: 48px;
+}
+
+.wf-tree-summary {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 56ch;
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
+
+.wf-tree-root-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wf-tree-root-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.wf-tree-trunk-line {
+  width: 2px;
+  height: 16px;
+  background: var(--border);
+  margin-left: 18px;
+}
+
+.wf-tree-stages {
+  margin-left: 18px;
+  padding-left: 28px;
+  border-left: 2px solid var(--border);
+}
+
+.wf-tree-stage {
+  position: relative;
+  padding: 14px 0;
+}
+
+.wf-tree-stage:first-child {
+  padding-top: 10px;
+}
+
+.wf-tree-stage::before {
+  content: '';
+  position: absolute;
+  left: -28px;
+  top: 20px;
+  width: 28px;
+  height: 2px;
+  background: var(--border);
+}
+
+.wf-tree-stage-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.wf-tree-stage-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.wf-tree-stage-count {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.wf-tree-stage-sheets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 480px;
+}
+
+/* CSS-drawn page/document icon */
+.wf-tree-ws {
+  display: inline-block;
+  width: 13px;
+  height: 15px;
+  border: 1.5px solid var(--muted);
+  border-radius: 2px;
+  position: relative;
+  opacity: 0.45;
+  flex-shrink: 0;
+}
+
+.wf-tree-ws::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  right: 2px;
+  height: 1px;
+  background: var(--muted);
+  box-shadow: 0 2.5px 0 var(--muted), 0 5px 0 var(--muted);
+}
+
+.wf-tree-ws--more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 15px;
+  border: none;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  opacity: 1;
+}
+
+.wf-tree-ws--more::after {
+  display: none;
+}
+
+.wf-tree-stage--more .wf-tree-stage-label {
+  color: var(--muted);
+  opacity: 0.75;
+}
+
+.wf-tree-stage--more .wf-tree-stage-count {
+  opacity: 0.65;
+}
+
 /* Price panel */
 .price-panel {
   border: 1px solid var(--border);
@@ -1247,8 +1395,8 @@ body.modal-open { overflow: hidden; }
 #pb-library .pb-row {
   margin-top: 26px;
   display: grid;
-  grid-template-columns: auto 1.6fr 0.9fr;
-  gap: 24px;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
   padding: 26px;
   border-radius: var(--radius, 18px);
   border: 1px solid var(--line, #e9e9e9);
@@ -1271,6 +1419,25 @@ body.modal-open { overflow: hidden; }
   justify-content: center;
   gap: 12px;
   text-align: center;
+}
+
+#pb-library .pb-row-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+#pb-library .pb-row-cta-inline {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+#pb-library .pb-cta-btn {
+  background: var(--pb);
 }
 
 #pb-library .pb-cta-label {
@@ -1485,7 +1652,7 @@ body.modal-open { overflow: hidden; }
 /* Hero — teal bg */
 .pbpp .hero                  { background: var(--pb); }
 .pbpp .hero-eyebrow          { color: rgba(255,255,255,0.5); }
-.pbpp .hero h1               { font-family: var(--serif); font-weight: 700; color: #fff; max-width: 24ch; }
+.pbpp .hero h1               { font-family: var(--sans); font-weight: 800; color: #fff; max-width: 24ch; }
 .pbpp .hero h2               { font-family: var(--serif); font-size: clamp(16px,2vw,20px); font-weight: 400; color: rgba(255,255,255,0.72); max-width: 42ch; line-height: 1.55; margin-bottom: 40px; }
 .pbpp .hero .btn-primary     { background: var(--pb-accent); color: #fff; }
 .pbpp .hero .btn-ghost       { color: rgba(255,255,255,0.88); border-bottom-color: rgba(255,255,255,0.4); }
@@ -1591,7 +1758,44 @@ body.modal-open { overflow: hidden; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink);
-  margin: 0 0 32px;
+  margin: 0 0 20px;
+}
+
+/* Inline "Learn how" explainer — below the tagline */
+.tools-learn-how-inline {
+  max-width: 56ch;
+  margin: 0 0 36px;
+  padding: 22px 26px;
+  border-left: 3px solid var(--pb);
+  background: rgba(27, 94, 90, 0.04);
+  border-radius: 0 8px 8px 0;
+}
+
+.tools-learn-how-head {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.tools-learn-how-body {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 10px;
+}
+
+.tools-learn-how-close {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--pb);
+  margin: 0;
 }
 
 /* Worksheet preview mockup */
