@@ -1652,7 +1652,7 @@ body.modal-open { overflow: hidden; }
 /* Hero — teal bg */
 .pbpp .hero                  { background: var(--pb); }
 .pbpp .hero-eyebrow          { color: rgba(255,255,255,0.5); }
-.pbpp .hero h1               { font-family: var(--sans); font-weight: 800; color: #fff; max-width: 24ch; }
+.pbpp .hero h1               { font-family: var(--sans); font-weight: 600; color: #fff; max-width: 24ch; }
 .pbpp .hero h2               { font-family: var(--serif); font-size: clamp(16px,2vw,20px); font-weight: 400; color: rgba(255,255,255,0.72); max-width: 42ch; line-height: 1.55; margin-bottom: 40px; }
 .pbpp .hero .btn-primary     { background: var(--pb-accent); color: #fff; }
 .pbpp .hero .btn-ghost       { color: rgba(255,255,255,0.88); border-bottom-color: rgba(255,255,255,0.4); }
@@ -2019,8 +2019,6 @@ body.modal-open { overflow: hidden; }
   text-transform: uppercase;
   color: rgba(255,255,255,.55);
   margin-bottom: 6px;
-  text-align: justify;
-  text-align-last: justify;
 }
 
 .pbpp-cover-title {
@@ -2042,8 +2040,8 @@ body.modal-open { overflow: hidden; }
 
 .pbpp-cover-sub {
   font-family: var(--sans);
-  font-size: 8px;
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: .2em;
   text-transform: uppercase;
   color: rgba(255,255,255,.72);
@@ -2061,12 +2059,12 @@ body.modal-open { overflow: hidden; }
 
 .pbpp-cover-system-label {
   font-family: var(--sans);
-  font-size: 6.5px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: #888;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
   line-height: 1.55;
 }
 
@@ -2102,7 +2100,7 @@ body.modal-open { overflow: hidden; }
 
 .pbpp-cover-brand-foot {
   font-family: var(--sans);
-  font-size: 5.5px;
+  font-size: 7px;
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
