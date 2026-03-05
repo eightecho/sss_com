@@ -73,6 +73,35 @@
   }
 
 
+  /* ── Learn-how modal ─────────────────────────────────── */
+  function setupLearnHowModal() {
+    var modal = qs('#learnhowModal');
+    if (!modal) return;
+
+    var openers = qsa('[data-open-learnhow]');
+    var closers = qsa('[data-close-learnhow]');
+
+    function openModal() {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    }
+
+    openers.forEach(function (btn) { btn.addEventListener('click', openModal); });
+    closers.forEach(function (el)  { el.addEventListener('click', closeModal); });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  }
+
+
   /* ── Footer year ─────────────────────────────────────── */
   function setYear() {
     var el = qs('#year');
@@ -84,6 +113,7 @@
   function init() {
     setupNav();
     setupModal();
+    setupLearnHowModal();
     setYear();
   }
 

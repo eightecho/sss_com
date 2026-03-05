@@ -1612,6 +1612,34 @@ body.modal-open { overflow: hidden; }
 }
 .worksheet-preview-cta:hover { opacity: 0.7; }
 
+/* Worksheet checklist — Learn how button layout */
+.worksheet-check-text {
+  flex: 1;
+}
+
+.worksheet-learn-btn {
+  flex-shrink: 0;
+  align-self: center;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pb);
+  background: none;
+  border: 1px solid var(--pb);
+  padding: 5px 11px;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: 12px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.worksheet-learn-btn:hover {
+  background: var(--pb);
+  color: #fff;
+}
+
 @media (max-width: 720px) {
   .pbpp .playbook-step { padding: 20px; }
   .pillar-divider { margin-top: 40px; }
