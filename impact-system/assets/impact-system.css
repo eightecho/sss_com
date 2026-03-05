@@ -3385,3 +3385,125 @@ ul.artifact-list li strong {
   .sp-hero       { padding: 36px 24px 32px; }
 }
 
+
+/* ── AUTHOR PHOTO ────────────────────────────────────────── */
+.sp-author-photo {
+  width: 160px;
+  margin: 0 0 36px;
+}
+
+.sp-author-photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1.2;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.sp-playbooks-cta-link {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dark);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--dark);
+  padding-bottom: 2px;
+  margin-top: 8px;
+  transition: opacity 0.15s;
+}
+
+.sp-playbooks-cta-link:hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+
+/* ── PLAYBOOKS CTA (playbooks-cta.html) ──────────────────── */
+.playbooks-cta {
+  padding: 72px 64px 80px;
+}
+
+.playbooks-cta > h1 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4.5vw, 62px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--dark);
+  margin-bottom: 56px;
+}
+
+.playbooks-cta > h2 {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.playbooks-cta > p {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--dimmed);
+  text-align: center;
+  max-width: 52ch;
+  margin: 0 auto 16px;
+}
+
+.playbooks-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 48px 56px;
+  text-align: center;
+  max-width: 520px;
+  margin: 52px auto 0;
+}
+
+.playbooks-box h2 {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+.playbooks-box p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--dimmed);
+  max-width: 44ch;
+  margin: 0 auto 36px;
+}
+
+.playbooks-btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dark);
+  text-decoration: none;
+  border: 1.5px solid var(--dark);
+  padding: 15px 40px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.playbooks-btn:hover {
+  background: var(--dark);
+  color: var(--white);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .playbooks-cta         { padding: 48px 24px 60px; }
+  .playbooks-cta > h1   { margin-bottom: 36px; }
+  .playbooks-box         { padding: 36px 28px; }
+}
+
