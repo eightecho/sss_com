@@ -329,6 +329,7 @@ p + p { margin-top: 1em; }
 .pbpp-cover--ghost .pbpp-cover-lower   { background: #e8e4de; }
 .pbpp-cover--ghost .pbpp-cover-system-label { color: #bbb; }
 .pbpp-cover--ghost .pbpp-dot           { background: #c8c4be; }
+.pbpp-cover--ghost .pbpp-cover-lower:empty { display: none; }
 
 .pbpp-cover-coming-soon {
   position: absolute;
@@ -1612,6 +1613,12 @@ body.modal-open { overflow: hidden; }
   border-bottom: 1px solid var(--line, #e9e9e9);
   padding-bottom: 2px;
   text-decoration: none;
+}
+
+#pb-library .pb-row--ghost {
+  background: transparent;
+  border-color: var(--border);
+  box-shadow: none;
 }
 
 @media (max-width: 900px) {
