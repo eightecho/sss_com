@@ -282,6 +282,76 @@ Present on every main page. Opened by `data-open-optin` attributes.
 - `data-open-optin` on any button/element opens the modal
 - `data-close-optin` on any element closes the modal
 
+### Hero Step Pills
+Used on `index.html` after `.hero-sub` to display the 6 IMPACT steps inline.
+```html
+<div class="hero-steps">
+  <span class="wf-step wf-step--identify">Identify</span>
+  <span class="wf-arrow">→</span>
+  <span class="wf-step wf-step--monetize">Monetize</span>
+  <span class="wf-arrow">→</span>
+  <span class="wf-step wf-step--productize">Productize</span>
+  <span class="wf-arrow">→</span>
+  <span class="wf-step wf-step--activate">Activate</span>
+  <span class="wf-arrow">→</span>
+  <span class="wf-step wf-step--campaign">Campaign</span>
+  <span class="wf-arrow">→</span>
+  <span class="wf-step wf-step--triumph">Triumph</span>
+</div>
+```
+
+### IMPACT Phase Flow Diagram
+Used on `impact-system.html` to show the two-phase structure with a loop badge.
+```html
+<div class="impact-phases">
+  <div class="impact-phase-row">
+    <span class="impact-phase-tag">Phase 1 · Build</span>
+    <span class="wf-step wf-step--identify">Identify</span>
+    <span class="wf-arrow">→</span>
+    <span class="wf-step wf-step--monetize">Monetize</span>
+    <span class="wf-arrow">→</span>
+    <span class="wf-step wf-step--productize">Productize</span>
+  </div>
+  <div class="impact-phase-div">↓</div>
+  <div class="impact-phase-row">
+    <span class="impact-phase-tag">Phase 2 · Run</span>
+    <span class="wf-step wf-step--activate">Activate</span>
+    <span class="wf-arrow">→</span>
+    <span class="wf-step wf-step--campaign">Campaign</span>
+    <span class="wf-arrow">→</span>
+    <span class="wf-step wf-step--triumph">Triumph</span>
+    <span class="impact-loop-badge">↺ repeats</span>
+  </div>
+</div>
+```
+
+### Problem Stats Callout
+Used in PBPP "The Problem" section to show a before/after stat comparison.
+```html
+<div class="problem-stats">
+  <div class="problem-stat">
+    <p class="problem-stat-num">$2,000</p>
+    <p class="problem-stat-label">Spent on illustrations</p>
+  </div>
+  <div class="problem-stat-vs">→</div>
+  <div class="problem-stat problem-stat--loss">
+    <p class="problem-stat-num">$200</p>
+    <p class="problem-stat-label">Average first-year earnings</p>
+  </div>
+</div>
+```
+`.problem-stat--loss` applies red/loss color treatment to the number.
+
+### Neutral Step Pills
+For non-IMPACT flows (e.g. community how-it-works) use `.wf-step--neutral` which renders with `background: var(--ink)` instead of a step color.
+```html
+<span class="wf-step wf-step--neutral">Buy a Playbook</span>
+<span class="wf-arrow">→</span>
+<span class="wf-step wf-step--neutral">Join on Heartbeat</span>
+<span class="wf-arrow">→</span>
+<span class="wf-step wf-step--neutral">Get Support</span>
+```
+
 ### Workbook Flow Diagram
 ```html
 <div class="workbook-flow">
@@ -336,7 +406,7 @@ Root node uses step color class. Stages use `.wf-tree-stage`. Worksheet icons ar
 ### PBPP CSS Overrides (key ones)
 ```css
 .pbpp .hero              { background: var(--pb); }
-.pbpp .hero h1           { font-family: var(--sans); font-weight: 800; color: #fff; }
+.pbpp .hero h1           { font-family: var(--sans); font-weight: 600; color: #fff; }
 .pbpp .section-label     { color: var(--pb); }
 .pbpp .cta-strip         { background: var(--pb); }
 .pbpp .hero .btn-primary { background: var(--pb-accent); }
@@ -352,7 +422,7 @@ Root node uses step color class. Stages use `.wf-tree-stage`. Worksheet icons ar
     <div class="pbpp-cover-sub">Playbook</div>
   </div>
   <div class="pbpp-cover-lower">
-    <div class="pbpp-cover-system-label">The IMPACT System — Applied</div>
+    <div class="pbpp-cover-system-label">The<br>IMPACT System<br>— Applied</div>
     <div class="pbpp-cover-dots">
       <span class="pbpp-dot pbpp-dot--i">I</span>
       <span class="pbpp-dot pbpp-dot--m">M</span>
@@ -366,6 +436,29 @@ Root node uses step color class. Stages use `.wf-tree-stage`. Worksheet icons ar
 </div>
 ```
 Sizes: `pbpp-cover--sm`, `pbpp-cover--md`, `pbpp-cover--lg`
+
+#### Ghost Cover Variant (coming-soon playbooks)
+Add `.pbpp-cover--ghost` to the cover div. The modifier overrides band/lower/dot colors to neutral greys and adds a "Coming Soon" badge.
+```html
+<div class="pbpp-cover pbpp-cover--sm pbpp-cover--ghost">
+  <div class="pbpp-cover-band">
+    <div class="pbpp-cover-brand">Stupid Simple Startup&trade;</div>
+    <div class="pbpp-cover-title">Solopreneur<br>Playbook</div>
+    <div class="pbpp-cover-rule"></div>
+    <div class="pbpp-cover-sub">Playbook</div>
+  </div>
+  <div class="pbpp-cover-lower">
+    <div class="pbpp-cover-system-label">The<br>IMPACT System<br>— Applied</div>
+    <div class="pbpp-cover-dots">
+      <span class="pbpp-dot pbpp-dot--i">I</span>
+      <!-- … -->
+    </div>
+    <div class="pbpp-cover-brand-foot">Stupid Simple Startup&trade;</div>
+  </div>
+  <span class="pbpp-cover-coming-soon">Coming Soon</span>
+</div>
+```
+`.pbpp-cover-coming-soon` is `position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%)` — requires `.pbpp-cover` to have `position: relative` (it does).
 
 ---
 
