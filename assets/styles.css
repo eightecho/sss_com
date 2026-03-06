@@ -285,6 +285,73 @@ p + p { margin-top: 1em; }
   margin-bottom: 32px;
 }
 
+/* ── Problem stat callout (PBPP) ────────────────────── */
+.problem-stats {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 36px 0;
+  flex-wrap: wrap;
+}
+.problem-stat { text-align: center; }
+.problem-stat-num {
+  font-family: var(--sans);
+  font-size: clamp(40px, 7vw, 60px);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.problem-stat--loss .problem-stat-num { color: var(--accent); }
+.problem-stat-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.problem-stat-vs {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--border);
+  align-self: center;
+}
+
+/* ── Ghost (coming-soon) book cover ─────────────────── */
+.pbpp-cover--ghost .pbpp-cover-band    { background: #a09890; }
+.pbpp-cover--ghost .pbpp-cover-brand   { color: rgba(255,255,255,.4); }
+.pbpp-cover--ghost .pbpp-cover-rule    { background: rgba(255,255,255,.3); }
+.pbpp-cover--ghost .pbpp-cover-sub     { color: rgba(255,255,255,.45); }
+.pbpp-cover--ghost .pbpp-cover-lower   { background: #e8e4de; }
+.pbpp-cover--ghost .pbpp-cover-system-label { color: #bbb; }
+.pbpp-cover--ghost .pbpp-dot           { background: #c8c4be; }
+
+.pbpp-cover-coming-soon {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(28,26,23,.72);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ── Neutral step (community flow) ──────────────────── */
+.wf-step--neutral { background: var(--ink); }
+
+
 /* ── Hero IMPACT step row ───────────────────────────── */
 .hero-steps {
   display: flex;
