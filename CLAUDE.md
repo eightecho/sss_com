@@ -13,7 +13,10 @@ It is the authoritative technical and editorial reference for this project.
 | Domain | stupidsimplestartup.com |
 | Legal entity | Eight Echo Agency, LLC |
 | Repository | github.com:eightecho/stupidsimplestartup.git |
-| Deployment | GitHub Pages (main branch, root) |
+| Deployment | GitHub Actions → rsync to Vultr VPS (GridPane WordPress multisite) |
+| WP install | `/var/www/my.stupidsimplestartup.com/htdocs/` |
+| Theme path on server | `htdocs/wp-content/themes/sss/` |
+| Multisite blog_id | 2 (stupidsimplestartup.com) |
 
 ### Registered Trademarks
 All use `&trade;` in HTML.
@@ -27,12 +30,13 @@ All use `&trade;` in HTML.
 
 ## Tech Stack — Hard Constraints
 
-- **Pure static HTML/CSS/JS. No build system. No framework. No npm.**
-- Files are edited directly. What you see is what deploys.
+- **WordPress custom PHP theme. No page builder. No Cadence/Elementor/Divi.**
+- Theme files: PHP templates + CSS + JS. No build system. No npm. No preprocessors.
 - JavaScript: ES5 IIFE pattern (`(function(){ 'use strict'; }())`), no modules, no transpilation.
 - CSS: custom properties only, no preprocessors.
-- Fonts loaded via Google Fonts CDN (Montserrat + Libre Baskerville).
-- Deployed via GitHub Pages — `git push` to `main` is the deploy.
+- Fonts loaded via Google Fonts CDN (Montserrat + Libre Baskerville) — enqueued in `functions.php`.
+- Deploy: push to `main` → GitHub Actions rsync → theme lands on server automatically.
+- Static HTML files at the repo root (`index.html`, `playbooks.html`, etc.) are **reference material only** — the old static site. Do not edit them; the WordPress theme is the live product.
 
 ---
 
@@ -40,46 +44,35 @@ All use `&trade;` in HTML.
 
 ```
 /
-├── index.html                     Homepage
-├── impact-system.html             IMPACT System™ landing page
-├── playbooks.html                 Playbook library
-├── worksheets.html                Worksheets page
-├── community.html                 Community page
-├── privacy.html                   Privacy Policy (includes cookie consent docs)
-├── disclaimer.html                Disclaimer
-├── terms.html                     Terms of Service
+├── theme/                         WordPress theme — this is what deploys
+│   ├── style.css                  WP theme header (required by WordPress)
+│   ├── functions.php              Enqueues assets, registers nav menus, theme support
+│   ├── header.php                 <html> through </header>
+│   ├── footer.php                 <footer> through </html>
+│   ├── index.php                  Blog index fallback
+│   ├── front-page.php             Homepage (static front page)
+│   ├── page.php                   Generic page template
+│   ├── single.php                 Single post template
+│   └── assets/
+│       ├── css/main.css           Master stylesheet
+│       └── js/main.js             Nav, modals, cookie consent, year
 │
-├── impact-system/                 The IMPACT System™ — chapter pages
-│   ├── index.html                 Table of contents
-│   ├── introduction.html
-│   ├── author.html
-│   ├── guiding-loop.html
-│   ├── phase-1.html
-│   ├── phase-2.html
-│   ├── step-1-identify.html
-│   ├── step-2-monetize.html
-│   ├── step-3-productize.html
-│   ├── step-4-activate.html
-│   ├── step-5-campaign.html
-│   ├── step-6-triumph.html
-│   ├── reference.html
-│   ├── playbooks-cta.html
-│   └── copyright.html
+├── .github/workflows/deploy.yml   GitHub Actions: rsync theme/ to server on push
 │
-├── playbooks/                     Playbook detail pages
-│   ├── index.html                 Playbooks index (redirects to playbooks.html)
-│   └── picture-book-project.html  Picture Book Project Playbook™ sales page
+├── assets/                        OLD static site assets — reference only, do not edit
+├── index.html                     OLD static homepage — reference only
+├── playbooks.html                 OLD static playbooks — reference only
+├── (other .html files)            OLD static site — reference only
 │
-└── assets/
-    ├── styles.css                 Single master stylesheet
-    ├── main.js                    Single JS file (nav, modals, consent, year)
-    └── tadrobert.jpg              Author photo
+└── CLAUDE.md                      This file
 ```
 
-### Path prefix rule
-- Root-level pages: `./assets/styles.css`, `./impact-system.html`
-- `playbooks/` subdirectory: `../assets/styles.css`, `../impact-system.html`
-- `impact-system/` subdirectory: `../assets/styles.css`, `../impact-system.html`
+### Theme template hierarchy (WordPress)
+- `front-page.php` — used when WP Settings → Reading has a static front page set
+- `page.php` — all other pages (About, Privacy, Terms, etc.)
+- `single.php` — blog posts
+- `index.php` — fallback for anything else (blog index)
+- Custom page templates: add `/* Template Name: Foo */` comment at top of a new PHP file
 
 ---
 
@@ -136,39 +129,30 @@ These are **not** CSS variables — used in specific sections:
 - The PBPP hero `h1` uses `var(--sans)` weight 800 (overrides body `h1` default)
 
 ### Font Loading
-Every page head must include:
-```html
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
-```
+Fonts are enqueued in `functions.php` via `wp_enqueue_style()` — do **not** add `<link>` tags directly to `header.php`. The enqueue call adds them to every page automatically via `wp_head()`.
 
 ---
 
 ## Component Reference
 
 ### Navigation
+In `header.php`, nav links use `home_url()` for the brand link and `wp_nav_menu()` for the nav. WordPress adds `current-menu-item` class on the active page — use this instead of `aria-current="page"`.
+
+Visual structure (mirrors old static site):
 ```html
 <header class="site-nav">
   <div class="container nav-inner">
-    <a href="index.html" class="brand">Stupid Simple Startup&trade;</a>
-    <nav aria-label="Main navigation">
-      <ul class="nav-links">
-        <li><a href="./impact-system.html">The IMPACT System</a></li>
-        <li><a href="./playbooks.html">Playbooks</a></li>
-        <li><a href="./worksheets.html">Worksheets</a></li>
-        <li><a href="./community.html">Community</a></li>
-      </ul>
-    </nav>
+    <a href="<?php echo home_url('/'); ?>" class="brand">Stupid Simple Startup&trade;</a>
+    <?php wp_nav_menu(['theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav-links']); ?>
     <button class="nav-toggle" data-nav-toggle ...><!-- hamburger SVG --></button>
   </div>
   <nav id="navDrawer" class="nav-drawer" aria-label="Mobile navigation">
-    <!-- same links, no <ul> wrapper -->
+    <?php wp_nav_menu(['theme_location' => 'primary', 'container' => false]); ?>
   </nav>
 </header>
 ```
 - ™ appears on the brand wordmark only — **not** in nav links
-- Active page gets `aria-current="page"` on its `<a>` tag
+- Nav menu is managed in WP admin → Appearance → Menus (assign to "Primary Navigation")
 
 ### Hero
 ```html
@@ -243,35 +227,29 @@ Every page head must include:
 </section>
 ```
 
-### Footer (3-row structure — all pages)
+### Footer (3-row structure — in `footer.php`)
 ```html
 <footer class="site-footer">
   <!-- Row 1: centered main nav -->
   <div class="container footer-main-nav">
-    <ul class="footer-links">
-      <li><a href="./impact-system.html">The IMPACT System</a></li>
-      <li><a href="./playbooks.html">Playbooks</a></li>
-      <li><a href="./worksheets.html">Worksheets</a></li>
-      <li><a href="./community.html">Community</a></li>
-    </ul>
+    <?php wp_nav_menu(['theme_location' => 'footer', 'container' => false, 'menu_class' => 'footer-links']); ?>
   </div>
   <!-- Row 2: copyright left / legal links right -->
   <div class="container footer-inner">
     <p class="footer-copy">Copyright &copy; <span id="year"></span> Eight Echo Agency, LLC</p>
-    <ul class="footer-links">
-      <li><a href="./privacy.html">Privacy Policy</a></li>
-      <li><a href="./disclaimer.html">Disclaimer</a></li>
-      <li><a href="./terms.html">Terms</a></li>
-    </ul>
+    <!-- legal links: hardcoded or second footer menu -->
   </div>
   <!-- Row 3: trademark notice -->
   <div class="container">
     <p class="footer-legal">Stupid Simple Startup&trade;, the IMPACT System&trade;, and the Stupid Simple Startup Program&trade; are trademarks of Eight Echo Agency, LLC. All rights reserved.</p>
   </div>
 </footer>
+<?php wp_footer(); ?>
+</body>
+</html>
 ```
-- Active legal page gets `aria-current="page"` on its footer link
-- The `<span id="year"></span>` is filled by `setYear()` in `main.js`
+- Footer nav managed in WP admin → Appearance → Menus (assign to "Footer Navigation")
+- The `<span id="year"></span>` is filled by `setYear()` in `assets/js/main.js`
 
 ### Opt-In Modal (Kit / ConvertKit)
 Present on every main page. Opened by `data-open-optin` attributes.
@@ -377,20 +355,25 @@ Root node uses step color class. Stages use `.wf-tree-stage`. Worksheet icons ar
 
 ## Page Templates
 
-### Standard Page Head
-```html
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[Page Title] — Stupid Simple Startup</title>
-  <meta name="description" content="[Description]" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/styles.css" />
-  <script defer src="./assets/main.js"></script>
-</head>
+### WordPress Template Structure
+All templates follow this pattern:
+```php
+<?php get_header(); ?>
+<main id="main">
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <!-- page content here -->
+    <?php endwhile; endif; ?>
+</main>
+<?php get_footer(); ?>
 ```
+
+`get_header()` outputs everything from `<!DOCTYPE html>` through `</header>`.
+`get_footer()` outputs `<footer>` through `</html>` including `wp_footer()`.
+
+All `<head>` content (charset, viewport, title, fonts, stylesheet, JS) is output by `wp_head()` in `header.php` — never hardcode these in individual templates.
+
+### Setting page-specific `<title>` and meta description
+Use Slim SEO Pro (already licensed and installed) to set title and description per page in the WP admin. No custom code needed.
 
 ---
 
@@ -522,23 +505,34 @@ Single IIFE. Functions:
 
 ## Development Workflow
 
-### Local Preview
-```bash
-python3 -m http.server 8765
-# or via Claude Code: mcp__Claude_Preview__preview_start "stupidsimplestartup"
+### Local Preview (LocalWP)
+The theme is mirrored in LocalWP for local dev. Local site path:
 ```
-Browse at `http://localhost:8765`
+~/Local Sites/stupidsimplestartupcom/app/public/wp-content/themes/sss/
+```
+After editing `theme/` files locally, manually copy to the LocalWP path to preview, or work directly in LocalWP and sync back. There is no auto-sync — copy intentionally.
 
-### Deploy
+### Deploy (GitHub Actions)
 ```bash
-git add [files]
+git add theme/
 git commit -m "Description of change"
 git push origin main
 ```
-GitHub Pages deploys automatically from `main`. No build step required.
+`.github/workflows/deploy.yml` triggers on push to `main` when `theme/**` changes. It rsync's `theme/` to the server at:
+```
+root@66.135.28.141:/var/www/my.stupidsimplestartup.com/htdocs/wp-content/themes/sss/
+```
+Uses `SSH_PRIVATE_KEY` GitHub secret (the same key as `~/.ssh/id_ed25519`). No manual deploy step needed.
 
-### Bulk edits across multiple files
-Use Python inline scripts with `re.compile(..., re.DOTALL)` for multi-file pattern replacement. Particularly useful for footer HTML blocks and nav updates across all pages.
+### Direct server access
+```bash
+ssh sss-server
+cd /var/www/my.stupidsimplestartup.com/htdocs/
+sudo -u my15356 wp cache flush --url=stupidsimplestartup.com
+```
+
+### Bulk edits across multiple PHP templates
+Use Python inline scripts with `re.compile(..., re.DOTALL)` for multi-file pattern replacement. Particularly useful for header/footer changes across all templates.
 
 ---
 
