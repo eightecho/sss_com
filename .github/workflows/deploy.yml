@@ -1,0 +1,20 @@
+name: Deploy SSS Theme
+
+on:
+  push:
+    branches: [main]
+    paths: [theme/**]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy theme to server
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan 66.135.28.141 >> ~/.ssh/known_hosts
+          rsync -avz --delete theme/ root@66.135.28.141:/var/www/my.stupidsimplestartup.com/htdocs/wp-content/themes/sss/

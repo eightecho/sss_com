@@ -17,3 +17,9 @@
 # Misc
 Thumbs.db
 ehthumbs.db
+
+# Site-specific
+media-archive/
+session-progress.md
+network-migration-plan.md
+replace_kit_form.py
