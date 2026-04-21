@@ -11,6 +11,6 @@ add_action('after_setup_theme', function () {
 });
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('sss-main', get_template_directory_uri() . '/assets/css/main.css', [], '0.1.0');
-    wp_enqueue_script('sss-main', get_template_directory_uri() . '/assets/js/main.js', [], '0.1.0', true);
+    wp_enqueue_style('sss-main', get_template_directory_uri() . '/assets/css/main.css', [], '0.2.0');
+    wp_enqueue_script('sss-main', get_template_directory_uri() . '/assets/js/main.js', [], '0.2.0', true);
 });
