@@ -4,16 +4,188 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Playbooks — The IMPACT System</title>
+<title>Get the Playbook — The IMPACT System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/impact-system.css">
 <style>
   :root {
-    --step: #c4a35a;
+    --step:       #c4a35a;
     --step-light: #fdf9f0;
-    --step-mid: #e8d9b0;
+    --step-mid:   #e8d9b0;
+  }
+
+  .cta-page {
+    max-width: 680px;
+    padding: 64px 0 120px;
+  }
+
+  .cta-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--step);
+    margin-bottom: 24px;
+  }
+
+  .cta-headline {
+    font-family: var(--sans);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .cta-subhead {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+  }
+
+  .cta-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--step);
+    margin-bottom: 48px;
+  }
+
+  .cta-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--step);
+    padding: 36px 40px;
+    margin-bottom: 32px;
+  }
+
+  .cta-card-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--step);
+    margin-bottom: 12px;
+  }
+
+  .cta-card-title {
+    font-family: var(--sans);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  .cta-card-body {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .cta-pitch {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text);
+    padding: 28px 32px;
+    border-left: 3px solid var(--step);
+    background: var(--step-light);
+    margin-bottom: 40px;
+  }
+
+  .cta-what-you-get {
+    margin-bottom: 40px;
+  }
+
+  .cta-what-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+
+  .cta-what-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cta-what-list li {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .cta-what-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--step);
+    font-family: var(--sans);
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--step);
+    color: #1c1a17;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    padding: 16px 32px;
+    text-decoration: none;
+    transition: opacity 150ms;
+    margin-bottom: 16px;
+  }
+
+  .cta-btn:hover { opacity: 0.88; }
+
+  .cta-btn-note {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  .cta-context {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-context-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+
+  .cta-context-text {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-dim);
   }
 </style>
 </head>
@@ -37,9 +209,9 @@
       <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
     </a>
     <div class="sidebar-phase-steps">
-      <a class="step-nav-item indented" data-step="1" href="step-1-identify.html"><div class="step-dot" >1</div><div class="step-nav-label"><span class="step-nav-number">Step 1</span><span class="step-nav-name">Identify</span></div></a>
-      <a class="step-nav-item indented" data-step="2" href="step-2-monetize.html"><div class="step-dot" >2</div><div class="step-nav-label"><span class="step-nav-number">Step 2</span><span class="step-nav-name">Monetize</span></div></a>
-      <a class="step-nav-item indented" data-step="3" href="step-3-productize.html"><div class="step-dot" >3</div><div class="step-nav-label"><span class="step-nav-number">Step 3</span><span class="step-nav-name">Productize</span></div></a>
+      <a class="step-nav-item indented" data-step="1" href="step-1-identify.html"><div class="step-dot">1</div><div class="step-nav-label"><span class="step-nav-number">Step 1</span><span class="step-nav-name">Identify</span></div></a>
+      <a class="step-nav-item indented" data-step="2" href="step-2-monetize.html"><div class="step-dot">2</div><div class="step-nav-label"><span class="step-nav-number">Step 2</span><span class="step-nav-name">Monetize</span></div></a>
+      <a class="step-nav-item indented" data-step="3" href="step-3-productize.html"><div class="step-dot">3</div><div class="step-nav-label"><span class="step-nav-number">Step 3</span><span class="step-nav-name">Productize</span></div></a>
     </div>
   </div>
   <div class="sidebar-nav-divider"></div>
@@ -50,9 +222,9 @@
       <span class="sidebar-phase-chevron" onclick="toggleChevron(event, this)">›</span>
     </a>
     <div class="sidebar-phase-steps">
-      <a class="step-nav-item indented" data-step="4" href="step-4-activate.html"><div class="step-dot" >4</div><div class="step-nav-label"><span class="step-nav-number">Step 4</span><span class="step-nav-name">Activate</span></div></a>
-      <a class="step-nav-item indented" data-step="5" href="step-5-campaign.html"><div class="step-dot" >5</div><div class="step-nav-label"><span class="step-nav-number">Step 5</span><span class="step-nav-name">Campaign</span></div></a>
-      <a class="step-nav-item indented" data-step="6" href="step-6-triumph.html"><div class="step-dot" >6</div><div class="step-nav-label"><span class="step-nav-number">Step 6</span><span class="step-nav-name">Triumph</span></div></a>
+      <a class="step-nav-item indented" data-step="4" href="step-4-activate.html"><div class="step-dot">4</div><div class="step-nav-label"><span class="step-nav-number">Step 4</span><span class="step-nav-name">Activate</span></div></a>
+      <a class="step-nav-item indented" data-step="5" href="step-5-campaign.html"><div class="step-dot">5</div><div class="step-nav-label"><span class="step-nav-number">Step 5</span><span class="step-nav-name">Campaign</span></div></a>
+      <a class="step-nav-item indented" data-step="6" href="step-6-triumph.html"><div class="step-dot">6</div><div class="step-nav-label"><span class="step-nav-number">Step 6</span><span class="step-nav-name">Triumph</span></div></a>
     </div>
   </div>
   <div class="sidebar-nav-divider"></div>
@@ -60,7 +232,7 @@
     <a class="nav-item" href="guiding-loop.html"><span class="nav-item-icon">↺</span><span class="nav-item-name">The Guiding Loop</span></a>
     <a class="nav-item" href="reference.html"><span class="nav-item-icon">≡</span><span class="nav-item-name">Glossary &amp; Reference</span></a>
     <a class="nav-item" href="author.html"><span class="nav-item-icon">T</span><span class="nav-item-name">About the Author</span></a>
-    <a class="nav-item active" href="playbooks-cta.html" style="margin-top:4px;"><span class="nav-item-icon" style="border-color:#c4a35a;color:#c4a35a;">▸</span><span class="nav-item-name" style="color:rgba(196,163,90,0.8);">The Playbook</span></a>
+    <a class="nav-item active" href="playbooks-cta.html" style="margin-top:4px;"><span class="nav-item-icon" style="border-color:#c4a35a;color:#c4a35a;">▸</span><span class="nav-item-name" style="color:rgba(196,163,90,0.8);">Get the Playbook</span></a>
   </div>
   <div class="sidebar-footer">
     <div class="sidebar-footer-text">Working Draft v1</div>
@@ -69,20 +241,64 @@
 </nav>
 
 <main class="main">
+  <div class="content cta-page">
 
-  <section class="playbooks-cta">
-    <h1>Now that you understand the system.</h1>
-    <h2>It's time to put it into action.</h2>
-    <p>The IMPACT System gives you the strategic framework.</p>
-    <p>But strategy alone isn't enough. The real question is: how does this look in practice?</p>
-    <p>That's where the playbooks come in.</p>
-    <div class="playbooks-box">
-      <h2>The Playbooks</h2>
-      <p>Each playbook applies the IMPACT System to a real business — showing every decision, tool, and deliverable used along the way.</p>
-      <a href="../playbooks.html" class="playbooks-btn">Explore the Playbooks</a>
+    <p class="cta-eyebrow">You've learned the system. Now apply it.</p>
+
+    <h1 class="cta-headline">The framework is only<br>half the work.</h1>
+
+    <p class="cta-subhead">The IMPACT System tells you what to do at every stage of building a business. What it can't tell you is how those decisions play out in your specific niche — the real tradeoffs, the sequencing mistakes, the things that only become obvious once you're deep in it.</p>
+
+    <p class="cta-subhead">That's what a Playbook is for.</p>
+
+    <div class="cta-divider"></div>
+
+    <div class="cta-card">
+      <p class="cta-card-eyebrow">For self-publishing picture book authors</p>
+      <h2 class="cta-card-title">Picture Book Project Playbook&trade;</h2>
+      <p class="cta-card-body">The IMPACT System applied to self-publishing a picture book — every decision documented in real time, from the first story idea through a live launch. Not a template. Not a course. A documented execution of the system in your exact market.</p>
     </div>
-  </section>
 
+    <blockquote class="cta-pitch">
+      "Your AI consultant already knows the picture book publishing world. The Playbook is how you introduce yourself."
+    </blockquote>
+
+    <div class="cta-what-you-get">
+      <p class="cta-what-label">What you're buying</p>
+      <ul class="cta-what-list">
+        <li>A downloadable file you own — the documented playbook for picture book self-publishing</li>
+        <li>An activation key — upload it to the IMPACT Studio App and your AI consultant is pre-loaded with deep picture book publishing knowledge</li>
+        <li>The start of a guided journey through all six IMPACT steps, specific to your venture</li>
+        <li>A personalized exit workbook at the end — generated by the agent, built around your actual decisions</li>
+      </ul>
+    </div>
+
+    <a href="../picture-book-project.html" class="cta-btn">
+      Get the Picture Book Project Playbook&trade; →
+    </a>
+    <br>
+    <span class="cta-btn-note">Full details and pricing on the next page</span>
+
+    <div class="cta-context">
+      <p class="cta-context-label">Not a picture book author?</p>
+      <p class="cta-context-text">More Playbooks are in development for other niches. The IMPACT System works for any solopreneur business — the Playbooks are what make it specific to yours. Check <a href="../playbooks.html" style="color:var(--text-muted);">the Playbook library</a> for what's available.</p>
+    </div>
+
+  </div>
+
+  <div class="step-footer-nav">
+    <a class="step-footer-nav-btn" href="author.html" style="margin-right:auto;">
+      <span class="step-footer-arrow" style="transform:scaleX(-1); display:inline-block;">→</span>
+      <span>
+        <div class="step-footer-nav-step">Previous</div>
+        <div class="step-footer-nav-name">About the Author</div>
+      </span>
+    </a>
+  </div>
+
+  <footer class="guide-footer">
+    <a href="https://stupidsimplestartup.com" target="_blank">stupidsimplestartup.com</a>
+  </footer>
 </main>
 
 <script defer src="assets/mobile-nav.js"></script>
