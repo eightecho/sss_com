@@ -12,7 +12,7 @@ It is the authoritative technical and editorial reference for this project.
 | Site name | Stupid Simple Startup™ |
 | Domain | stupidsimplestartup.com |
 | Legal entity | Eight Echo Agency, LLC |
-| Repository | github.com:eightecho/stupidsimplestartup.git |
+| Repository | github.com:eightecho/sss_com.git |
 | Deployment | GitHub Actions → rsync to Vultr VPS (GridPane WordPress multisite) |
 | WP install | `/var/www/my.stupidsimplestartup.com/htdocs/` |
 | Theme path on server | `htdocs/wp-content/themes/sss/` |
@@ -36,7 +36,7 @@ All use `&trade;` in HTML.
 - CSS: custom properties only, no preprocessors.
 - Fonts loaded via Google Fonts CDN (Montserrat + Libre Baskerville) — enqueued in `functions.php`.
 - Deploy: push to `main` → GitHub Actions rsync → theme lands on server automatically.
-- Static HTML files at the repo root (`index.html`, `playbooks.html`, etc.) are **reference material only** — the old static site. Do not edit them; the WordPress theme is the live product.
+- Static HTML files in `dev/` are **reference material only** — the old static site. Do not edit them; the WordPress theme in `production/` is the live product.
 
 ---
 
@@ -44,7 +44,7 @@ All use `&trade;` in HTML.
 
 ```
 /
-├── theme/                         WordPress theme — this is what deploys
+├── production/                    WordPress theme — this is what deploys
 │   ├── style.css                  WP theme header (required by WordPress)
 │   ├── functions.php              Enqueues assets, registers nav menus, theme support
 │   ├── header.php                 <html> through </header>
@@ -57,12 +57,13 @@ All use `&trade;` in HTML.
 │       ├── css/main.css           Master stylesheet
 │       └── js/main.js             Nav, modals, cookie consent, year
 │
-├── .github/workflows/deploy.yml   GitHub Actions: rsync theme/ to server on push
+├── dev/                           Static HTML reference site — do not edit
+│   ├── index.html
+│   ├── playbooks.html
+│   ├── assets/
+│   └── (other .html files and folders)
 │
-├── assets/                        OLD static site assets — reference only, do not edit
-├── index.html                     OLD static homepage — reference only
-├── playbooks.html                 OLD static playbooks — reference only
-├── (other .html files)            OLD static site — reference only
+├── .github/workflows/deploy.yml   GitHub Actions: rsync production/ to server on push
 │
 └── CLAUDE.md                      This file
 ```
@@ -514,11 +515,11 @@ After editing `theme/` files locally, manually copy to the LocalWP path to previ
 
 ### Deploy (GitHub Actions)
 ```bash
-git add theme/
+git add production/
 git commit -m "Description of change"
 git push origin main
 ```
-`.github/workflows/deploy.yml` triggers on push to `main` when `theme/**` changes. It rsync's `theme/` to the server at:
+`.github/workflows/deploy.yml` triggers on push to `main` when `production/**` changes. It rsync's `production/` to the server at:
 ```
 root@66.135.28.141:/var/www/my.stupidsimplestartup.com/htdocs/wp-content/themes/sss/
 ```

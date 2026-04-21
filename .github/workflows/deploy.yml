@@ -3,7 +3,7 @@ name: Deploy SSS Theme
 on:
   push:
     branches: [main]
-    paths: [theme/**]
+    paths: [production/**]
 
 jobs:
   deploy:
@@ -17,4 +17,4 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan 66.135.28.141 >> ~/.ssh/known_hosts
-          rsync -avz --delete theme/ root@66.135.28.141:/var/www/my.stupidsimplestartup.com/htdocs/wp-content/themes/sss/
+          rsync -avz --delete production/ root@66.135.28.141:/var/www/my.stupidsimplestartup.com/htdocs/wp-content/themes/sss/
