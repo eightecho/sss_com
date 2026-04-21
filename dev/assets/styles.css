@@ -834,16 +834,51 @@ p + p { margin-top: 1em; }
   padding: 16px 28px 28px;
 }
 
-/* Kit form overrides — strip stock UI chrome from any Kit form in the modal */
-.modal-body .formkit-form {
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  border: none !important;
+/* Opt-in form (Fluent Forms placeholder in dev; shortcode in production) */
+.optin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.modal-body .formkit-background {
-  display: none !important;
+.optin-form-head {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin: 0;
 }
+
+.optin-form-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.optin-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 200ms;
+}
+
+.optin-input:focus { border-color: var(--ink); }
+
+.optin-form .btn { width: 100%; justify-content: center; }
+
+.optin-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* PBPP modal — coral submit */
+.pbpp .optin-form .pbpp-btn { background-color: var(--pb-accent); }
 
 body.modal-open { overflow: hidden; }
 
@@ -1815,9 +1850,6 @@ body.modal-open { overflow: hidden; }
   padding: 0; margin-top: 2px;
 }
 
-/* Kit modal — coral submit */
-.pbpp #optinModal .formkit-form[data-uid="7d2826bed8"] .formkit-submit       { background-color: var(--pb-accent) !important; border-radius: 0 !important; }
-.pbpp #optinModal .formkit-form[data-uid="7d2826bed8"] .formkit-submit > span { background-color: transparent !important; }
 
 /* Pillar dividers */
 .pillar-divider {

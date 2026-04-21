@@ -46,7 +46,7 @@
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('modal-open');
 
-      /* Auto-focus the first input (Kit renders it dynamically) */
+      /* Auto-focus the email input */
       setTimeout(function () {
         var input = qs('input[type="email"]', modal);
         if (input) input.focus();
@@ -113,14 +113,6 @@
   /* ── Cookie Consent ──────────────────────────────────── */
   var CONSENT_KEY = 'sss_cookie_consent';
 
-  /* Load ConvertKit script dynamically — called only after consent */
-  function loadConvertKit() {
-    if (qs('script[src*="convertkit"]')) return; /* already loaded */
-    var s = document.createElement('script');
-    s.src = 'https://f.convertkit.com/ckjs/ck.5.js';
-    document.head.appendChild(s);
-  }
-
   function getConsent() {
     try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
   }
@@ -139,7 +131,6 @@
   function acceptCookies() {
     saveConsent('accepted');
     dismissBanner();
-    loadConvertKit();
   }
 
   function declineCookies() {
@@ -159,7 +150,7 @@
     banner.innerHTML =
       '<div class="cookie-inner">' +
         '<p class="cookie-text">' +
-          'We use cookies to power our email sign-up forms. ' +
+          'This site uses cookies to remember your preferences. ' +
           '<a href="' + privacyHref + '" class="cookie-link">Privacy&nbsp;Policy</a>.' +
         '</p>' +
         '<div class="cookie-actions">' +
@@ -173,12 +164,7 @@
   function setupCookieConsent() {
     var stored = getConsent();
 
-    if (stored === 'accepted') {
-      loadConvertKit();
-      return;
-    }
-
-    if (stored === 'declined') {
+    if (stored === 'accepted' || stored === 'declined') {
       return; /* respect existing choice, don't show banner */
     }
 
