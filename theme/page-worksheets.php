@@ -1,0 +1,240 @@
+<?php get_header(); ?>
+<main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <p class="hero-eyebrow">Tools · The Stupid Simple Startup Program&trade;</p>
+            <h1>Do the work.</h1>
+            <p class="hero-sub">Structured worksheets for every task at every step of the IMPACT System&trade; — organized into Workbooks, one per step, so you always know where to go and always have something real to show for the work.</p>
+        </div>
+    </section>
+
+
+    <!-- What they are -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">What they are</p>
+            <div class="section-head">
+                <h2>Deliverables, not exercises.</h2>
+                <p>The worksheets are where the work gets done. Each step has a dedicated Workbook — a collection of worksheets covering every task in that step — and you work through them alongside the playbook chapter. Come out the other side with something concrete: a validated direction, a revenue model, a production plan.</p>
+            </div>
+
+            <div class="workbook-flow" style="margin-bottom: 40px;">
+                <div class="workbook-flow-row">
+                    <span class="wf-step wf-step--identify">Step 1: Identify</span>
+                    <span class="wf-arrow">→</span>
+                    <span class="wf-workbook wf-workbook--identify">Identify Workbook</span>
+                    <span class="wf-arrow">→</span>
+                    <div class="wf-worksheets">
+                        <span class="wf-sheet">Worksheet 1</span>
+                        <span class="wf-sheet">Worksheet 2</span>
+                        <span class="wf-sheet">Worksheet 3</span>
+                        <span class="wf-sheet wf-sheet--more">+ more</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <p class="card-label">Structured</p>
+                    <h3>Not blank pages</h3>
+                    <p>Every worksheet has specific prompts, frameworks, and decision points. You're not starting from scratch — you're filling in the right blanks.</p>
+                </div>
+                <div class="card">
+                    <p class="card-label">Step-specific</p>
+                    <h3>Organized into Workbooks</h3>
+                    <p>The worksheets for each step are collected in a dedicated Workbook — one per IMPACT step. New worksheets are continuously added to each Workbook as better ways to complete each task are discovered.</p>
+                </div>
+                <div class="card">
+                    <p class="card-label">Output-focused</p>
+                    <h3>Something to show for it</h3>
+                    <p>You finish each worksheet with a concrete deliverable — a decision made, a plan documented, a next step confirmed before you move on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Six Workbooks -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">One Workbook per step</p>
+            <div class="section-head">
+                <h2>Six steps. Six Workbooks.</h2>
+                <p>Each Workbook contains the worksheets you need to complete that step — structured exercises applied to your specific project, not generic templates. New worksheets are added as better approaches emerge.</p>
+            </div>
+
+            <div class="steps-list">
+                <div class="step-item step-item--identify">
+                    <p class="step-num">Step 1</p>
+                    <p class="step-name">Identify</p>
+                    <p class="step-desc">Validate your niche, map the market, and lock in your angle — before committing time, money, or energy to the wrong thing.</p>
+                </div>
+                <div class="step-item step-item--monetize">
+                    <p class="step-num">Step 2</p>
+                    <p class="step-name">Monetize</p>
+                    <p class="step-desc">Build a real revenue model before you build anything else. Pricing, distribution channels, and projected returns — documented and defensible.</p>
+                </div>
+                <div class="step-item step-item--productize">
+                    <p class="step-num">Step 3</p>
+                    <p class="step-name">Productize</p>
+                    <p class="step-desc">Plan the production of the actual thing you're selling — every decision, every spec, every dependency mapped before you start.</p>
+                </div>
+                <div class="step-item step-item--activate">
+                    <p class="step-num">Step 4</p>
+                    <p class="step-name">Activate</p>
+                    <p class="step-desc">Map out your first-sales plan. Who you're reaching, how you're reaching them, and what success looks like before launch.</p>
+                </div>
+                <div class="step-item step-item--campaign">
+                    <p class="step-num">Step 5</p>
+                    <p class="step-name">Campaign</p>
+                    <p class="step-desc">Design the ongoing sales engine — the distribution, audience, and system that generates repeatable revenue after the launch.</p>
+                </div>
+                <div class="step-item step-item--triumph">
+                    <p class="step-num">Step 6</p>
+                    <p class="step-name">Triumph</p>
+                    <p class="step-desc">Review the full cycle — revenue vs. plan, what worked, what to cut — and document a clear decision about what comes next.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 56px;">
+                <p class="section-label">Inside a Workbook</p>
+                <div class="section-head">
+                    <h2>As many worksheets as it takes.</h2>
+                    <p>Each Workbook is organized into stages — a designed sequence of work that builds toward the chapter's goal. Every stage has as many worksheets as needed to get the job done, and new ones are added as better approaches emerge.</p>
+                </div>
+
+                <div class="wf-tree">
+                    <div class="wf-tree-root-wrap">
+                        <div class="wf-tree-root-node wf-step--identify">
+                            <svg width="16" height="13" viewBox="0 0 16 13" fill="none" aria-hidden="true">
+                                <path d="M8 11.5V2C8 1.4 7.2 1 6 1H1.5C1.2 1 1 1.2 1 1.5V10.5C1 10.8 1.2 11 1.5 11H5.5C6.8 11 7.5 11.3 8 11.5Z" fill="rgba(255,255,255,0.35)" stroke="white" stroke-width="1.1"/>
+                                <path d="M8 11.5V2C8 1.4 8.8 1 10 1H14.5C14.8 1 15 1.2 15 1.5V10.5C15 10.8 14.8 11 14.5 11H10.5C9.2 11 8.5 11.3 8 11.5Z" fill="rgba(255,255,255,0.6)" stroke="white" stroke-width="1.1"/>
+                            </svg>
+                            Step 1: Identify
+                        </div>
+                        <div class="wf-tree-trunk-line"></div>
+                    </div>
+                    <div class="wf-tree-stages">
+                        <div class="wf-tree-stage">
+                            <div class="wf-tree-stage-meta">
+                                <span class="wf-tree-stage-label">Stage 1</span>
+                                <span class="wf-tree-stage-count">As many worksheets as it takes</span>
+                            </div>
+                            <div class="wf-tree-stage-sheets">
+                                <span class="wf-tree-ws"></span><span class="wf-tree-ws"></span><span class="wf-tree-ws"></span><span class="wf-tree-ws wf-tree-ws--more">+</span>
+                            </div>
+                        </div>
+                        <div class="wf-tree-stage">
+                            <div class="wf-tree-stage-meta">
+                                <span class="wf-tree-stage-label">Stage 2</span>
+                                <span class="wf-tree-stage-count">As many worksheets as it takes</span>
+                            </div>
+                            <div class="wf-tree-stage-sheets">
+                                <span class="wf-tree-ws"></span><span class="wf-tree-ws"></span><span class="wf-tree-ws"></span><span class="wf-tree-ws"></span><span class="wf-tree-ws"></span><span class="wf-tree-ws wf-tree-ws--more">+</span>
+                            </div>
+                        </div>
+                        <div class="wf-tree-stage">
+                            <div class="wf-tree-stage-meta">
+                                <span class="wf-tree-stage-label">Stage 3</span>
+                                <span class="wf-tree-stage-count">As many worksheets as it takes</span>
+                            </div>
+                            <div class="wf-tree-stage-sheets">
+                                <span class="wf-tree-ws"></span><span class="wf-tree-ws"></span><span class="wf-tree-ws"></span><span class="wf-tree-ws"></span><span class="wf-tree-ws wf-tree-ws--more">+</span>
+                            </div>
+                        </div>
+                        <div class="wf-tree-stage wf-tree-stage--more">
+                            <div class="wf-tree-stage-meta">
+                                <span class="wf-tree-stage-label">More stages</span>
+                                <span class="wf-tree-stage-count">As the playbook grows</span>
+                            </div>
+                            <div class="wf-tree-stage-sheets">
+                                <span class="wf-tree-ws wf-tree-ws--more">· · ·</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample worksheet preview -->
+            <div class="worksheet-preview" style="margin-top: 56px;">
+                <div class="worksheet-preview-header">
+                    <div>
+                        <p class="worksheet-preview-label">Sample · Identify Workbook · Stage 1</p>
+                        <p class="worksheet-preview-title">Target Audience</p>
+                    </div>
+                    <button class="worksheet-preview-badge" data-open-optin>Get Access</button>
+                </div>
+                <div class="worksheet-preview-body">
+                    <div class="worksheet-section">
+                        <ul class="worksheet-checklist">
+                            <li class="worksheet-check-item worksheet-check-item--done">
+                                <span class="worksheet-checkbox worksheet-checkbox--done" aria-hidden="true">
+                                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3L9 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span class="worksheet-check-text">Map your concept's target audience — cross-reference against the top 20 competitors in your category to identify the positioning sweet spot your product should own</span>
+                                <button class="worksheet-learn-btn">Learn how</button>
+                            </li>
+                            <li class="worksheet-check-item worksheet-check-item--done">
+                                <span class="worksheet-checkbox worksheet-checkbox--done" aria-hidden="true">
+                                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3L9 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span class="worksheet-check-text">Score each potential buyer type across three axes: purchase authority, price sensitivity, and acquisition channel — identify which buyer drives your primary sales strategy</span>
+                                <button class="worksheet-learn-btn">Learn how</button>
+                            </li>
+                            <li class="worksheet-check-item">
+                                <span class="worksheet-checkbox" aria-hidden="true"></span>
+                                <span class="worksheet-check-text">For each adjacent audience segment, define a distinct purchase trigger — each trigger represents a separate marketing angle with different messaging requirements</span>
+                                <button class="worksheet-learn-btn">Learn how</button>
+                            </li>
+                            <li class="worksheet-check-item">
+                                <span class="worksheet-checkbox" aria-hidden="true"></span>
+                                <span class="worksheet-check-text">Extract and categorize 1- and 2-star reviews from each competitor by complaint type — the most frequently recurring complaint is your positioning angle</span>
+                                <button class="worksheet-learn-btn">Learn how</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="worksheet-preview-footer">
+                    <p>Six chapters, six Workbooks — structured worksheets you complete, not PDFs you file away. New worksheets are continuously added as better approaches emerge.</p>
+                    <a href="<?php echo esc_url(home_url('/playbooks/')); ?>" class="worksheet-preview-cta">
+                        See the Playbooks
+                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden="true">
+                            <path d="M1 5h10M7 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Mid-page CTA -->
+    <section class="cta-light">
+        <div class="container">
+            <p class="section-label">Included with training</p>
+            <h2>Workbooks and Worksheets — included with the Playbook.</h2>
+            <p>Purchase any Stupid Simple Startup playbook and every Workbook is included — all the worksheets you need for every step, no separate purchase, no add-on.</p>
+            <a href="<?php echo esc_url(home_url('/playbooks/')); ?>" class="btn btn-primary">
+                See the Playbooks
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- CTA Strip -->
+    <section class="cta-strip">
+        <div class="container">
+            <p class="section-label">Start with the system</p>
+            <h2>The master guide is free.</h2>
+            <p>Get it, read it, use it.</p>
+            <button class="btn btn-primary-light" data-open-optin>Get the IMPACT System</button>
+        </div>
+    </section>
+
+</main>
+<?php get_footer(); ?>

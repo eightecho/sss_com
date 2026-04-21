@@ -1,0 +1,121 @@
+<?php get_header(); ?>
+<main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <p class="hero-eyebrow">Legal</p>
+            <h1>Privacy Policy</h1>
+            <p class="hero-sub">Effective Date: January 1, 2026 &nbsp;·&nbsp; Eight Echo Agency, LLC</p>
+        </div>
+    </section>
+
+
+    <!-- Content -->
+    <section class="section">
+        <div class="container" style="max-width: 720px;">
+
+            <div class="section-head">
+                <h2>Information We Collect</h2>
+                <p>We collect information you provide directly to us when you interact with this website.</p>
+            </div>
+
+            <div class="grid-2" style="margin-top: 32px;">
+                <div class="card">
+                    <p class="card-label">Contact &amp; Subscription</p>
+                    <h3>Email &amp; Name</h3>
+                    <p>Collected when you voluntarily subscribe to the IMPACT System&trade; or join our email list through any opt-in form on the site. Subscription is always voluntary.</p>
+                </div>
+                <div class="card">
+                    <p class="card-label">Transactions</p>
+                    <h3>Purchase Data</h3>
+                    <p>When you purchase a Playbook or other product, your transaction is processed by our payment provider. We do not store or have access to your credit card or banking information.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 48px;">
+                <p class="section-label">How We Use It</p>
+                <div class="section-head">
+                    <h2>Your information stays purposeful.</h2>
+                    <p>We use the information we collect only to operate this site and communicate with you about content you've requested or purchased.</p>
+                </div>
+                <div class="grid-3" style="margin-top: 32px;">
+                    <div class="card">
+                        <p class="card-label">Delivery</p>
+                        <h3>Content Access</h3>
+                        <p>To deliver the free and paid content you requested — the IMPACT System, Playbooks, and related materials.</p>
+                    </div>
+                    <div class="card">
+                        <p class="card-label">Communication</p>
+                        <h3>Email Updates</h3>
+                        <p>To send newsletters, product updates, and promotional communications. You can unsubscribe at any time using the link in any email we send.</p>
+                    </div>
+                    <div class="card">
+                        <p class="card-label">Improvement</p>
+                        <h3>Site Analytics</h3>
+                        <p>To understand how the site is used so we can improve it. We may collect standard usage data through our hosting platform.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border);">
+                <p class="section-label">Third Parties</p>
+                <div class="section-head">
+                    <h2>Who handles your data.</h2>
+                    <p>We use a small number of trusted third-party services to operate this site. We do not sell your personal information to anyone.</p>
+                </div>
+                <div class="grid-2" style="margin-top: 32px;">
+                    <div class="card">
+                        <p class="card-label">Email Platform</p>
+                        <h3>Kit (ConvertKit)</h3>
+                        <p>We use Kit as our email service provider. By subscribing, you agree to have your information transferred to and processed by Kit in accordance with their privacy policy at kit.com.</p>
+                    </div>
+                    <div class="card">
+                        <p class="card-label">Hosting</p>
+                        <h3>WordPress / Cloudflare</h3>
+                        <p>This website is hosted on a managed WordPress server behind Cloudflare. Standard web server logs (IP addresses, browser type, pages viewed) may be collected in accordance with their respective privacy policies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border);">
+                <p class="section-label">Cookies</p>
+                <div class="section-head">
+                    <h2>How we use cookies.</h2>
+                    <p>This site uses a small number of cookies and browser storage to function. No advertising or tracking cookies are used.</p>
+                </div>
+                <div class="grid-2" style="margin-top: 32px;">
+                    <div class="card">
+                        <p class="card-label">Functional</p>
+                        <h3>Email Sign-Up Forms</h3>
+                        <p>When you accept cookies, we load a script from Kit (ConvertKit) that powers the email sign-up form. This script may set cookies to support form submission and prevent duplicate sign-ups. If you decline, the form still works as a standard HTML form but without Kit's enhanced experience.</p>
+                    </div>
+                    <div class="card">
+                        <p class="card-label">Preference</p>
+                        <h3>Your Consent Choice</h3>
+                        <p>We store your cookie consent decision in your browser's <code style="font-size:13px; background:var(--alt); padding:1px 5px; border-radius:3px;">localStorage</code> under the key <code style="font-size:13px; background:var(--alt); padding:1px 5px; border-radius:3px;">sss_cookie_consent</code>. This is never sent to a server. You can reset your choice at any time by <button id="resetConsent" style="background:none;border:none;padding:0;font-family:inherit;font-size:inherit;color:var(--ink);text-decoration:underline;text-underline-offset:2px;cursor:pointer;">clicking here</button>.</p>
+                    </div>
+                </div>
+                <script>
+                document.getElementById('resetConsent').addEventListener('click', function() {
+                    try { localStorage.removeItem('sss_cookie_consent'); } catch(e) {}
+                    this.textContent = 'Done — reload the page to see the banner again.';
+                    this.style.cursor = 'default';
+                });
+                </script>
+            </div>
+
+            <div style="margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border);">
+                <p class="section-label">Your Rights</p>
+                <div class="section-head">
+                    <h2>You're always in control.</h2>
+                    <p>You may unsubscribe from our email list at any time using the unsubscribe link included in every email we send. To request deletion of your personal data or ask questions about this policy, contact us at <a href="<?php echo esc_url(home_url('/')); ?>">stupidsimplestartup.com</a>.</p>
+                </div>
+                <p class="journey-body" style="margin-top: 24px;">We may update this Privacy Policy from time to time. Continued use of the site after any changes constitutes your acceptance of the updated policy. The effective date at the top of this page will reflect the most recent revision.</p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+<?php get_footer(); ?>

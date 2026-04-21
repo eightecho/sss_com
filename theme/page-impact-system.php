@@ -1,0 +1,197 @@
+<?php get_header(); ?>
+<main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <p class="hero-eyebrow">A product of Stupid Simple Startup&trade;</p>
+            <h1>The <span class="impact-i">I</span><span class="impact-m">M</span><span class="impact-p">P</span><span class="impact-a">A</span><span class="impact-c">C</span><span class="impact-t" style="padding-left:5px">T</span> System</h1>
+            <p class="hero-sub">Six steps. Two phases. One loop.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" data-open-optin>Get free access</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- What it is -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">The Framework</p>
+            <div class="section-head">
+                <h2>A complete business-building system <br>for solo operators.</h2>
+                <p>The IMPACT System&trade; is a sequential framework — six steps, two phases, one repeating loop. You don't skip steps. You don't reorder them. You do the work in the sequence it was designed, and the system builds on itself.</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <p class="card-label">Phase 1 · Build</p>
+                    <h3>Identify. Monetize. Productize.</h3>
+                    <p>Define the opportunity, validate the economics, and build the thing worth selling. This phase has a beginning and an end. You complete it before moving to Phase 2.</p>
+                </div>
+                <div class="card">
+                    <p class="card-label">Phase 2 · Run</p>
+                    <h3>Activate. Campaign. Triumph.</h3>
+                    <p>Build the infrastructure, drive it with deliberate campaigns, then analyze and decide what comes next. Phase 2 repeats. Every cycle of Triumph informs the next.</p>
+                </div>
+            </div>
+
+            <div class="impact-phases">
+                <div class="impact-phase-row">
+                    <span class="impact-phase-tag">Phase 1 · Build</span>
+                    <span class="wf-step wf-step--identify">Identify</span>
+                    <span class="wf-arrow">→</span>
+                    <span class="wf-step wf-step--monetize">Monetize</span>
+                    <span class="wf-arrow">→</span>
+                    <span class="wf-step wf-step--productize">Productize</span>
+                </div>
+                <div class="impact-phase-div">↓</div>
+                <div class="impact-phase-row">
+                    <span class="impact-phase-tag">Phase 2 · Run</span>
+                    <span class="wf-step wf-step--activate">Activate</span>
+                    <span class="wf-arrow">→</span>
+                    <span class="wf-step wf-step--campaign">Campaign</span>
+                    <span class="wf-arrow">→</span>
+                    <span class="wf-step wf-step--triumph">Triumph</span>
+                    <span class="impact-loop-badge">↺ repeats</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Six steps -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">The Six Steps</p>
+            <div class="section-head">
+                <h2>Each step owns something specific.</h2>
+                <p>No overlap. No ambiguity. Every step has a clear job. You know when you've done it, and you know when you haven't.</p>
+            </div>
+
+            <div class="steps-list">
+                <div class="step-item step-item--identify">
+                    <p class="step-num">Step 1</p>
+                    <p class="step-name">Identify</p>
+                    <p class="step-desc">Define the customer, validate the problem, and establish the strategic positioning that guides every subsequent decision. Skip this and you're building for someone who doesn't exist.</p>
+                </div>
+                <div class="step-item step-item--monetize">
+                    <p class="step-num">Step 2</p>
+                    <p class="step-name">Monetize</p>
+                    <p class="step-desc">Work out the unit economics before you build anything. Pricing, margin, and monetization goal. If the numbers don't work here, they won't work later.</p>
+                </div>
+                <div class="step-item step-item--productize">
+                    <p class="step-num">Step 3</p>
+                    <p class="step-name">Productize</p>
+                    <p class="step-desc">Turn your expertise or idea into a defined, deliverable product. Scope, format, delivery, promise. Build what you validated in Step 1 at the price you set in Step 2.</p>
+                </div>
+                <div class="step-item step-item--activate">
+                    <p class="step-num">Step 4</p>
+                    <p class="step-name">Activate</p>
+                    <p class="step-desc">Build the infrastructure that makes selling possible — audience, platform, systems, and the minimum viable presence needed to run campaigns in Step 5.</p>
+                </div>
+                <div class="step-item step-item--campaign">
+                    <p class="step-num">Step 5</p>
+                    <p class="step-name">Campaign</p>
+                    <p class="step-desc">Drive deliberate, time-bound selling pressure. Not a vague ongoing effort — a specific campaign with a start, an offer, and an end. Then stop and measure.</p>
+                </div>
+                <div class="step-item step-item--triumph">
+                    <p class="step-num">Step 6</p>
+                    <p class="step-name">Triumph</p>
+                    <p class="step-desc">Analyze results, extract decisions, and determine what happens next — optimize, rebuild, or move to a new product. Triumph is what makes the loop compound over time.</p>
+                </div>
+            </div>
+
+            <div class="step-pills" aria-label="IMPACT System steps">
+                <span class="step-pill step-pill--identify">Identify</span>
+                <span class="step-pill step-pill--monetize">Monetize</span>
+                <span class="step-pill step-pill--productize">Productize</span>
+                <span class="step-pill step-pill--activate">Activate</span>
+                <span class="step-pill step-pill--campaign">Campaign</span>
+                <span class="step-pill step-pill--triumph">Triumph</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <p class="section-label">FAQ</p>
+            <div class="section-head">
+                <h2>Common questions.</h2>
+            </div>
+
+            <dl class="faq-list">
+                <details class="faq-item">
+                    <summary>Why is the IMPACT System free?</summary>
+                    <div class="faq-answer">
+                        <p>Because useful knowledge gets stronger when it's shared. The more people who use, test, and build on these ideas, the better they become. My goal is to see more solo creators succeed, and the best way I can help is by removing the barrier of entry to a proven process.</p>
+                        <p>I'm sharing the system because I believe that for the right person, this roadmap is the difference between a stalled idea and a real business. If you can use it to build something meaningful, then the system has done its job.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Do I have to do the steps in order?</summary>
+                    <div class="faq-answer">
+                        <p>The system is designed to be worked sequentially — each step sets up the next, and the logic holds best when you follow the order. Identify before you build. Monetize before you produce. Productize before you sell.</p>
+                        <p>That said, you know your situation. If you're mid-build and realize you skipped Identify, go back. If a campaign isn't converting and you need to revisit Monetize, do it. The sequence is a strong recommendation, not a hard gate.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What's the difference between the IMPACT System and the Playbooks?</summary>
+                    <div class="faq-answer">
+                        <p>The IMPACT System is the strategy — a complete framework that applies to any solo business. A Playbook is the tactics — the specific moves for a specific business type, documented step by step as the work actually happens.</p>
+                        <p>The IMPACT System tells you what to do. A Playbook shows you how it was done, in a real business, in real time.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Is this right for my type of business?</summary>
+                    <div class="faq-answer">
+                        <p>The IMPACT System was built for solo operators — side hustlers, solopreneurs, and subject matter experts building a product-based business. If you're creating something to sell — a digital product, a course, a service, a physical product — the system applies.</p>
+                        <p>It's not designed for funded startups, agencies, or enterprise teams.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What do I actually get when I sign up?</summary>
+                    <div class="faq-answer">
+                        <p>You get the full IMPACT System guide — a complete, step-by-step breakdown of all six steps, both phases, and how the loop works. It's delivered by email and free to keep. No trial. No upsell gate. The full system, upfront.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I start if I'm already building something?</summary>
+                    <div class="faq-answer">
+                        <p>Yes — and you don't have to start over. Take what you already have and run it through the framework from the beginning. Each step becomes a checkpoint: either you confirm you're on the right track, or you catch something that needs adjusting before it becomes a real problem.</p>
+                        <p>Triumph, Step 6, is particularly useful here. Most people think of it as a post-launch review, but it works just as well before launch — as a structured way to assess where you are, identify what's missing, and decide whether you're actually ready to move forward.</p>
+                        <p>If you've already launched, Triumph is still the right entry point. It closes the loop and tells you what comes next.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>How long does it take?</summary>
+                    <div class="faq-answer">
+                        <p>The IMPACT System isn't a course with a timeline — it's a framework you work through at your own pace. Phase 1 moves at the speed of your decisions. Phase 2 repeats as long as you're running the business.</p>
+                        <p>Some people move through the first cycle in weeks. Others take months. The point isn't speed — it's doing the steps in the right order.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Is there support if I get stuck?</summary>
+                    <div class="faq-answer">
+                        <p>Yes. The <a href="<?php echo esc_url(home_url('/member/')); ?>">Member</a> area is where you can connect with other solo operators working through the system. If you need direct, one-on-one guidance on a specific decision, that's available through <a href="<?php echo esc_url(home_url('/member/')); ?>">Tactical Support</a>.</p>
+                    </div>
+                </details>
+            </dl>
+        </div>
+    </section>
+
+
+    <!-- CTA strip -->
+    <section class="cta-strip">
+        <div class="container">
+            <p class="section-label">Get started</p>
+            <h2>The master guide is free.</h2>
+            <p>Get immediate access. No tricks.</p>
+            <button class="btn btn-primary-light" data-open-optin>Get the IMPACT System</button>
+        </div>
+    </section>
+
+</main>
+<?php get_footer(); ?>
