@@ -175,7 +175,7 @@
                 <details class="faq-item">
                     <summary>Is there support if I get stuck?</summary>
                     <div class="faq-answer">
-                        <p>Yes. The <a href="<?php echo esc_url(home_url('/member/')); ?>">Member</a> area is where you can connect with other solo operators working through the system. If you need direct, one-on-one guidance on a specific decision, that's available through <a href="<?php echo esc_url(home_url('/member/')); ?>">Tactical Support</a>.</p>
+                        <p>Yes. The <a href="<?php echo esc_url(home_url('/membership/')); ?>">Member</a> area is where you can connect with other solo operators working through the system. If you need direct, one-on-one guidance on a specific decision, that's available through <a href="<?php echo esc_url(home_url('/membership/')); ?>">Tactical Support</a>.</p>
                     </div>
                 </details>
             </dl>

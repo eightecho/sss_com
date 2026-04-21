@@ -41,7 +41,7 @@
                 <div class="card">
                     <p class="card-label">Execution</p>
                     <h3>Workbooks &amp; Worksheets</h3>
-                    <p>Every chapter has a Workbook — a structured collection of worksheets for every task in that step. Included with every Playbook, along with <a href="<?php echo esc_url(home_url('/member/')); ?>">member access</a>.</p>
+                    <p>Every chapter has a Workbook — a structured collection of worksheets for every task in that step. Included with every Playbook, along with <a href="<?php echo esc_url(home_url('/membership/')); ?>">member access</a>.</p>
                 </div>
             </div>
         </div>
