@@ -259,12 +259,12 @@ Visual structure (mirrors old static site):
 - Footer nav managed in WP admin → Appearance → Menus (assign to "Footer Navigation")
 - The `<span id="year"></span>` is filled by `setYear()` in `assets/js/main.js`
 
-### Opt-In Modal (Kit / ConvertKit)
+### Opt-In Modal (Fluent Forms — replacing Kit)
 Present on every main page. Opened by `data-open-optin` attributes.
-- Kit script (`ck.5.js`) is **NOT** in the HTML — it loads dynamically via JS only after cookie consent
-- Form action: `https://app.kit.com/forms/9157991/subscriptions`
-- Form UID: `195ac6fa15`
-- Form data-sv-form: `9157991`
+- **Kit/ConvertKit is legacy** — all Kit JS, form IDs, and the `loadConvertKit()` loader are being removed
+- Replacement: **Fluent Forms** embed (WordPress plugin) for the form; **Fluent CRM** captures the lead and triggers the double opt-in email
+- In `dev/`: use a static HTML placeholder (`<div class="form-placeholder">`) — no live form integration
+- In `production/`: embed the Fluent Forms shortcode inside the modal markup
 - `data-open-optin` on any button/element opens the modal
 - `data-close-optin` on any element closes the modal
 
@@ -479,24 +479,23 @@ Stupid Simple Startup™, the IMPACT System™, and the Stupid Simple Startup Pr
 ## Cookie Consent System
 
 ### Architecture
-- Kit (`ck.5.js`) is the only third-party cookie-setting script
-- Script is **never** hardcoded in HTML — loaded dynamically via `loadConvertKit()` in `main.js`
+- No third-party cookie-setting scripts currently active (Kit is being removed; analytics/ads not yet added)
+- Cookie consent banner remains in the UI — it will gate future third-party scripts as they are added
 - User preference stored in `localStorage` key: `sss_cookie_consent`
 - Values: `'accepted'` | `'declined'` | `null` (not yet set)
 
 ### Behavior
-| State | Banner shown | Kit loaded |
-|---|---|---|
-| null (first visit) | Yes — slides up from bottom | No |
-| `'accepted'` | No | Yes — immediately on page load |
-| `'declined'` | No | Never |
+| State | Banner shown |
+|---|---|
+| null (first visit) | Yes — slides up from bottom |
+| `'accepted'` or `'declined'` | No |
 
-### Planned Expansion (when analytics/ads are added)
-The current binary `accepted`/`declined` value will be upgraded to a JSON object:
+### When third-party scripts are added (analytics, ads, etc.)
+Upgrade the binary consent value to a JSON object:
 ```json
 { "functional": true, "analytics": false, "marketing": false }
 ```
-Each script category will have its own conditional loader function, same pattern as `loadConvertKit()`. The banner will be updated to show category toggles. `privacy.html` will be updated to document each new service.
+Each category gets its own conditional loader. Banner updated to show category toggles. `privacy.html` updated to document each service.
 
 ---
 
@@ -507,7 +506,7 @@ Single IIFE. Functions:
 - `setupModal()` — opt-in modal open/close, ESC key, auto-focus email input
 - `setupLearnHowModal()` — "Learn how" tutorial modal on PBPP worksheets
 - `setYear()` — fills `#year` span in footer
-- `setupCookieConsent()` — builds and injects banner, reads/writes consent, loads Kit conditionally
+- `setupCookieConsent()` — builds and injects banner, reads/writes consent (Kit loader being removed)
 
 ---
 
@@ -515,8 +514,12 @@ Single IIFE. Functions:
 
 ### The dev → production pipeline
 
-1. **Design and iterate in `dev/`** — pure HTML, opens in any browser, no WP instance needed. Fast iteration on layout, copy, and components.
-2. **Translate to `production/`** — once the HTML is final, apply the same changes to the corresponding PHP template. The translation is mechanical:
+**All work starts in `dev/`. Never build directly in `production/`.**
+
+`dev/` is a fully working static HTML site — open any page in a browser, no server needed. It is the design and copy source of truth. `production/` only receives changes that have been approved in `dev/` first.
+
+1. **Build and iterate in `dev/`** — pure HTML, fast browser preview, no WP instance needed.
+2. **Translate to `production/`** — once approved, apply the changes to the corresponding PHP template. The translation is mechanical:
    - Replace `<!DOCTYPE html>` through `</header>` with `<?php get_header(); ?>`
    - Replace `<footer>` through `</html>` with `<?php get_footer(); ?>`
    - Replace static `href="/index.html"` etc. with `<?php echo home_url('/'); ?>`
