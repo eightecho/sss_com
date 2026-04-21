@@ -57,11 +57,18 @@ All use `&trade;` in HTML.
 │       ├── css/main.css           Master stylesheet
 │       └── js/main.js             Nav, modals, cookie consent, year
 │
-├── dev/                           Static HTML reference site — do not edit
-│   ├── index.html
-│   ├── playbooks.html
-│   ├── assets/
-│   └── (other .html files and folders)
+├── dev/                           Static HTML site — design source of truth
+│   ├── index.html                 → front-page.php
+│   ├── membership.html            → page-membership.php
+│   ├── picture-book-project.html  → page-picture-book-project.php
+│   ├── playbooks.html             → page-playbooks.php
+│   ├── impact-system.html         → page-impact-system.php
+│   ├── worksheets.html            → page-worksheets.php
+│   ├── privacy.html               → page-privacy.php
+│   ├── disclaimer.html            → page-disclaimer.php
+│   ├── terms.html                 → page-terms.php
+│   ├── assets/                    CSS, JS, images (static site only)
+│   └── impact-system/             Standalone multi-page IMPACT System doc
 │
 ├── .github/workflows/deploy.yml   GitHub Actions: rsync production/ to server on push
 │
@@ -506,12 +513,38 @@ Single IIFE. Functions:
 
 ## Development Workflow
 
-### Local Preview (LocalWP)
-The theme is mirrored in LocalWP for local dev. Local site path:
+### The dev → production pipeline
+
+1. **Design and iterate in `dev/`** — pure HTML, opens in any browser, no WP instance needed. Fast iteration on layout, copy, and components.
+2. **Translate to `production/`** — once the HTML is final, apply the same changes to the corresponding PHP template. The translation is mechanical:
+   - Replace `<!DOCTYPE html>` through `</header>` with `<?php get_header(); ?>`
+   - Replace `<footer>` through `</html>` with `<?php get_footer(); ?>`
+   - Replace static `href="/index.html"` etc. with `<?php echo home_url('/'); ?>`
+   - Strip inline `<head>` content — WP outputs this via `wp_head()` in `header.php`
+3. **Commit and push** — deploy triggers automatically on `production/**` changes.
+
+### Page mapping (dev → production)
+
+| `dev/` | `production/` |
+|---|---|
+| `index.html` | `front-page.php` |
+| `membership.html` | `page-membership.php` |
+| `picture-book-project.html` | `page-picture-book-project.php` |
+| `playbooks.html` | `page-playbooks.php` |
+| `impact-system.html` | `page-impact-system.php` |
+| `worksheets.html` | `page-worksheets.php` |
+| `privacy.html` | `page-privacy.php` |
+| `disclaimer.html` | `page-disclaimer.php` |
+| `terms.html` | `page-terms.php` |
+
+`impact-system/` subfolder in `dev/` is a standalone multi-page reference doc — no direct production counterpart (content lives inside `page-impact-system.php`).
+
+### Local WP preview (LocalWP)
+The theme is mirrored in LocalWP for testing WP-specific behaviour. Local site path:
 ```
 ~/Local Sites/stupidsimplestartupcom/app/public/wp-content/themes/sss/
 ```
-After editing `theme/` files locally, manually copy to the LocalWP path to preview, or work directly in LocalWP and sync back. There is no auto-sync — copy intentionally.
+No auto-sync — copy `production/` to the LocalWP path intentionally to preview, or work in LocalWP and copy back.
 
 ### Deploy (GitHub Actions)
 ```bash
